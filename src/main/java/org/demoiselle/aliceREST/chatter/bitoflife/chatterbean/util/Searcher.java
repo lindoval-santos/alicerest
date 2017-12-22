@@ -21,6 +21,7 @@ import java.io.FilenameFilter;
 import java.io.InputStreamReader;
 import java.io.IOException;                           
 import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -46,12 +47,16 @@ public class Searcher implements FilenameFilter
     this.expression = expression;
 
     if (path.charAt(path.length() - 1) != '/') path += "/";
-    File dir = new File(path);
+    File dir;
+    String raiz = getClass().getResource(path).getPath();
+    dir = new File(getClass().getResource(path).getPath());//new File(path);
+
     String[] names = dir.list(this);
     Arrays.sort(names);
     
     for (int i = 0, n = names.length; i < n; i++)
-      names[i] = path + names[i];
+      //names[i] = path + names[i];
+    	names[i] = raiz + names[i];
 
     return names;
   }

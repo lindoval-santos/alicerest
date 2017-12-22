@@ -72,11 +72,17 @@ public class AliceBotMother
   {
     Searcher searcher = new Searcher();
     AliceBotParser parser = new AliceBotParser();
-    AliceBot bot = parser.parse(new FileInputStream(getBundle().getString("load.context")),
+/*    AliceBot bot = parser.parse(new FileInputStream(getBundle().getString("load.context")),
                                 new FileInputStream(getBundle().getString("load.splitters")),
                                 new FileInputStream(getBundle().getString("load.substitutions")),
                                 searcher.search(getBundle().getString("load.cerebrobase"), ".*\\.aiml"));
-
+*/  
+    System.out.println("Caminho: " + getClass().getResource(getBundle().getString("load.context")).getPath());
+    AliceBot bot = parser.parse((FileInputStream)getClass().getResourceAsStream(getBundle().getString("load.context")),
+            (FileInputStream)getClass().getResourceAsStream(getBundle().getString("load.splitters")),
+            (FileInputStream)getClass().getResourceAsStream(getBundle().getString("load.substitutions")),
+            searcher.search(getBundle().getString("load.cerebrobase"), ".*\\.aiml"));
+    
     Context context = bot.getContext(); 
     context.outputStream(gossip);
     return bot;
