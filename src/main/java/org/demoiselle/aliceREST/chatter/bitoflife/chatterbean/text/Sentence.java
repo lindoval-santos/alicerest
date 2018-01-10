@@ -16,9 +16,6 @@ package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text;
 
 import java.util.Arrays;
 
-/**
-
-*/
 public class Sentence
 {
   /*
@@ -45,6 +42,7 @@ public class Sentence
 
   /**
   Constructs a Sentence out of a non-normalized input string.
+  @param original a sentenca original informada
   */
   public Sentence(String original)
   {
@@ -66,6 +64,7 @@ public class Sentence
 
   /**
   Gets the number of individual words contained by the Sentence.
+  @return o tamanho atual
   */
   public int length()
   {
@@ -74,6 +73,7 @@ public class Sentence
 
   /**
   Returns the normalized as an array of String words.
+  @return um array normalizado
   */
   public String[] normalized()
   {
@@ -82,6 +82,8 @@ public class Sentence
 
   /**
   Gets the (index)th word of the Sentence, in its normalized form.
+  @param index o indice do array que será recuperado
+  @return uma String a string após separação referente o indice
   */
   public String normalized(int index)
   {
@@ -144,6 +146,7 @@ public class Sentence
 
   /**
   Gets the Sentence in its normalized form.
+  @return o array normalizado
   */
   public String getNormalized()
   {
@@ -159,6 +162,7 @@ public class Sentence
 
   /**
   Gets the Sentence, in its original, unformatted form.
+  @return o valor original
   */
   public String getOriginal()
   {

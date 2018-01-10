@@ -90,6 +90,8 @@ public class Sequence
 
   /**
   Return the next number in the sequence.
+  @throws java.io.IOException
+  @return um long
   */
   public synchronized long getNext() throws IOException
   {

@@ -31,6 +31,8 @@ public class Escaper
   /**
   Replaces characters which are special to the regular expression language by their
   escaped versions.
+  @param splitter uma string
+  @return uma string sem as barras invertidas
   */
   public static String escapeRegex(String splitter)
   {

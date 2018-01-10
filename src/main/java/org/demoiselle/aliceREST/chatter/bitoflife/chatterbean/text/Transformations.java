@@ -139,6 +139,9 @@ public class Transformations
 
   /**
   Constructs a new Transformations out of a list of sentence splitters and several substitution maps.
+  @param splitters Array de string
+  @param substitutions Array de substituições
+  @param tokenizer um objeto Tokenizer
   */
   public Transformations(List<String> splitters,
                          Map<String, Map<String, String>> substitutions,
@@ -199,6 +202,9 @@ public class Transformations
 
   /**
   Turns the entry to UPPERCASE, takes sequences of non-alphanumeric characters out of it (replacing them with a single whitespace) and sees that the entry is trimmed off leading and trailing whitespaces.
+  @param input uma string de entrada
+  @param mapper um objeto Mapper
+  @return uma string
   */
   private String fit(String input, Mapper mapper)
   {

@@ -43,6 +43,7 @@ public class Logger
 
   /**
   Constructs a new Log on the given directory.
+  @param writer o objeto responsavel pelo armazenamento do registro de log
   */
   public Logger(Writer writer)
   {
@@ -55,6 +56,9 @@ public class Logger
   
   /**
   Adds an entry to this Log.
+  @param request a String usada como entrada
+  @param response a String retornada
+  @throws java.io.IOException
   */
   public void append(String request, String response) throws IOException
   {

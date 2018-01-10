@@ -144,6 +144,9 @@ public class Match implements Serializable
   
   /**
   Gets the contents for the (index)th wildcard in the matched section.
+  @param section um objeto Section
+  @param index o indice a ser considerado
+  @return uma string representando o wildcard
   */
   public String wildcard(Section section, int index)
   {

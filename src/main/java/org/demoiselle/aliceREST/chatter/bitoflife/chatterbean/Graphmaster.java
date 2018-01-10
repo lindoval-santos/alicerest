@@ -50,6 +50,7 @@ public class Graphmaster
 
   /**
   Constructs a new tree, with this node as the root.
+  @param categories uma lista de Category
   */  
   public Graphmaster(List<Category> categories)
   {
@@ -90,6 +91,7 @@ public class Graphmaster
   <p>
     If any of these nodes can not be found among this node's children, its position is filled by <code>null</code>.
   </p>
+  @param name um parametro
   */
   private Graphmaster[] children(String name)
   {
@@ -158,6 +160,8 @@ public class Graphmaster
 
   /**
   Returns the Catgeory which Pattern matches the given Sentence, or <code>null</code> if it cannot be found.
+  @param match um obejeto Match
+  @return retorna uma Categoria
   */
   public Category match(Match match)
   {

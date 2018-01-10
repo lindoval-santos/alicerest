@@ -14,7 +14,7 @@ You should have received a copy of the GNU General Public License along with Cha
 
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean;
 
-import java.util.List;
+//import java.util.List;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml.Category;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Request;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Response;
@@ -81,13 +81,13 @@ public class AliceBot
     }
   }
 
-
-  //Responds a request.
+/**
+  Responds a request.
   
-  //@param request A Request.
+  @param request A Request.
   
-  //@return A response to the request.
-  
+  @return A response to the request.
+  **/
   public Response respond(Request request)
   {
     String original = request.getOriginal();
@@ -110,10 +110,10 @@ public class AliceBot
   /**
   Responds a request.
   
-  @param A request string.
+  @param input a request string.
   
-  @return A response to the request string.
-  */
+  @return A response to the input string.
+  **/
   public String respond(String input)
   {
     Response response = respond(new Request(input));
