@@ -81,13 +81,13 @@ public class AliceBot
     }
   }
 
-  /**
-  Responds a request.
+
+  //Responds a request.
   
-  @param request A Request.
+  //@param request A Request.
   
-  @return A response to the request.
-  */
+  //@return A response to the request.
+  
   public Response respond(Request request)
   {
     String original = request.getOriginal();

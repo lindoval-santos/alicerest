@@ -20,7 +20,7 @@ public class Api extends Application {
 	public Api() {
 		BeanConfig beanConfig = new BeanConfig();
 		beanConfig.setVersion("1.0.0-SNAPSHOT");
-		beanConfig.setBasePath("/aliceREST/bot");
+		beanConfig.setBasePath("/alicerest/bot");
 		beanConfig.setResourcePackage("org.demoiselle.aliceREST");
 		beanConfig.setScan(true);
 	}

@@ -32,8 +32,8 @@ public class AliceBotBC extends DelegateCrud<Bookmark, Long, BookmarkDAO> {
 		return bot.respond(mensagem);
 	}
 	
-	@Startup
-	@Transactional
+	//@Startup
+	//@Transactional
 	public void load() {
 		if (findAll().isEmpty()) {
 			insert(new Bookmark("Portal", "http://www.frameworkdemoiselle.gov.br"));

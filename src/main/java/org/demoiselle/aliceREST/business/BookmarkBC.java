@@ -4,11 +4,11 @@ import br.gov.frameworkdemoiselle.lifecycle.Startup;
 import br.gov.frameworkdemoiselle.stereotype.BusinessController;
 import br.gov.frameworkdemoiselle.transaction.Transactional;
 
-@BusinessController
+//@BusinessController
 public class BookmarkBC {
 
-	@Startup
-	@Transactional
+	//@Startup
+	//@Transactional
 	public void load() {
 
 	}
