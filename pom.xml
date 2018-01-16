@@ -60,18 +60,65 @@
 		</dependency>
 		
 		<!-- Swagger -->
-		<dependency>
+		<!--dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-jaxrs</artifactId>
-			<version>1.5.14</version>
-		</dependency>
+			<version>1.5.0</version>
+		</dependency-->
 		
 		<dependency>
-		    <groupId>com.google.guava</groupId>
-		    <artifactId>guava</artifactId>
-		    <version>14.0</version>
+		  <groupId>io.swagger</groupId>
+		  <artifactId>swagger-jaxrs</artifactId>
+		  <version>1.5.0</version>
+		  <!--version>1.5.3</version-->
+		  <exclusions>
+		    <!-- API are useless since in javaee-api -->
+		    <exclusion>
+		      <groupId>javax.ws.rs</groupId>
+		      <artifactId>jsr311-api</artifactId>
+		    </exclusion>
+		    <exclusion>
+		      <groupId>javax.validation</groupId>
+		      <artifactId>validation-api</artifactId>
+		    </exclusion>
+		    <!-- not useful for the GUI -> only json for us -->
+		    <exclusion>
+		      <groupId>com.fasterxml.jackson.dataformat</groupId>
+		      <artifactId>jackson-dataformat-xml</artifactId>
+		    </exclusion>
+		    <!--exclusion>
+		      <groupId>com.fasterxml.jackson.datatype</groupId>
+		      <artifactId>jackson-datatype-joda</artifactId>
+		    </exclusion-->
+		    <!-- we don't use reflections so no need of javassist -->
+		    <exclusion>
+		      <groupId>org.javassist</groupId>
+		      <artifactId>javassist</artifactId>
+		    </exclusion>
+		    <!--exclusion>
+		      <groupId>org.reflections</groupId>
+		      <artifactId>reflections</artifactId>
+		    </exclusion-->
+		    <!-- we'll reuse the container one or add an impl as well to your app -->
+		    <exclusion>
+		      <groupId>org.slf4j</groupId>
+		      <artifactId>slf4j-api</artifactId>
+		    </exclusion>
+		  </exclusions>
 		</dependency>
 		
+      <dependency>
+        <groupId>org.jboss.weld.servlet</groupId>
+        <artifactId>weld-servlet-core</artifactId>
+        <version>1.1.34.Final</version>
+      </dependency>
+
+	  <dependency>
+	    <groupId>org.glassfish.jersey.bundles</groupId>
+	    <artifactId>jaxrs-ri</artifactId>
+	    <version>2.13</version>
+	  </dependency>
+
 		<!-- bsh -->
 		<dependency>
 	      <groupId>org.beanshell</groupId>
@@ -88,5 +135,7 @@
 		    <scope>system</scope>
 		    <systemPath>/lib/plugin.jar</systemPath>
 		</dependency -->
+
 	</dependencies>
+
 </project>

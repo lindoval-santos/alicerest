@@ -19,8 +19,8 @@ import org.demoiselle.aliceREST.business.AliceBotBC;
 @Path("query")
 public class AliceBotREST {
 
-	@Inject
-	private AliceBotBC bc;
+	//@Inject
+	private AliceBotBC bc = new AliceBotBC();
 
 	@GET
 	@Path("ask/{mensagem}")
