@@ -91,10 +91,10 @@
 		      <artifactId>jackson-datatype-joda</artifactId>
 		    </exclusion-->
 		    <!-- we don't use reflections so no need of javassist -->
-		    <exclusion>
+		    <!--exclusion>
 		      <groupId>org.javassist</groupId>
 		      <artifactId>javassist</artifactId>
-		    </exclusion>
+		    </exclusion-->
 		    <!--exclusion>
 		      <groupId>org.reflections</groupId>
 		      <artifactId>reflections</artifactId>
