@@ -71,8 +71,7 @@
 		  <artifactId>swagger-jaxrs</artifactId>
 		  <version>1.5.0</version>
 		  <!--version>1.5.3</version-->
-		  <exclusions>
-		    <!-- API are useless since in javaee-api -->
+		  <!-- exclusions>
 		    <exclusion>
 		      <groupId>javax.ws.rs</groupId>
 		      <artifactId>jsr311-api</artifactId>
@@ -81,30 +80,27 @@
 		      <groupId>javax.validation</groupId>
 		      <artifactId>validation-api</artifactId>
 		    </exclusion>
-		    <!-- not useful for the GUI -> only json for us -->
 		    <exclusion>
 		      <groupId>com.fasterxml.jackson.dataformat</groupId>
 		      <artifactId>jackson-dataformat-xml</artifactId>
 		    </exclusion>
-		    <!--exclusion>
+		    <exclusion>
 		      <groupId>com.fasterxml.jackson.datatype</groupId>
 		      <artifactId>jackson-datatype-joda</artifactId>
-		    </exclusion-->
-		    <!-- we don't use reflections so no need of javassist -->
-		    <!--exclusion>
+		    </exclusion>
+		    <exclusion>
 		      <groupId>org.javassist</groupId>
 		      <artifactId>javassist</artifactId>
-		    </exclusion-->
-		    <!--exclusion>
+		    </exclusion>
+		    <exclusion>
 		      <groupId>org.reflections</groupId>
 		      <artifactId>reflections</artifactId>
-		    </exclusion-->
-		    <!-- we'll reuse the container one or add an impl as well to your app -->
+		    </exclusion>
 		    <exclusion>
 		      <groupId>org.slf4j</groupId>
 		      <artifactId>slf4j-api</artifactId>
 		    </exclusion>
-		  </exclusions>
+		  </exclusions-->
 		</dependency>
 		
       <dependency>
