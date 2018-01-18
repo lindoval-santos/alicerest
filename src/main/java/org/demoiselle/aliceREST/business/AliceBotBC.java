@@ -12,7 +12,8 @@ import br.gov.frameworkdemoiselle.template.DelegateCrud;
 import br.gov.frameworkdemoiselle.transaction.Transactional;
 
 @BusinessController
-public class AliceBotBC extends DelegateCrud<Bookmark, Long, BookmarkDAO> {
+public class AliceBotBC //extends DelegateCrud<Bookmark, Long, BookmarkDAO> 
+{
 
 	private static final long serialVersionUID = 1L;
 
@@ -34,7 +35,7 @@ public class AliceBotBC extends DelegateCrud<Bookmark, Long, BookmarkDAO> {
 	
 	//@Startup
 	//@Transactional
-	public void load() {
+/*	public void load() {
 		if (findAll().isEmpty()) {
 			insert(new Bookmark("Portal", "http://www.frameworkdemoiselle.gov.br"));
 			insert(new Bookmark("Documentação", "http://demoiselle.sourceforge.net/docs/framework/reference"));
@@ -54,5 +55,5 @@ public class AliceBotBC extends DelegateCrud<Bookmark, Long, BookmarkDAO> {
 
 	public List<Bookmark> find(String filter) {
 		return getDelegate().find(filter);
-	}
+	}*/
 }

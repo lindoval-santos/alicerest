@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: Classes/bsh.jar
-Main-Class: bitoflife.chatterbean.util.ScriptRunner
