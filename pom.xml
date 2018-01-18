@@ -9,7 +9,7 @@
 	<version>1.0</version>
 	<packaging>war</packaging>
 
-	<name></name>
+	<name>alicerest</name>
 	<description></description>
 	<url></url>
 
@@ -20,20 +20,13 @@
 	</parent>
 
 	<dependencies>
+	
 		<!-- Demoiselle dependencies -->
 		<dependency>
 			<groupId>br.gov.frameworkdemoiselle</groupId>
 			<artifactId>demoiselle-jpa</artifactId>
 			<scope>compile</scope>
 		</dependency>
-		<!-- Uncomment this dependency if you are using a JTA -->
-		<!--
-		<dependency>
-		    <groupId>br.gov.frameworkdemoiselle</groupId>
-		    <artifactId>demoiselle-jta</artifactId>
-		    <scope>compile</scope>
-		</dependency>
-		-->
 
 		<!-- Jackson dependencies -->
 		<dependency>
@@ -71,7 +64,7 @@
 		  <artifactId>swagger-jaxrs</artifactId>
 		  <version>1.5.0</version>
 		  <!--version>1.5.3</version-->
-		  <!-- exclusions>
+		  <!--exclusions>
 		    <exclusion>
 		      <groupId>javax.ws.rs</groupId>
 		      <artifactId>jsr311-api</artifactId>
@@ -108,7 +101,8 @@
         <artifactId>weld-servlet-core</artifactId>
         <version>1.1.34.Final</version>
       </dependency>
-
+	
+	
 	  <dependency>
 	    <groupId>org.glassfish.jersey.bundles</groupId>
 	    <artifactId>jaxrs-ri</artifactId>
@@ -121,16 +115,6 @@
 	      <artifactId>bsh-core</artifactId>
 	      <version>2.0b4</version>
 	    </dependency>
-	    
-	    <!-- JSObject -->
-		<!-- dependency>
-		    <groupId>com.sun.jdk</groupId>
-		    <artifactId>plugin</artifactId>
-		    <version>${version.java-plugin}</version>
-		    <type>jar</type>
-		    <scope>system</scope>
-		    <systemPath>/lib/plugin.jar</systemPath>
-		</dependency -->
 
 	</dependencies>
 
