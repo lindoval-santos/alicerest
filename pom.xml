@@ -13,6 +13,10 @@
 	<description></description>
 	<url></url>
 
+	<properties>
+	    <maven.javadoc.skip>true</maven.javadoc.skip>
+	</properties>
+
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>
 		<artifactId>demoiselle-rest-parent</artifactId>
@@ -143,19 +147,12 @@
       <scope>runtime</scope>
     </dependency>
 
-	<dependency>
-	 <groupId>javax.ws.rs</groupId>
-	 <artifactId>jsr311-api</artifactId>
-	 <version>1.1.1</version>
-	 <scope>system</scope> 
-	 <systemPath>${project.basedir}/lib/jsr311-api-1.1.1.jar</systemPath>
-	</dependency>
-    
+   
     <dependency>
       <groupId>javax.enterprise</groupId>
       <artifactId>cdi-api</artifactId>
       <version>1.0-SP4</version>
-      <scope>runtime</scope>
+      <scope>compile</scope>
       <exclusions>
         <exclusion>
           <artifactId>jsr250-api</artifactId>
@@ -164,20 +161,6 @@
       </exclusions>
     </dependency>
     
-	<dependency>
-	 <groupId>javax.enterprise</groupId>
-	 <artifactId>cdi-api</artifactId>
-	 <version>1.0-SP4</version>
-	 <scope>system</scope> 
-	 <systemPath>${project.basedir}/lib/cdi-api-1.0-SP4.jar</systemPath>
-      <exclusions>
-        <exclusion>
-          <artifactId>jsr250-api</artifactId>
-          <groupId>javax.annotation</groupId>
-        </exclusion>
-      </exclusions>
-	</dependency>
-
     <dependency>
       <groupId>org.eclipse.persistence</groupId>
       <artifactId>eclipselink</artifactId>
@@ -214,28 +197,12 @@
       <scope>runtime</scope>
     </dependency>
 
-	<dependency>
-	 <groupId>org.javassist</groupId>
-	 <artifactId>javassist</artifactId>
-	 <version>3.16.1-GA</version>
-	 <scope>system</scope> 
-	 <systemPath>${project.basedir}/lib/javassist-3.16.1-GA.jar</systemPath>
-	</dependency>
-    
     <dependency>
       <groupId>javax.validation</groupId>
       <artifactId>validation-api</artifactId>
       <version>1.0.0.GA</version>
       <scope>compile</scope>
     </dependency>
-
-	<dependency>
-	 <groupId>javax.validation</groupId>
-	 <artifactId>validation-api</artifactId>
-	 <version>1.0.0.GA</version>
-	 <scope>system</scope> 
-	 <systemPath>${project.basedir}/lib/validation-api-1.0.0.GA.jar</systemPath>
-	</dependency>
 
 	</dependencies>
 </project>
