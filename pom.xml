@@ -148,7 +148,7 @@
 	 <artifactId>jsr311-api</artifactId>
 	 <version>1.1.1</version>
 	 <scope>system</scope> 
-	 <systemPath>${project.basedir}/lib/jsr311-api-1.1.1.jar</systemPath>
+	 <systemPath>${project.basedir}/src/lib/jsr311-api-1.1.1.jar</systemPath>
 	</dependency>
     
     <!--dependency>
@@ -169,7 +169,7 @@
 	 <artifactId>cdi-api</artifactId>
 	 <version>1.0-SP4</version>
 	 <scope>system</scope> 
-	 <systemPath>${project.basedir}/lib/cdi-api-1.0-SP4.jar</systemPath>
+	 <systemPath>${project.basedir}/src/lib/cdi-api-1.0-SP4.jar</systemPath>
       <exclusions>
         <exclusion>
           <artifactId>jsr250-api</artifactId>
@@ -219,7 +219,7 @@
 	 <artifactId>javassist</artifactId>
 	 <version>3.16.1-GA</version>
 	 <scope>system</scope> 
-	 <systemPath>${project.basedir}/lib/javassist-3.16.1-GA.jar</systemPath>
+	 <systemPath>${project.basedir}/src/lib/javassist-3.16.1-GA.jar</systemPath>
 	</dependency>
     
     <!--dependency>
@@ -234,27 +234,8 @@
 	 <artifactId>validation-api</artifactId>
 	 <version>1.0.0.GA</version>
 	 <scope>system</scope> 
-	 <systemPath>${project.basedir}/lib/validation-api-1.0.0.GA.jar</systemPath>
+	 <systemPath>${project.basedir}/src/lib/validation-api-1.0.0.GA.jar</systemPath>
 	</dependency>
-
-    <!--dependency>
-      <groupId>javax.transaction</groupId>
-      <artifactId>jta</artifactId>
-      <version>1.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.persistence</groupId>
-      <artifactId>javax.persistence</artifactId>
-      <version>2.0.0</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-entitymanager</artifactId>
-      <version>4.1.7.Final</version>
-      <scope>test</scope>
-    </dependency -->
 
 	</dependencies>
 </project>
