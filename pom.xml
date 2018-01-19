@@ -6,12 +6,16 @@
 
 	<groupId>org.demoiselle</groupId>
 	<artifactId>alicerest</artifactId>
-	<!--version>1.0</version-->
+	<version>0</version>
 	<packaging>war</packaging>
 
 	<name>alicerest</name>
 	<description></description>
 	<url></url>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
 
 	<properties>
 	    <maven.javadoc.skip>true</maven.javadoc.skip>
