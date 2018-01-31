@@ -31,6 +31,7 @@ public class AliceBotREST {
 	public Resposta consultar(@PathParam("mensagem") String mensagem) throws Exception {
 		String s = bc.questionar(mensagem);
 		Resposta r = new Resposta(s);
+		r.setQuestao(mensagem);
 		return r;
 	}
 

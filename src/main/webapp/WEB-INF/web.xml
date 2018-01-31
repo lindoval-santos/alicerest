@@ -39,7 +39,7 @@
   </resource-env-ref>
 
 	<filter>
-	    <filter-name>CORS</filter-name>
+	    <filter-name>cors</filter-name>
 	    <filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class>
         <init-param>
            <param-name>cors.allowOrigin</param-name>
@@ -47,7 +47,7 @@
         </init-param>
 	</filter>
 	<filter-mapping>
-	    <filter-name>CORS</filter-name>
+	    <filter-name>cors</filter-name>
 	    <url-pattern>/*</url-pattern>
 	</filter-mapping>
 

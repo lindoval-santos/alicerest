@@ -102,11 +102,11 @@
 	<!-- If you are using Tomcat 6 / Tomcat 7 / JUnit then use this persistence-unit -->
 	
 	 
-	<!--persistence-unit name="bookmark-ds" transaction-type="RESOURCE_LOCAL"-->
+	<persistence-unit name="bookmark-ds" transaction-type="RESOURCE_LOCAL">
 
 		<!-- class>org.demoiselle.aliceREST.entity.Bookmark</class-->
 		
-		<!-- properties>
+		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" />
 			<property name="javax.persistence.jdbc.user" value="sa" />
 			<property name="javax.persistence.jdbc.password" value="" />
@@ -116,7 +116,7 @@
 			<property name="eclipselink.ddl-generation" value="create-tables" />
 			<property name="eclipselink.ddl-generation.output-mode" value="database" />
 		</properties>
-	</persistence-unit -->
+	</persistence-unit>
 	
 
 </persistence>

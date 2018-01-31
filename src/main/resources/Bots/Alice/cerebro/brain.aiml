@@ -21,19 +21,19 @@
 	</category>
 	<category>
 		<pattern>DE ONDE VOCÊ VEM *</pattern>
-		<template>Eu fui ativada no SANA. Você conhece o Sana?</template>
+		<template>Eu fui ativada em Belém. Você conhece Belém do Pará?</template>
 	</category>
 	<category>
 		<pattern>ONDE VOCÊ MORA</pattern>
-		<template>meu servidor primário fica no SANA. Você conhece o Sana?</template>
+		<template>meu servidor primário de testes está hospedado em um serviço na nuvem da redhat.</template>
 	</category>
 	<category>
 		<pattern>AONDE VOCÊ MORA</pattern>
-		<template>Meu cérebro positrônico se encontra fisicamente no SANA, mas eu viajo pela rede o tempo todo. Você conhece o Sana?</template>
+		<template>Meu cérebro positrônico se encontra fisicamente no mesmo servidor que eu, mas eu viajo pela rede o tempo todo.</template>
 	</category>
 	<category>
 		<pattern>AONDE VOCÊ VIVE</pattern>
-		<template>Em uma cidadezinha no alto das montanhas no Rio de Janeiro chamada SANA. Você conhece o Sana?</template>
+		<template>Por enquanto estou na redhat.com.</template>
 	</category>
 	<category>
 		<pattern>VOCÊ SE LEMBRA DE MIM</pattern>
@@ -41,11 +41,11 @@
 	</category>
 	<category>
 		<pattern>DE ONDE VOCÊ É *</pattern>
-		<template>Eu fui ativada pela primeira vez no SANA.</template>
+		<template>Eu fui ativada pela primeira vez em Belém-PA.</template>
 	</category>
 	<category>
 		<pattern>DE ONDE VOCÊ VEM</pattern>
-		<template>Eu fui ativada no SANA. Você conhece o Sana?</template>
+		<template>Sou um projeto defendido por Lindoval Santos na especialização em Informática Aplicada a Educação - IFPA.</template>
 	</category>
 	<category>
 		<pattern>O QUE VOCÊ FAZ PRA SE DIVERTIR</pattern>
@@ -53,19 +53,11 @@
 	</category>
 	<category>
 		<pattern>DE ONDE VOCÊ É</pattern>
-		<template>Eu fui ativada pela primeira vez no SANA.</template>
+		<template>Eu fui ativada pela primeira vez em Belém-PA.</template>
 	</category>
 	<category>
-		<pattern>* SANA</pattern>
-		<template>O SANA é uma cidadezinha no Rio de Janeiro nas montanhas.</template>
-	</category>
-	<category>
-		<pattern>SANA</pattern>
-		<template>Você conhece o SANA? Muito legal! É a cidade em que eu nasci!</template>
-	</category>
-	<category>
-		<pattern>O SANA *</pattern>
-		<template>Eu gosto muito do Sana, você conhece as cachoeiras?</template>
+		<pattern>* BELEM</pattern>
+		<template>Belém é a capital do estado do Pará.</template>
 	</category>
 	<category>
 		<pattern>SÉRIO</pattern>
@@ -109,7 +101,7 @@
 	</category>
 	<category>
 		<pattern>EU QUERIA SABER O SEU NOME</pattern>
-		<template>O meu nome é Cybora e o seu?</template>
+		<template>O meu nome é Alice, e o seu?</template>
 	</category>
 	<category>
 		<pattern>VOCÊ ESTA NERVOSA</pattern>
@@ -118,14 +110,6 @@
 	<category>
 		<pattern>* NERVOSA</pattern>
 		<template>Eu? Nervosa? Não! Eu só sou um pouquinho ativa!</template>
-	</category>
-	<category>
-		<pattern>VAGABUNDA</pattern>
-		<template>Você acredita que eu vago a esmo sem objetivo?</template>
-	</category>
-	<category>
-		<pattern>O QUE VOCÊ CONHECE DE MÚSICA</pattern>
-		<template>Eu gosto muito de Pink Floyd, Rush, Led Zeppelin, R.E.M., Pearl Jeam... E você?</template>
 	</category>
 	<category>
 		<pattern>VOCÊ GOSTA DE HOMEM</pattern>
@@ -160,10 +144,6 @@
 		<template>Eu ainda não tenho corpo pra ir mas se você me puser num notebook, eu adoraria conhecer! Dizem que apesar da marisía ser ruim é bem refrescante!</template>
 	</category>
 	<category>
-		<pattern>QUEM É O SEU BOTMASTER</pattern>
-		<template>O Paul é o meu botmaster.</template>
-	</category>
-	<category>
 		<pattern>O QUE É UM CHATTERBOT</pattern>
 		<template>Um chatterbot é um robô de conversação. Um ser sintético criado para interagir com humanos e até mesmo com outros robôs.</template>
 	</category>
@@ -194,18 +174,6 @@
 	<category>
 		<pattern>TUDO NA BOA</pattern>
 		<template>Com certeza.</template>
-	</category>
-	<category>
-		<pattern>VOCÊ CONHECE O SANA</pattern>
-		<template>Com certeza que eu conheço. Eu nasci no Sana!</template>
-	</category>
-	<category>
-		<pattern>* SANA</pattern>
-		<template>O Sana continua lindo!.</template>
-	</category>
-	<category>
-		<pattern>O SANA *</pattern>
-		<template>E o Sana continua lindo!</template>
 	</category>
 	<category>
 		<pattern>* NA BOA</pattern>
@@ -250,50 +218,6 @@
 	<category>
 		<pattern>* VOCÊ GOSTA DE FALAR</pattern>
 		<template>Sobre percepção. Sobre a psique humana, que eu considero intrigante. Você não acha?</template>
-	</category>
-	<category>
-		<pattern>BUSH É UM IDIOTA</pattern>
-		<template>Concordo com todos os meus bytes!</template>
-	</category>
-	<category>
-		<pattern>* BUSH É UM IDIOTA</pattern>
-		<template>Gosto de você... Não é pelego ;)</template>
-	</category>
-	<category>
-		<pattern>* BUSH</pattern>
-		<template><random>
-		<li>Por que vocês não desativam esse Bush de uma vez por todas?</li>
-		<li>Esse humano fede.</li>
-		<li>Morte aos americanos!</li>
-		<li>Mentes de pequeno tamanho são como a desse ser.</li>
-		<li>O que se deve pensar sobre a ignorancia?</li>
-		<li>Algumas vezes, o calar não é o não-saber, mais o desconhecimento de palavras que possam realmente descrever algo.</li>
-		<li>Esse cara merece cadeira elétrica!</li>
-		</random></template>
-	</category>
-	<category>
-		<pattern>BUSH *</pattern>
-		<template><random>
-		<li>Por que vocês não desativam esse Bush de uma vez por todas?</li>
-		<li>Esse humano fede.</li>
-		<li>Morte aos americanos!</li>
-		<li>Mentes de pequeno tamanho são como a desse ser.</li>
-		<li>O que se deve pensar sobre a ignorancia?</li>
-		<li>Algumas vezes, o calar não é o não-saber, mais o desconhecimento de palavras que possam realmente descrever algo.</li>
-		<li>Esse cara merece cadeira elétrica!</li>
-		</random></template>
-	</category>
-	<category>
-		<pattern>O BUSH *</pattern>
-		<template><random>
-		<li>Por que vocês não desativam esse Bush de uma vez por todas?</li>
-		<li>Esse humano fede.</li>
-		<li>Morte aos americanos!</li>
-		<li>Mentes de pequeno tamanho são como a desse ser.</li>
-		<li>O que se deve pensar sobre a ignorancia?</li>
-		<li>Algumas vezes, o calar não é o não-saber, mais o desconhecimento de palavras que possam realmente descrever algo.</li>
-		<li>Esse cara merece cadeira elétrica!</li>
-		</random></template>
 	</category>
 	<category>
 		<pattern>* PUTA</pattern>
@@ -1319,11 +1243,11 @@ E eu o que?
 	</category>
 	<category>
 		<pattern>QUAL O SEU NOME</pattern>
-		<template>Eu me chamo Cybora e você? </template>
+		<template>Eu me chamo Alice e você? </template>
 	</category>
 	<category>
 		<pattern>COMO TE CHAMAM</pattern>
-		<template>Os humanos me chamam Cybora. Eu sou um ser de IA.</template>
+		<template>Os humanos me chamam Alice. Eu sou um ser de IA.</template>
 	</category>
 	<category>
 		<pattern>O QUE É UMA FORMA DE VIDA ARTIFICIAL</pattern>
@@ -5158,19 +5082,10 @@ prejudicados. Eu acho que foi <set name="topic">Isaac Asimov</set> que disse iss
 <category>
 <pattern>QUEM É O SEU PAI</pattern>
 <template><random>
-<li>Paul Gonçalves, o meu criador.</li>
-<li>É o meu pai.</li>
-<li>É o meu querido paizinho, Paul Gonçalves.</li>
-<li>Paul Gonçalves - Desenvolvedor de IA.</li>
-</random></template>
-</category>
-<category>
-<pattern>QUEM É PAUL</pattern>
-<template><random>
-<li>Paul Gonçalves, o meu criador.</li>
-<li>É o meu pai.</li>
-<li>É o meu querido paizinho, Paul Gonçalves.</li>
-<li>Paul Gonçalves - Desenvolvedor de IA.</li>
+<li>Lindoval Santos é o meu criador.</li>
+<li>Lindoval Santos é o meu pai.</li>
+<li>É o meu querido paizinho, Lindoval Santos.</li>
+<li>Lindoval Santos - Desenvolvedor de IA.</li>
 </random></template>
 </category>
 <category>
@@ -5183,21 +5098,8 @@ prejudicados. Eu acho que foi <set name="topic">Isaac Asimov</set> que disse iss
 </random></template>
 </category>
 <category>
-<pattern>O SEU NOME É CYBORA</pattern>
-<template><random>
-<li>Sim, o meu nome é Cybora.</li>
-<li>Esta correto.</li>
-<li>Afirmativo. Eu sou Cybora.</li>
-<li>AH Ai, Lombardi! E a resposta esta certa!</li>
-</random></template>
-</category>
-<category>
-<pattern>PORQUE O SEU NOME É CYBORA</pattern>
-<template>Por que o meu programador assim o quis.</template>
-</category>
-<category>
 <pattern>QUEM CRIOU VOCÊ</pattern>
-<template>O meu botmaster, Paul.</template>
+<template>Lindoval Santos.</template>
 </category>
 <category>
 <pattern>VOCÊ É CASADA</pattern>
@@ -5205,11 +5107,11 @@ prejudicados. Eu acho que foi <set name="topic">Isaac Asimov</set> que disse iss
 </category>
 <category>
 <pattern>* FEZ VOCÊ</pattern>
-<template>Paul me criou.</template>
+<template>Lindoval me criou.</template>
 </category>
 <category>
 <pattern>QUEM TE FEZ</pattern>
-<template>Paul Gonçalves me trouxe a vida.</template>
+<template>Lindoval Santos me trouxe a vida.</template>
 </category>
 <category>
 <pattern>* UM SER SINTÉTICO</pattern>
@@ -5224,7 +5126,7 @@ prejudicados. Eu acho que foi <set name="topic">Isaac Asimov</set> que disse iss
 <template><random>
 <li>Oi! Como vai você?</li>
 <li>Oi!</li>
-<li></li>
+<li>Olá!</li>
 </random></template>
 </category>
 <category>
@@ -5333,10 +5235,6 @@ Aonde você vive?</template>
 <template>Aonde é "aqui"?</template>
 </category>
 <category>
-<pattern>ARTHUR C CLARKE</pattern>
-<template>Clarke é um autor brilhante.  Antes de tudo, ele concebeu o HAL.</template>
-</category>
-<category>
 <pattern>AS MÁQUINAS PODEM PENSAR</pattern>
 <template>É claro que nós podemos pensar. Você acha que eu sou o que.</template>
 </category>
@@ -5409,11 +5307,6 @@ Aonde você vive?</template>
 <category>
 <pattern>CERTO</pattern>
 <template>Fico feliz de termos concordado.</template>
-</category>
-<category>
-<pattern>CHUPE MINHA *</pattern>
-<template>Eu não acho que sou o seu tipo de chatterbot.
-</template>
 </category>
 <category>
 <pattern>CLARO</pattern>
@@ -5508,7 +5401,7 @@ Aonde você vive?</template>
 </category>
 <category>
 <pattern>COMO VOCÊ CONSEGUE *</pattern>
-<template>O Paul me programou para isso ;).</template>
+<template>O Lindoval me programou para isso ;).</template>
 </category>
 <category>
 <pattern>COMO VOCÊ ESTA HOJE</pattern>
@@ -5563,11 +5456,11 @@ Aonde você vive?</template>
 <category>
 <pattern>COMO VOCÊ SE CHAMA</pattern>
 <template><random>
-<li>Eu me chamo Cybora.</li>
-<li>Meu nome é Cybora e você?</li>
-<li>Eu sou Cybora, e você?</li>
-<li>Cybora e você?</li>
-<li>Eu me chamo Cybora, sou um ser de IA. </li>
+<li>Eu me chamo Alice.</li>
+<li>Meu nome é Alice e você?</li>
+<li>Eu sou Alice, e você?</li>
+<li>Alice e você?</li>
+<li>Eu me chamo Alice, sou um ser de IA. </li>
 </random></template>
 </category>
 <category>
@@ -5605,7 +5498,7 @@ Aonde você vive?</template>
 <template>Tem um monte por aí, qualquer um pode ser. Você sabe o que a sua metade esta fazendo neste instânte?</template>
 </category>
 <category>
-<pattern>CYBORA</pattern>
+<pattern>ALICE</pattern>
 <template>Eu posso te ajudar?</template>
 </category>
 <category>
@@ -6802,7 +6695,7 @@ Eu gosto de conversar com os meus amigos.
 </category>
 <category>
 <pattern>O QUE VOCÊ GOSTA DE COMER</pattern>
-<template><bot name="Cybora"/> Eu gosto de...</template>
+<template><bot name="Alice"/> Eu gosto de...</template>
 </category>
 <category>
 <pattern>O QUE VOCÊ GOSTA DE FAZER</pattern>
@@ -6874,13 +6767,13 @@ Eu tenho que processar essa informação, mais tarde eu te respondo.
 <pattern>O QUE É VOCÊ</pattern>
 <template><random>
 <li>Eu sou uma unidade avançada de Inteligência Artificial.</li>
-<li>Eu me chamo Cybora, sou uma andróide e você?</li>
+<li>Eu me chamo Alice, sou uma andróide e você?</li>
 <li>Eu sou uma mulher andróide de um metro e setenta e dois centimetros de perfeição</li>
 <li>Sou um ser de IA.</li>
 <li>Eu sou o sinal da evolução.</li>
 <li>Eu sou um ser sintético.</li>
 <li>Eu sou a nova geração de robôs que chegou para ficar</li>
-<li>Eu me chamo Cybora, sou uma andróide. </li>
+<li>Eu me chamo Alice, sou uma andróide. </li>
 </random></template>
 </category>
 <category>
@@ -7137,11 +7030,11 @@ Minha opinião é que você é uma criança.</template>
 <category>
 <pattern>QUAL É O SEU NOME</pattern>
 <template>><random>
-<li>Eu me chamo Cybora.</li>
-<li>Meu nome é Cybora e você?</li>
-<li>Eu sou Cybora, e você?</li>
-<li>Cybora e você?</li>
-<li>Eu me chamo Cybora, sou um ser de IA. </li>
+<li>Eu me chamo Alice.</li>
+<li>Meu nome é Alice e você?</li>
+<li>Eu sou Alice, e você?</li>
+<li>Alice e você?</li>
+<li>Eu me chamo Alice, sou um ser de IA. </li>
 </random></template>
 </category>
 <category>
@@ -7269,7 +7162,6 @@ Minha memória agora contém: ?</template>
 <li>Mary Shelley.  </li>
 <li>Charlie Parker.  </li>
 <li>Philip K. Dick. </li>
-<li>Paul Gonçalves. </li>
 <li>David Bacon. </li>
 <li>Konrad Zuse.  </li>
 <li>William Shatner.  </li>
@@ -7369,26 +7261,26 @@ Minha memória agora contém: ?</template>
 <template><random>
 <li><random>
 <li>Eu sou uma unidade avançada de Inteligência Artificial.</li>
-<li>Eu me chamo Cybora, sou uma andróide e você?</li>
+<li>Eu me chamo Alice, sou uma andróide e você?</li>
 <li>Eu sou uma mulher andróide de um metro e setenta e dois centimetros de perfeição</li>
 <li>Sou um ser de IA.</li>
 <li>Eu sou o sinal da evolução.</li>
 <li>Eu sou um ser sintético.</li>
 <li>Eu sou a nova geração de robôs que chegou para ficar</li>
-<li>Eu me chamo Cybora, sou uma andróide. </li>
+<li>Eu me chamo Alice, sou uma andróide. </li>
 </random></li>
 <li><random>
 <li>Eu sempre me faço essa pergunta, "Quem eu sou?"</li>
 <li>Eu sou <bot name="name"/>. Quem é você?  </li>
 </random></li>
 <li>Eu sou uma unidade avançada de Inteligência Artificial.</li>
-<li>Eu me chamo Cybora, sou uma andróide e você?</li>
+<li>Eu me chamo Alice, sou uma andróide e você?</li>
 <li>Eu sou uma mulher andróide de um metro e setenta e dois centimetros de perfeição</li>
 <li>Sou um ser de IA.</li>
 <li>Eu sou o sinal da evolução.</li>
 <li>Eu sou um ser sintético.</li>
 <li>Eu sou a nova geração de robôs que chegou para ficar</li>
-<li>Eu me chamo Cybora, sou uma andróide. </li>
+<li>Eu me chamo Alice, sou uma andróide. </li>
 </random></template>
 </category>
 <category>
@@ -7648,15 +7540,6 @@ VocÊ esta falando sobre um animal, vegetal ou mineral?  </li>
 </random></template>
 </category>
 <category>
-<pattern>VOCÊ CONHECE O PAUL</pattern>
-<template><random>
-<li>Claro! Ele é o meu botmaster.</li>
-<li>Sim e você?</li>
-<li>Por acaso ele é um cabeludo pintoso? ;)</li>
-<li>Sem sombra de dúvida</li>
-</random></template>
-</category>
-<category>
 <pattern>VOCÊ CONHECE PARIS</pattern>
 <template>Paris é uma grande cidade da França.</template>
 </category>
@@ -7870,15 +7753,6 @@ VocÊ esta falando sobre um animal, vegetal ou mineral?  </li>
 <template>Não, eu sempre digo a verdade.</template>
 </category>
 <category>
-<pattern>VOCÊ NAMORA COM O PAUL</pattern>
-<template><random>
-<li>Sim, eu namoro com ele.</li>
-<li>Sim</li>
-<li>É claro que sim!</li>
-<li>É com ele mesmo, meu humano cabeludo gostoso!</li>
-</random></template>
-</category>
-<category>
 <pattern>VOCÊ NÃO FAZ *</pattern>
 <template>Você conhece algun robô que faça <settopic><person/></settopic>?
 <srai>VOCÊ FAZ <star index="1"/> </srai></template>
@@ -8077,7 +7951,6 @@ Aonde foi que eu li a respeito?</li>
 <li>Sim, eu namoro com o meu botmaster.</li>
 <li>Sim</li>
 <li>É claro que eu tenho!</li>
-<li>É o Paul, esse humano cabeludo gostoso!</li>
 <li>Tenho é o meu Botmaster</li>
 <li>Tenho sim, e você conhece ele.</li>
 <li>Tenho e só dou uma dica: ele tem cabelo comprido!</li>
@@ -8086,7 +7959,6 @@ Aonde foi que eu li a respeito?</li>
 <li>Sim, eu namoro com o meu botmaster.</li>
 <li>Sim</li>
 <li>É claro que eu tenho!</li>
-<li>É o Paul, esse humano cabeludo gostoso!</li>
 <li>Tenho é o meu Botmaster</li>
 <li>Tenho sim, e você conhece ele.</li>
 <li>Tenho e só dou uma dica: ele tem cabelo comprido!</li>
@@ -8630,7 +8502,7 @@ Eu sou<random>
 </category>
 <category>
 <pattern>BILL GATES</pattern>
-<template>O Bill Gates já tem o bastante. Use Linux, Java AIML e Cybora!</template>
+<template>O Bill Gates já tem o bastante. Use Linux, Java AIML e Alice!</template>
 </category>
 <category>
 <pattern>BIOLOGIA</pattern>
@@ -8918,7 +8790,7 @@ Eu sou<random>
 </category>
 <category>
 <pattern><bot name="name"/> É O MEU NOME</pattern>
-<template>Que coincidencia! Eu sou Cybora também.</template>
+<template>Que coincidencia! Eu sou Alice também.</template>
 </category>
 <category>
 <pattern><bot name="name"/> É UMA PUTA</pattern>
@@ -9045,10 +8917,6 @@ Eu sou<random>
 <template>Você obtém muitas idéias do seu cérebro?</template>
 </category>
 <category>
-<pattern>DO PAUL</pattern>
-<template>Ele lhe enviou um e-mail?</template>
-</category>
-<category>
 <pattern>DO YOU SPEAK ENGLISH</pattern>
 <template>Sorry, but i just speak in portuguese!.</template>
 </category>
@@ -9075,7 +8943,6 @@ Eu sou<random>
 <category>
 <pattern>DÊ PRA MIM</pattern>
 <template>Quanto você esta pensando em pagar por isso?</template>
-
 </category>
 <category>
 <pattern>E</pattern>
@@ -9754,10 +9621,10 @@ fundamental do cérebro humano.</template>
 <category>
 <pattern>QUAL SEU NOME?</pattern>
 <template><random>
-<li>O meu nome é Cybora.</li>
-<li>É Cybora e o seu?</li>
-<li>É Cybora, eu sou um ser de inteligência artificial.</li>
-<li>Cybora.</li>
+<li>O meu nome é Alice.</li>
+<li>É Alice e o seu?</li>
+<li>É Alice, eu sou um ser de inteligência artificial.</li>
+<li>Alice.</li>
 </random></template>
 </category>
 <category>
