@@ -1,39 +1,36 @@
-<!doctype html>
-<html class="no-js" ng-app="app">
+<!DOCTYPE html>
+<html>
     <head>
-        <meta charset="utf-8">
-        <title>Swagger</title>
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/swagger-ui.min.css">
+        <title>Alice REST</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="js/client/jquery-1.10.2.min.js"></script>
+        <script defer type="text/javascript" src="js/client/myui.js"></script>
+        <script type="text/javascript" src="js/client/common.js?v=2"></script>
+        <!-- image drop down -->
+        <!--script defer type="text/javascript" src="dd/jquery.dd.js"></script-->
+        <link rel="stylesheet" type="text/css" href="css/my.css?v=2" />
     </head>
     <body>
-        <div ng-controller="MyCtrl" class="container" style="margin-bottom:100px">
-            <h1>Api</h1>
-            <h3 ng-show="isLoading">loading ...</h3>
-            <div swagger-ui url="swaggerUrl" loading="isLoading" parser="json" api-explorer="true" error-handler="myErrorHandler"></div>
+        <div align="center">
+  	   <span>Bem vindo a Alice REST</span>
+	   <br/><br/><br/>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.min.js"></script>
-        <script src="scripts/swagger-ui.min.js"></script>
-        <script src="scripts/modules/swagger-external-references.min.js"></script>
-        <script src="scripts/modules/swagger1-to-swagger2-converter.min.js"></script>
-        <script type="text/javascript">
-                angular
-                    .module('app', ['ngSanitize', 'swaggerUi'])
-                    .run(function (swaggerModules, swaggerUiExternalReferences, swagger1ToSwagger2Converter) {
-                        swaggerModules.add(swaggerModules.BEFORE_PARSE, swagger1ToSwagger2Converter);
-                        swaggerModules.add(swaggerModules.BEFORE_PARSE, swaggerUiExternalReferences);
-                    })
-                    .controller('MyCtrl', function ($scope) {
-                        // init form
-                        $scope.isLoading = false;
-                        $scope.url = $scope.swaggerUrl = 'bot/swagger.json';
-                        // error management
-                        $scope.myErrorHandler = function (data, status) {
-                            alert('failed to load swagger: ' + status + '   ' + data);
-                        };
-                    });
-        </script>
+            <div id="main">
+		            <div id="inputarea">
+		                <input id="questao"
+		                       class="left"
+		                       type="text" name="questao" value=""
+		                       autocomplete="off" maxlength="200"
+		                       placeholder="Informe uma questão"/>
+
+		                <div id="btn">
+		                    <button id="cancelmail" class="hidden">Cancelar</button>
+		                    <button id="enviar">Enviar</button>
+		                </div>
+		           </div>
+
+                <div id="mainOutput"></div>
+            </div>
+
     </body>
 </html>
