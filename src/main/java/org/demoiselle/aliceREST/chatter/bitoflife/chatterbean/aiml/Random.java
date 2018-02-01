@@ -47,7 +47,7 @@ public class Random extends TemplateElement
   {
     AliceBot bot = match.getCallback();
     Context context = bot.getContext();
-    java.util.Random random = context.random();
+    java.util.Random random = new java.util.Random();//context.random();
 
     int n = children().size();    
     TemplateElement child = getChildren(random.nextInt(n));

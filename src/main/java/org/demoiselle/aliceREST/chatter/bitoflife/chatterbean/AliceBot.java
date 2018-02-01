@@ -15,6 +15,8 @@ You should have received a copy of the GNU General Public License along with Cha
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean;
 
 //import java.util.List;
+import java.text.Normalizer;
+
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml.Category;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Request;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Response;
@@ -116,7 +118,8 @@ public class AliceBot
   **/
   public String respond(String input)
   {
-    Response response = respond(new Request(input));
+	String s = Normalizer.normalize(input, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+    Response response = respond(new Request(s));
     return response.trimOriginal();
   }
   

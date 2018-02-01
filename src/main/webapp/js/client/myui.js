@@ -8,8 +8,8 @@ $(document).ready(function (){
     var input = $('#questao').val();
 
     $.ajax({
-//		        url:'http://localhost:8080/alicerest/bot/query/ask/'+input,
-			url: 'http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask/' + input,
+		        url:'http://localhost:8080/alicerest/bot/query/ask/'+input,
+//			url: 'http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask/' + input,
 //        		//data:input,
 		        contentType: "application/json; charset=utf-8",
 		        dataType: 'json',
