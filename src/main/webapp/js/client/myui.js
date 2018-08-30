@@ -1,5 +1,6 @@
 
-var apiURL = "http://localhost:8080/alicerest/bot";
+//var apiURL = 'http://10.32.96.210:8080/alicerest/bot/query/ask/';
+var apiURL = 'ttp://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask/';
 
 var input;
 
@@ -10,21 +11,25 @@ $(document).ready(function (){
     var that = $('#that').val();
     var topic = $('#topic').val();
     
-    this.input = $('#questao').val();
+    input = $('#questao').val();
     
-    this.input = this.input.replace('?','');
-    this.input = this.input.replace('/','');
-    this.input = this.input.replace('!','');
+    input = input.replace('?','');
+    input = input.replace('/','');
+    input = input.replace('!','');
     
-    if(this.input == undefined || this.input == '')
+    if(input == undefined || input == '')
     	return;
     
     that = (that == undefined || that == '')?'*':that;
     topic = (topic == undefined || topic == '')?'*':topic;
+    
+    topic = topic.replace('"', '');
+    
+    var send = input + '/' + that + '/' + topic;
 
     $.ajax({
-	        url:'http://10.32.96.210:8080/alicerest/bot/query/ask/' + this.input + '/' + that + '/' + topic.replace('"', ''),
-			//url: 'http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask',
+	        url: apiURL + send,
+			//url: this.apiURL + send,
         	//data:tmp,
 		    contentType: "application/json; charset=utf-8",
 		    dataType: 'json',
@@ -75,11 +80,11 @@ $(document).ready(function (){
 	    output.append(clickableDiv);
 	 
 	    var tag = $("<span/>");
-		tag.html('Ocorreu um erro ao processar: ' + this.input);
+		tag.html('Ocorreu um erro ao processar: ' + input);
 		output.append(tag);
 
 		$('#mainOutput').append(output);
-		this.input = '';
+		input = '';
 	}
  
  function scrollDown(){
