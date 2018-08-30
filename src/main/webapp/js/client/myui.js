@@ -7,7 +7,7 @@ var input;
 $(document).ready(function (){
 
     $('#enviar').on('click', function(){
-
+    debug('Iniciando');
     var that = $('#that').val();
     var topic = $('#topic').val();
     
@@ -25,6 +25,8 @@ $(document).ready(function (){
     topic = topic.replace('/','');
     topic = topic.replace('!','');    
     
+    debug('realizou todos os replaces');
+    
     if(input == undefined || input == '')
     	return;
     
@@ -32,6 +34,8 @@ $(document).ready(function (){
     topic = (topic == undefined || topic == '')?'*':topic;
     
     topic = topic.replace('"', '');
+    
+    debug('valores: '+input+'| '+that+'| '+topic);
     
     $.ajax({
 	        url: apiURL + input + '/' + that + '/' + topic,
@@ -50,12 +54,16 @@ $(document).ready(function (){
     });
 });
 
+function debug(msg){
+	$("#spandebug").text(msg);;
+}
 
- function mostrar(data){
+function mostrar(data){
 	var questao = "";
 	var resposta = "";
 	var output = $("<div class='output'/>");
 
+	debug('Retornou sucesso, valores: '+data.questao+'--'+data.resposta+'--'+data.that+'--'+data.topic);
 	questao = data.questao;
     resposta = data.conteudo;
     
@@ -74,18 +82,19 @@ $(document).ready(function (){
 	$('#mainOutput').prepend(output);
 	$('#questao').val('');
 	//$('#questao').focus();
+	debug('terminou de renderizar a resposta');
 }
  
- function erro(){
+function erro(){
 		var questao = "";
 		var output = $("<div class='output'/>");
-
+		debug('Erro inicio');
 		questao = $('#questao').val();
 	    
 		var clickableDiv = $("<div class='inputDiv'>Questão: " + questao + "</div>");
 	    //clickableDiv.addClass('clickable');
 	    output.append(clickableDiv);
-	 
+	    debug('Erro meio');
 	    var tag = $("<span/>");
 		tag.html('Ocorreu um erro ao processar: ' + input);
 		output.append(tag);
@@ -93,6 +102,7 @@ $(document).ready(function (){
 		//$('#mainOutput').append(output);
 		$('#mainOutput').prepend(output);
 		input = '';
+		debug('Erro fim');
 	}
  
 /*
