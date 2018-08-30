@@ -215,6 +215,13 @@ public class Context
     return that;
   }
 
+  public void setThat(Sentence that)
+  {
+    if (that == null)
+      this.that = ASTERISK;
+    this.that = that;
+  }
+  
   public Sentence getTopic()
   {
     if (topic == null)

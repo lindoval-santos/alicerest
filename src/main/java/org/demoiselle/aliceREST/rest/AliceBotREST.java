@@ -4,16 +4,21 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import io.swagger.annotations.Authorization;
 
-import javax.inject.Inject;
+import java.util.List;
+
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 
 import org.demoiselle.aliceREST.business.AliceBotBC;
+import org.demoiselle.aliceREST.business.ConfigBody;
+import org.demoiselle.aliceREST.business.QuestaoBody;
 
 @Api(value = "query")
 @Path("query")
@@ -23,17 +28,52 @@ public class AliceBotREST {
 	private AliceBotBC bc = new AliceBotBC();
 
 	@GET
-	@Path("ask/{mensagem}")
+	@Path("ask/{questao}/{that}/{topic}")
 	@Produces("application/json")
-	@ApiOperation(value = "Responde uma questão conforme a base de conhecimento", notes = "Robot em REST", response = Resposta.class, authorizations = {
-	@Authorization(value = "basicAuth") })
-	//@ApiResponses(value = { @ApiResponse(code = 400, message = "Parâmetro(s) em desacordo com a especificação.") })
-	public Resposta consultar(@PathParam("mensagem") String mensagem) throws Exception {
-		String s = bc.questionar(mensagem);
-		Resposta r = new Resposta(s);
-		r.setQuestao(mensagem);
-		return r;
+	@Consumes("application/json")
+	@ApiOperation(value = "O chatterbot responde uma questão conforme a base de conhecimento", notes = "Robot em REST", response = Resposta.class)
+	public Response consultar(@PathParam("questao") String questao,
+							  @PathParam("that") String that,
+							  @PathParam("topic") String topic) throws Exception {
+		if (questao == null || "".equals(questao))
+			throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST)
+					.entity("Nenhuma questão informada.").build());
+		Resposta r = null;
+		try{
+			r = bc.questionar(new QuestaoBody(questao, that == null?"*":that, topic == null?"*":topic));
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			Resposta resp = new Resposta(topic.trim(), that, "Ocorreu um erro, favor recarregar a página para reiniciar.",questao);
+			return Response.ok().entity(resp).build();
+		}
+		return Response.ok().entity(r).build();
 	}
+	
+	@POST
+	@Path("config/{nome}/{valor}")
+	@ApiResponses(value = {@ApiResponse(code = 400, message = "Os parâmetros 'nome' e 'valor' são obrigatórios") })
+	@ApiOperation(value = "Insere ou altera o valor de um path da configuração", notes = "Realiza alteração nos paths das configurações", response = ConfigBody.class)
+	public Response alterarConfig(ConfigBody config){
+
+		if ((config == null) || ("".equals(config.getNome())) || ("".equals(config.getValor()))){
+			throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST)
+					.entity("Os parâmetros 'nome' e 'valor' são obrigatórios").build());
+		}
+		String s = "";
+		s = bc.insertConfig(config);
+		return Response.ok().entity(new ConfigBody(s,config.getValor())).build();
+	}
+	
+	@GET
+	@Path("config/recupera")
+	@Produces("application/json")
+	@ApiOperation(value = "Recuperar os valores da configuração", notes = "Fornece listagem dos paths das configurações", response = ConfigBody.class)
+	public Response recuperarConfiguracoes() throws Exception {
+		List<ConfigBody> result = bc.getConfigs();
+		return Response.ok().entity(result).build();
+	}
+
 
 /*	@GET
 	@Path("{id}")

@@ -15,12 +15,10 @@ You should have received a copy of the GNU General Public License along with Cha
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml.Category;
-import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml.Pattern;
 
 public class Graphmaster
 {

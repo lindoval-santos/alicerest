@@ -14,16 +14,15 @@ You should have received a copy of the GNU General Public License along with Cha
 
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean;
 
+import static org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Sentence.ASTERISK;
+
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Sentence;
-
-import static org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Sentence.ASTERISK;
 
 /**
 Contains information about a match operation, which is needed by the classes of the <code>org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml</code> to produce a proper response.
@@ -113,6 +112,18 @@ public class Match implements Serializable
     System.arraycopy(pattern, 0, matchPath, 0, m);
     System.arraycopy(that, 0, matchPath, m + 1, n);
     System.arraycopy(topic, 0, matchPath, m + 1 + n + 1, o);
+  }
+  
+  public Sentence getTopic(){
+	  if (this.topic == null) 
+		  return ASTERISK;
+	  return this.topic;
+  }
+
+  public Sentence getThat(){
+	  if (this.that == null) 
+		  return ASTERISK;
+	  return this.that;
   }
   
   public void appendWildcard(int beginIndex, int endIndex)

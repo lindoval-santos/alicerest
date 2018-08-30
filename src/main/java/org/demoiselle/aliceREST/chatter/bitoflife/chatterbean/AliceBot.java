@@ -15,6 +15,8 @@ You should have received a copy of the GNU General Public License along with Cha
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean;
 
 //import java.util.List;
+//import static org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Sentence.ASTERISK;
+
 import java.text.Normalizer;
 
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml.Category;
@@ -90,11 +92,32 @@ public class AliceBot
   
   @return A response to the request.
   **/
-  public Response respond(Request request)
+  public Response respond(Request request, String _topic, String _that)
   {
     String original = request.getOriginal();
     if (original == null || "".equals(original.trim()))
       return new Response("");
+    
+    String oldTopic = context.getTopic().getOriginal().trim();
+    String newTopic = _topic != null?_topic.trim():"*";
+    String newThat = _that != null?_that.trim():"*";
+    
+    boolean isNewTopic = !newTopic.equals(oldTopic);
+    boolean isThat = !newThat.equals("*");
+    
+    if (isNewTopic)
+    {
+      Sentence topic = new Sentence(newTopic);
+      transformations().normalization(topic);
+      context.setTopic(topic);
+    }
+    
+    if (isThat)
+    {
+      Sentence that = new Sentence(newThat);
+      transformations().normalization(that);
+      context.setThat(that);
+    }
     
     Sentence that = context.getThat();
     Sentence topic = context.getTopic();
@@ -105,7 +128,7 @@ public class AliceBot
     for(Sentence sentence : request.getSentences())
       respond(sentence, that, topic, response);
     context.appendResponse(response);
-
+    response.setSentences(new Sentence[]{context.getTopic(),context.getThat()});
     return response;
   }
 
@@ -116,11 +139,11 @@ public class AliceBot
   
   @return A response to the input string.
   **/
-  public String respond(String input)
+  public Response respond(String input, String topic, String that)
   {
 	String s = Normalizer.normalize(input, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
-    Response response = respond(new Request(s));
-    return response.trimOriginal();
+    Response response = respond(new Request(s), topic, that);
+    return response;
   }
   
   /*

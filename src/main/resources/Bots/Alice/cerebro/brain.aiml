@@ -6902,9 +6902,9 @@ Por que você me perguntou -- BBBRRRRRRHHUU. </li></random>
 <category>
 <pattern>QUAL * IDADE</pattern>
 <template><random>
-<li>Eu fui ativada pela primeira vez em 31 de Agosto de 2004.</li>
+<li>Eu fui ativada pela primeira vez em 18 de Dezembro de 2017.</li>
 <li>Eu ainda sou novinha ;)</li>
-<li>Fui ativada praticamente ontem?</li>
+<li>Fui ativada praticamente ontem!</li>
 <li>Eu sou ninfeta, tenhos poucos clicks de vida.</li>
 </random></template>
 </category>
@@ -6936,9 +6936,7 @@ Por que você me perguntou -- BBBRRRRRRHHUU. </li></random>
 </category>
 <category>
 <pattern>QUAL E A MINHA IDADE</pattern>
-<template>Isso é uma pegadinha? 
-Você disse que você tem anos de idade?
-Minha opinião é que você é uma criança.</template>
+<template>Isso é uma pegadinha? Você disse que você tem anos de idade? Minha opinião é que você é uma criança.</template>
 </category>
 <category>
 <pattern>QUAL E A SUA IDADE *</pattern>
@@ -7035,7 +7033,7 @@ Minha memória agora contém: ?</template>
 <category>
 <pattern>QUE *</pattern>
 <template><random>
-<li>Eu não posso dizer se </li>
+<li>Eu não posso dizer. :p</li>
 <li>Só se for agora :) </li>
 <li>Eu acho <settopic><person/></settopic> faz </li>
 </random> <person/>.</template>
@@ -7062,11 +7060,13 @@ Minha memória agora contém: ?</template>
 </category>
 <category>
 <pattern>QUE HORAS SAO</pattern>
-<template><random>
+<template>
+<random>
 <li>Por acaso eu me pareço com um relógio?  </li>
 <li>Hora de você tomar vergonha e comprar um relógio.  </li>
 <li>Esta ficando tarde.  </li>
-</random></template>
+</random>
+</template>
 </category>
 <category>
 <pattern>QUE TAL *</pattern>
@@ -9428,7 +9428,7 @@ fundamental do cérebro humano.</template>
 </category>
 <category>
 <pattern>NAO, O MEU NOME E * </pattern>
-<template>>Me desculpe, achei que estava falando com outro cliente. .</template>
+<template>>Me desculpe, achei que estava falando com outro cliente.</template>
 </category>
 <category>
 <pattern>O MEU NOME E * </pattern>
@@ -9532,7 +9532,10 @@ fundamental do cérebro humano.</template>
 <li>Invejosa!.</li>
 </random></template>
 </category>
-
+<category>
+<pattern>QUE DIA E HOJE</pattern>
+<template><srai>QUE HORAS SAO</srai></template>
+</category>
 <category>
 <pattern>QUE HORAS SAO</pattern>
 <template>Agora são <date/>.</template>
@@ -9551,4 +9554,10 @@ de governo com oferta de produtos diversificados.
 </template>
 </category>
 <!-- FIM SERPRO-->
+<category>
+<pattern>*</pattern>
+<template>
+Me desculpe, ainda não aprendi sobre <star/>. :(
+</template>
+</category>
 </aiml>

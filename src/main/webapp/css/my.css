@@ -9,7 +9,7 @@ div a:hover, #description div ul li:hover, #menu li a {
 div a {
     text-decoration: none;
 }
-#main, #description, #infova, .output {
+#main, #description, #infova{
     color: #596067;
     font-family: 'Helvetica Neue',Arial,sans-serif;
     font-size: 16px;
@@ -24,7 +24,7 @@ div a {
 #main {
     /*    float: right;*/
     padding-left: 5px;
-    width: 500px;
+    width: 400px;
     margin: 0 auto;
 }
 #main, #mainOutput {
@@ -126,15 +126,22 @@ div a {
 
 .output {
     /* speaker - padding */
-    width: 340px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 10px;
-    border: #ccc groove 1px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     -webkit-border-radius: 5px;
-    border-radius: 5px;
+
+	background-color: #ceff62;
+    border: 1px groove #ccc;
+    border-radius: 9px;
+    margin-bottom: 0;
+    margin-top: 3px;
+    padding: 6px;
+    width: 345px;
+}
+
+.output span{
+    font-family: 'Helvetica Neue',Arial,sans-serif;
+    font-size: 12px;
 }
 
 .output ol, .output ul {
@@ -194,24 +201,6 @@ div a {
 #google_div {
     display: none;
 }
-#google_login {
-}
-#google_logout {
-    display: none;
-}
-#google_logout img {
-    width: 20px;
-    padding-right: 10px;
-}
-#google_logout span {
-    font-size: 14px;
-}
-#google_logout {
-    position: fixed;
-    top: 30px;
-    left: 20px;    
-}
-
 .info p {
     z-index: 1;
     position: fixed;
@@ -241,4 +230,10 @@ div a {
 
 #composer-commands {
     font-size: 11px;
+}
+
+.mainOutput {
+	overflow:auto;
+	overflow-x:hidden;
+	max-height:200px;
 }

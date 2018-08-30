@@ -15,14 +15,15 @@ You should have received a copy of the GNU General Public License along with Cha
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
 import java.util.Locale;
-import br.gov.frameworkdemoiselle.util.ResourceBundle;
 
 import javax.inject.Inject;
 
+import org.demoiselle.aliceREST.business.AliceBotBC;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.parser.AliceBotParser;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.util.Searcher;
+
+import br.gov.frameworkdemoiselle.util.ResourceBundle;
 
 public class AliceBotMother
 {
@@ -30,6 +31,11 @@ public class AliceBotMother
   Attribute Section
   */
   
+  public static String PATH_CONTEXT = "";
+  public static String PATH_SPLITTERS = "";
+  public static String PATH_SUBSTITUTIONS = "";
+  public static String PATH_BRAINBASE = "";
+  	
   private ByteArrayOutputStream gossip;
   
   @Inject
@@ -41,6 +47,9 @@ public class AliceBotMother
   Event Section
   */
 
+  public static boolean configIsLoaded(){
+	  return (!"".equals(PATH_CONTEXT));
+  }
   
   public void setUp(String tipoExecucao)
   {
@@ -67,21 +76,30 @@ public class AliceBotMother
   {
     return gossip.toString();
   }
+  
+  public void loadConfig(){
+	  AliceBotBC bc = new AliceBotBC();
+	  PATH_CONTEXT = bc.getConfigByNome("load.context").getValor();
+	  PATH_SPLITTERS = bc.getConfigByNome("load.splitters").getValor();
+	  PATH_SUBSTITUTIONS = bc.getConfigByNome("load.substitutions").getValor();
+	  PATH_BRAINBASE = bc.getConfigByNome("load.cerebrobase").getValor();
+	  bc = null;
+  }
 
   public AliceBot newInstance() throws Exception
   {
-    Searcher searcher = new Searcher();
+	Searcher searcher = new Searcher();
     AliceBotParser parser = new AliceBotParser();
-/*    AliceBot bot = parser.parse(new FileInputStream(getBundle().getString("load.context")),
-                                new FileInputStream(getBundle().getString("load.splitters")),
-                                new FileInputStream(getBundle().getString("load.substitutions")),
-                                searcher.search(getBundle().getString("load.cerebrobase"), ".*\\.aiml"));
-*/  
-    System.out.println("Caminho: " + getClass().getResource(getBundle().getString("load.context")).getPath());
-    AliceBot bot = parser.parse(getClass().getResourceAsStream(getBundle().getString("load.context")),
-            getClass().getResourceAsStream(getBundle().getString("load.splitters")),
-            getClass().getResourceAsStream(getBundle().getString("load.substitutions")),
-            searcher.search(getBundle().getString("load.cerebrobase"), ".*\\.aiml"));
+
+    //carrega os paths do banco
+    if(!configIsLoaded())
+	 loadConfig();
+
+    System.out.println("Consultando...");
+    AliceBot bot = parser.parse(getClass().getResourceAsStream(PATH_CONTEXT),
+            getClass().getResourceAsStream(PATH_SPLITTERS),
+            getClass().getResourceAsStream(PATH_SUBSTITUTIONS),
+            searcher.search(PATH_BRAINBASE, ".*\\.aiml"));
     
     Context context = bot.getContext(); 
     context.outputStream(gossip);

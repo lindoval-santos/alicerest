@@ -4,20 +4,19 @@ import java.util.List;
 
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.AliceBot;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.AliceBotMother;
-import org.demoiselle.aliceREST.entity.Bookmark;
-import org.demoiselle.aliceREST.persistence.BookmarkDAO;
-import br.gov.frameworkdemoiselle.lifecycle.Startup;
+import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Response;
+import org.demoiselle.aliceREST.persistence.ConfigDAO;
+import org.demoiselle.aliceREST.rest.Resposta;
+
 import br.gov.frameworkdemoiselle.stereotype.BusinessController;
-import br.gov.frameworkdemoiselle.template.DelegateCrud;
-import br.gov.frameworkdemoiselle.transaction.Transactional;
 
 @BusinessController
-public class AliceBotBC //extends DelegateCrud<Bookmark, Long, BookmarkDAO> 
+public class AliceBotBC 
 {
 
-	private static final long serialVersionUID = 1L;
-
     private final AliceBotMother mother = new AliceBotMother();
+    
+    private ConfigDAO dao = new ConfigDAO();
   
     private AliceBot bot;
 	
@@ -28,32 +27,36 @@ public class AliceBotBC //extends DelegateCrud<Bookmark, Long, BookmarkDAO>
       }
 	}
 	
-	public String questionar(String mensagem)throws Exception{
+	public Resposta questionar(QuestaoBody q)throws Exception{
 		this.setUp();
-		return bot.respond(mensagem);
-	}
-	
-	//@Startup
-	//@Transactional
-/*	public void load() {
-		if (findAll().isEmpty()) {
-			insert(new Bookmark("Portal", "http://www.frameworkdemoiselle.gov.br"));
-			insert(new Bookmark("Documentação", "http://demoiselle.sourceforge.net/docs/framework/reference"));
-			insert(new Bookmark("Fórum", "http://pt.stackoverflow.com/tags/demoiselle"));
-			insert(new Bookmark("Lista de usuários", "https://lists.sourceforge.net/lists/listinfo/demoiselle-users"));
-			insert(new Bookmark("Blog oficial", "http://frameworkdemoiselle.wordpress.com"));
-			insert(new Bookmark("Blog experimental", "http://demoisellelab.wordpress.com"));
-			insert(new Bookmark("Repositório", "http://github.com/demoiselle/framework"));
-			insert(new Bookmark("Bug Tracker", "https://demoiselle.atlassian.net"));
-			insert(new Bookmark("Facebook", "http://facebook.com/FrameworkDemoiselle"));
-			insert(new Bookmark("Twitter", "http://twitter.com/fwkdemoiselle"));
-			insert(new Bookmark("Distribuição",
-					"http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22br.gov.frameworkdemoiselle%22"));
-			insert(new Bookmark("Binários", "http://sourceforge.net/projects/demoiselle/files/framework"));
-		}
+		Response response = bot.respond(q.getQuestao(), q.getTopic(), q.getThat());
+		String topic = response.getSentences(0).getOriginal();
+		String that = response.getSentences(1).getOriginal();
+		Resposta r = new Resposta(topic, that, q.getQuestao(),response.getOriginal().trim());
+		return r;
 	}
 
-	public List<Bookmark> find(String filter) {
-		return getDelegate().find(filter);
-	}*/
+	//recarregar paths a partir do banco
+	public void reLoadConfigs(){
+		mother.loadConfig();
+	}
+
+	public List<ConfigBody> getConfigs(){
+		//Configuracao c = new Configuracao();
+		//return c.getPropriedades();
+		return dao.selectAll();
+	}
+
+	public ConfigBody getConfigByNome(String nome){
+		return dao.load(new ConfigBody(nome, ""));
+	}
+
+	public String insertConfig(ConfigBody c){
+		String s = "";
+		s = dao.insert(c);
+		if ("Erro".equals(s))
+			s = "Configuração não alterada devido a um erro interno.";
+		return s;
+	}
+	
 }

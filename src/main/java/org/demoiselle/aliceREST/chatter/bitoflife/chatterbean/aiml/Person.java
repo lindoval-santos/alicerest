@@ -42,6 +42,8 @@ public class Person extends TemplateElement
   public String process(Match match)
   {
     String input = super.process(match);
+    if(input == null || "".equals(input))
+    	return "";
     AliceBot bot = match.getCallback();
     Transformations transformations = bot.transformations();
     return transformations.person(input);
