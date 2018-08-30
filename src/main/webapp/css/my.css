@@ -106,10 +106,10 @@ div a {
     margin-bottom: -14px;
 }
 .inputDiv {
+    color: steelblue;
     font-size: 12px;
     font-style: italic;
-    padding-bottom: 5px;
-    color: gray;
+    padding-bottom: 0;
 }
 .small {
     font-size: small;
@@ -198,9 +198,7 @@ div a {
     background-color: white;
     border: groove lightgray 1px;
 }
-#google_div {
-    display: none;
-}
+
 .info p {
     z-index: 1;
     position: fixed;
