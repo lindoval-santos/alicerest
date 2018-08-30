@@ -17,6 +17,14 @@ $(document).ready(function (){
     input = input.replace('/','');
     input = input.replace('!','');
     
+    that = that.replace('?','');
+    that = that.replace('/','');
+    that = that.replace('!','');
+    
+    topic = topic.replace('?','');
+    topic = topic.replace('/','');
+    topic = topic.replace('!','');    
+    
     if(input == undefined || input == '')
     	return;
     
@@ -37,8 +45,8 @@ $(document).ready(function (){
 		    crossDomain: true,
 			async:true
 }).
-                        pipe(function(data) { console.log("Successo!!!"); mostrar(data);scrollDown();}).
-                        fail(function() { console.log('Falhou!');erro();scrollDown();});
+                        pipe(function(data) { console.log("Successo!!!"); mostrar(data);}).
+                        fail(function() { console.log('Falhou!');erro();});
 
 
     });
