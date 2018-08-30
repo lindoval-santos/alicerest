@@ -1,6 +1,6 @@
 
-//var apiURL = 'http://10.32.96.210:8080/alicerest/bot/query/ask/';
-var apiURL = 'http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask/';
+//var apiURL = 'http://10.32.96.210:8080/alicerest/bot/query/ask';
+var apiURL = 'http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask';
 
 var input;
 
@@ -33,10 +33,8 @@ $(document).ready(function (){
     
     topic = topic.replace('"', '');
     
-    var send = input + '/' + that + '/' + topic;
-
     $.ajax({
-	        url: apiURL + send,
+	        url: apiURL + input + '/' + that + '/' + topic,
 			//url: this.apiURL + send,
         	//data:tmp,
 		    contentType: "application/json; charset=utf-8",
@@ -97,7 +95,7 @@ $(document).ready(function (){
 		input = '';
 	}
  
-//function scrollDown(){
+/*function scrollDown(){
 //	 $("#mainOutput").animate({ scrollTop: $('#mainOutput').prop("scrollHeight")}, 1000);
 // }
  
@@ -107,4 +105,4 @@ $(document).ready(function (){
          return false;
      }
      return true;
- });
+ });*/

@@ -21,14 +21,6 @@ div a {
 }
 */
 
-#main {
-    /*    float: right;*/
-    width: 315px;
-    margin: 0 auto;
-}
-#main, #mainOutput {
-    z-index: 100
-}
 #speaker {    
     float: left;    
 }
@@ -213,6 +205,15 @@ div a {
 
 #composer-commands {
     font-size: 11px;
+}
+
+#main {
+    /*    float: right;*/
+    width: 315px;
+    margin: 0 auto;
+}
+#main, #mainOutput {
+    z-index: 100
 }
 
 .mainOutput {
