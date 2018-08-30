@@ -23,7 +23,7 @@ public class AliceBotBC
 	
 	public void setUp() throws Exception{
       if (bot == null){
-    	Locale.setDefault(new Locale("pt", "BR"));
+    	//Locale.setDefault(new Locale("pt", "BR"));
 	    mother.setUp("");
 	    bot = mother.newInstance();
       }
