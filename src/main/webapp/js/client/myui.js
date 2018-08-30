@@ -95,9 +95,11 @@ $(document).ready(function (){
 		input = '';
 	}
  
-/*function scrollDown(){
-//	 $("#mainOutput").animate({ scrollTop: $('#mainOutput').prop("scrollHeight")}, 1000);
-// }
+/*
+ 
+function scrollDown(){
+	 $("#mainOutput").animate({ scrollTop: $('#mainOutput').prop("scrollHeight")}, 1000);
+ }
  
  $("#questao").on('keydown', function(e) {
      if (e.which == 13) {
@@ -105,4 +107,5 @@ $(document).ready(function (){
          return false;
      }
      return true;
- });*/
+ });
+ */
