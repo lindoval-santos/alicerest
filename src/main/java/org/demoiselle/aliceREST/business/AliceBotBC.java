@@ -1,6 +1,7 @@
 package org.demoiselle.aliceREST.business;
 
 import java.util.List;
+import java.util.Locale;
 
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.AliceBot;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.AliceBotMother;
@@ -22,6 +23,7 @@ public class AliceBotBC
 	
 	public void setUp() throws Exception{
       if (bot == null){
+    	Locale.setDefault(new Locale("pt", "BR"));
 	    mother.setUp("");
 	    bot = mother.newInstance();
       }

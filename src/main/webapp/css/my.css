@@ -23,8 +23,7 @@ div a {
 
 #main {
     /*    float: right;*/
-    padding-left: 5px;
-    width: 400px;
+    width: 315px;
     margin: 0 auto;
 }
 #main, #mainOutput {
@@ -110,6 +109,7 @@ div a {
     font-size: 12px;
     font-style: italic;
     padding-bottom: 0;
+    text-align: left;
 }
 .small {
     font-size: small;
@@ -122,21 +122,6 @@ div a {
 .horizontal-space {
     padding-left: 4px;
     padding-right: 2px;
-}
-
-.output {
-    /* speaker - padding */
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -webkit-border-radius: 5px;
-
-	background-color: #ceff62;
-    border: 1px groove #ccc;
-    border-radius: 9px;
-    margin-bottom: 0;
-    margin-top: 3px;
-    padding: 6px;
-    width: 345px;
 }
 
 .output span{
@@ -234,4 +219,27 @@ div a {
 	overflow:auto;
 	overflow-x:hidden;
 	max-height:200px;
+}
+
+.output {
+    /* speaker - padding */
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+	background-color: #ceff62;
+    border: 1px groove #ccc;
+    border-radius: 9px;
+    margin-bottom: 0;
+    margin-top: 2px;
+    padding: 5px;
+    width: 290px;
+}
+
+#divhead {
+    margin: 0 auto;
+    width: 315px;
+    color: #596067;
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    font-size: 16px;
 }

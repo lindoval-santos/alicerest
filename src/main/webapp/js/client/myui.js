@@ -59,12 +59,13 @@ $(document).ready(function (){
 	var clickableDiv = $("<div class='inputDiv'>Questão: " + questao + "</div>");
     //clickableDiv.addClass('clickable');
     output.append(clickableDiv);
- 
+    
     var tag = $("<span/>");
 	tag.html('<p align="justify">Resposta: ' + resposta + '</p>');
 	output.append(tag);
 
-	$('#mainOutput').append(output);
+	//$('#mainOutput').append(output);
+	$('#mainOutput').prepend(output);
 	$('#questao').val('');
 	$('#questao').focus();
 }
@@ -83,13 +84,14 @@ $(document).ready(function (){
 		tag.html('Ocorreu um erro ao processar: ' + input);
 		output.append(tag);
 
-		$('#mainOutput').append(output);
+		//$('#mainOutput').append(output);
+		$('#mainOutput').prepend(output);
 		input = '';
 	}
  
- function scrollDown(){
-	 $("#mainOutput").animate({ scrollTop: $('#mainOutput').prop("scrollHeight")}, 1000);
- }
+//function scrollDown(){
+//	 $("#mainOutput").animate({ scrollTop: $('#mainOutput').prop("scrollHeight")}, 1000);
+// }
  
  $("#questao").on('keydown', function(e) {
      if (e.which == 13) {
