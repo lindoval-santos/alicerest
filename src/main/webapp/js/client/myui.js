@@ -73,7 +73,7 @@ $(document).ready(function (){
 	//$('#mainOutput').append(output);
 	$('#mainOutput').prepend(output);
 	$('#questao').val('');
-	$('#questao').focus();
+	//$('#questao').focus();
 }
  
  function erro(){
