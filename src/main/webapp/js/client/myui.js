@@ -13,32 +13,32 @@ $(document).ready(function (){
     
     input = $('#questao').val();
 
-    if(input == undefined || input == '')
+    if(input == undefined || input == "")
     	return;
     
-    input = input.replace('?','');
-    input = input.replace('/','');
-    input = input.replace('!','');
+    input = input.replace("?","");
+    input = input.replace("/","");
+    input = input.replace("!","");
     
-    that = that.replace('?','');
-    that = that.replace('/','');
-    that = that.replace('!','');
+    that = that.replace("?","");
+    that = that.replace("/","");
+    that = that.replace("!","");
     
-    topic = topic.replace('?','');
-    topic = topic.replace('/','');
-    topic = topic.replace('!','');    
+    topic = topic.replace("?","");
+    topic = topic.replace("/","");
+    topic = topic.replace("!","");    
     
     debug('realizou todos os replaces');
     
-    that = (that == undefined || that == '')?'*':that;
-    topic = (topic == undefined || topic == '')?'*':topic;
+    that = (that == undefined || that == '' || that == "")?"*":that;
+    topic = (topic == undefined || topic == '')?"*":topic;
     
-    topic = topic.replace('"', '');
+    topic = topic.replace("\"", "");
     
     debug('valores: '+input+'| '+that+'| '+topic);
     
     $.ajax({
-	        url: 'http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask/' + input + '/' + that + '/' + topic,
+	        url: "http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask/" + input + "/" + that + "/" + topic,
 	        //url: 'http://10.32.96.210:8080/alicerest/bot/query/ask/' + input + '/' + that + '/' + topic,
 			//url: this.apiURL + input + '/' + that + '/' + topic,
         	//data:tmp,
