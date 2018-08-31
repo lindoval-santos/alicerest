@@ -6,12 +6,12 @@ $(document).ready(function (){
 
     $('#enviar').on('click', function(){
     debug('Iniciando');
-    var that = $('#that').val();
-    var topic = $('#topic').val();
+    //var that = $('#that').val();
+    //var topic = $('#topic').val();
     
     var input = $('#questao').val();
 
-    if(input == undefined || input == "")
+    if(input == '')
     	return;
     
 /*    input = input.replace("?","");
@@ -33,13 +33,13 @@ $(document).ready(function (){
     
     topic = topic.replace("\"", "");*/
     
-    that = '*';
-    topic = that;
+    //that = '*';
+    //topic = that;
     
-    debug('valores: '+input+'| '+that+'| '+topic);
+    debug('input: '+input);//+'| '+that+'| '+topic);
     
     $.ajax({
-	        url: "http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask/" + input + "/" + that + "/" + topic,
+	        url: 'http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask/' + input + '/*/*',
 	        //url: 'http://10.32.96.210:8080/alicerest/bot/query/ask/' + input + '/' + that + '/' + topic,
 			//url: this.apiURL + input + '/' + that + '/' + topic,
         	//data:tmp,
