@@ -2,8 +2,6 @@
 //var apiURL = 'http://10.32.96.210:8080/alicerest/bot/query/ask/';
 //var apiURL = 'http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask/';
 
-var input;
-
 $(document).ready(function (){
 
     $('#enviar').on('click', function(){
@@ -11,12 +9,12 @@ $(document).ready(function (){
     var that = $('#that').val();
     var topic = $('#topic').val();
     
-    input = $('#questao').val();
+    var input = $('#questao').val();
 
     if(input == undefined || input == "")
     	return;
     
-    input = input.replace("?","");
+/*    input = input.replace("?","");
     input = input.replace("/","");
     input = input.replace("!","");
     
@@ -26,14 +24,17 @@ $(document).ready(function (){
     
     topic = topic.replace("?","");
     topic = topic.replace("/","");
-    topic = topic.replace("!","");    
+    topic = topic.replace("!",""); */   
     
     debug('realizou todos os replaces');
     
-    that = (that == undefined || that == '' || that == "")?"*":that;
+/*    that = (that == undefined || that == '' || that == "")?"*":that;
     topic = (topic == undefined || topic == '')?"*":topic;
     
-    topic = topic.replace("\"", "");
+    topic = topic.replace("\"", "");*/
+    
+    that = '*';
+    topic = that;
     
     debug('valores: '+input+'| '+that+'| '+topic);
     
@@ -49,7 +50,7 @@ $(document).ready(function (){
 			async:true
 }).
                         pipe(function(data) { console.log("Successo!!!"); mostrar(data);}).
-                        fail(function() { console.log('Falhou!');erro();});
+                        fail(function() { console.log('Falhou!');erro(input);});
 
 
     });
@@ -71,7 +72,7 @@ function mostrar(data){
     $('#that').val(data.that);
     $('#topic').val(data.topic);
     
-	var clickableDiv = $("<div class='inputDiv'>Questão: " + questao + "</div>");
+	var clickableDiv = $("<div class='inputDiv'>"+new Date().toLocaleString()+"<br/>Questão: " + questao + "</div>");
     //clickableDiv.addClass('clickable');
     output.append(clickableDiv);
     
@@ -86,7 +87,7 @@ function mostrar(data){
 	debug('terminou de renderizar a resposta');
 }
  
-function erro(){
+function erro(input){
 		
 		debug('Erro inicio');
 		
@@ -94,7 +95,7 @@ function erro(){
 		var output = $("<div class='output'/>");
 		questao = $('#questao').val();
 	    
-		var clickableDiv = $("<div class='inputDiv'>Questão: " + questao + "</div>");
+		var clickableDiv = $("<div class='inputDiv'>"+new Date().toLocaleString()+"<br/>Questão: " + questao + "</div>");
 	    //clickableDiv.addClass('clickable');
 	    output.append(clickableDiv);
 	    debug('Erro meio');
