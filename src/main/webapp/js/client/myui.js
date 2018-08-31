@@ -6,15 +6,23 @@ $(document).ready(function (){
 
     $('#enviar').on('click', function(){
     debug('Iniciando');
-    //var that = $('#that').val();
-    //var topic = $('#topic').val();
+    var that = $('#that').val();
+    var topic = $('#topic').val();
     
     var input = $('#questao').val();
 
     if(input == '')
     	return;
     
-/*    input = input.replace("?","");
+    var apiURL;
+    
+    if(isDebugging())
+      apiURL = 'bot/query/ask/';
+    else
+      apiURL = 'bot/query/ask/';	
+
+    
+    input = input.replace("?","");
     input = input.replace("/","");
     input = input.replace("!","");
     
@@ -24,22 +32,29 @@ $(document).ready(function (){
     
     topic = topic.replace("?","");
     topic = topic.replace("/","");
-    topic = topic.replace("!",""); */   
+    topic = topic.replace("!","");    
     
     debug('realizou todos os replaces');
     
-/*    that = (that == undefined || that == '' || that == "")?"*":that;
-    topic = (topic == undefined || topic == '')?"*":topic;
+    that = (that == "undefined" || that == '' || that == "")?"*":that;
+    topic = (topic == "undefined" || topic == '')?"*":topic;
     
-    topic = topic.replace("\"", "");*/
+    topic = topic.replace("\"", "");
     
-    //that = '*';
-    //topic = that;
+    that = that.replace("*","%2A");
+    topic = topic.replace("*","%2A");
     
-    debug('input: '+input);//+'| '+that+'| '+topic);
+    debug('input: '+input+'|'+that+'|'+topic);
+    
+    apiURL = apiURL + input + '/' + that + '/' + topic;
+
+    var send = apiURL;
+    
+    debug(send);
     
     $.ajax({
-	        url: 'http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask/' + input + '/*/*',
+    		url: send,
+	        //url: 'http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask/' + input + '/*/*',
 	        //url: 'http://10.32.96.210:8080/alicerest/bot/query/ask/' + input + '/' + that + '/' + topic,
 			//url: this.apiURL + input + '/' + that + '/' + topic,
         	//data:tmp,
@@ -83,7 +98,7 @@ function mostrar(data){
 	//$('#mainOutput').append(output);
 	$('#mainOutput').prepend(output);
 	$('#questao').val('');
-	//$('#questao').focus();
+	$('#questao').focus();
 	debug('terminou de renderizar a resposta');
 }
  
@@ -109,12 +124,17 @@ function erro(input){
 		debug('Erro fim');
 	}
  
+function isDebugging() {
+    if (document.location.hostname == "l" || document.location.hostname == "0.0.0.0") return true;
+    return document.location.hostname == "localhost" || document.location.hostname == "127.0.0.1";
+}
+
 /*
  
 function scrollDown(){
 	 $("#mainOutput").animate({ scrollTop: $('#mainOutput').prop("scrollHeight")}, 1000);
  }
- 
+ */
  $("#questao").on('keydown', function(e) {
      if (e.which == 13) {
           $("#enviar").trigger('click');
@@ -122,4 +142,4 @@ function scrollDown(){
      }
      return true;
  });
- */
+ 

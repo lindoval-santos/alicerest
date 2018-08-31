@@ -38,6 +38,7 @@ public class AliceBotREST {
 		if (questao == null || "".equals(questao))
 			throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST)
 					.entity("Nenhuma questão informada.").build());
+		System.out.println("consultando com os 3 parâmetros");
 		Resposta r = null;
 		try{
 			r = bc.questionar(new QuestaoBody(questao, that == null?"*":that, topic == null?"*":topic));
@@ -49,6 +50,36 @@ public class AliceBotREST {
 		}
 		return Response.ok().entity(r).build();
 	}
+
+	//O chome no Android não consegue construir URL tipo "{questao}/{that}/{topic}", assim, irá consultar este método
+	@GET
+	@Path("ask/{questao}/{that}")
+	@Produces("application/json")
+	@Consumes("application/json")
+	@ApiOperation(value = "O chatterbot responde uma questão conforme a base de conhecimento", notes = "Robot em REST", response = Resposta.class)
+	public Response consultar(@PathParam("questao") String questao,
+			  				  @PathParam("that") String that) throws Exception {
+		if (questao == null || "".equals(questao))
+			throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST)
+					.entity("Nenhuma questão informada.").build());
+		System.out.println("consultando com 2 parâmetros");
+		return this.consultar(questao, that, "*");
+	}
+	
+	//O chome no Android não consegue construir URL tipo "{questao}/{that}/{topic}", assim, irá consultar este método
+	@GET
+	@Path("ask/{questao}")
+	@Produces("application/json")
+	@Consumes("application/json")
+	@ApiOperation(value = "O chatterbot responde uma questão conforme a base de conhecimento", notes = "Robot em REST", response = Resposta.class)
+	public Response consultar(@PathParam("questao") String questao) throws Exception {
+		if (questao == null || "".equals(questao))
+			throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST)
+					.entity("Nenhuma questão informada.").build());
+		System.out.println("consultando com 1 parâmetro");
+		return this.consultar(questao, "*", "*");
+	}
+	
 	
 	@POST
 	@Path("config/{nome}/{valor}")

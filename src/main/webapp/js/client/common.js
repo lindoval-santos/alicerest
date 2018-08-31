@@ -24,7 +24,7 @@ function getLocale(l) {
 
 function isDebugging() {
     if (document.location.hostname == "l" || document.location.hostname == "0.0.0.0") return true;
-    return document.location.hostname == "localhost" || document.location.hostname == "127.0.0.1"
+    return document.location.hostname == "localhost" || document.location.hostname == "127.0.0.1";
 }
 
 function getTimeZone(tz) {
@@ -48,8 +48,8 @@ function parseUrl(query) {
     var res = {};
     var vars = query.split("&");
     for (var i=0;i < vars.length;i++) {
-        var tmpVar = vars[i]
-        var equalIndex = tmpVar.indexOf("=")
+        var tmpVar = vars[i];
+        var equalIndex = tmpVar.indexOf("=");
         key = tmpVar.substring(0, equalIndex);
         val = tmpVar.substring(equalIndex + 1);
         if(val != null)
@@ -69,14 +69,14 @@ function parseUrl(query) {
 
 function getIsoTime(d){
     function pad(n){
-        return n<10 ? '0'+n : n
+        return n<10 ? '0'+n : n;
     }
     return d.getUTCFullYear()+'-'
     + pad(d.getUTCMonth()+1)+'-'
     + pad(d.getUTCDate())+'T'
     + pad(d.getUTCHours())+':'
     + pad(d.getUTCMinutes())+':'
-    + pad(d.getUTCSeconds())+'Z'
+    + pad(d.getUTCSeconds())+'Z';
 }
 
 // quick hack to make tabs working again with history.js
@@ -141,7 +141,7 @@ function exactMatches(input, words) {
         return false;        
     }
         
-    return input.indexOf(words) >= 0
+    return input.indexOf(words) >= 0;
 }
 
 function matches(input, words, and_or) {
@@ -164,7 +164,7 @@ function matches(input, words, and_or) {
         return false;        
     }
         
-    return input.indexOf(words.toLowerCase()) >= 0
+    return input.indexOf(words.toLowerCase()) >= 0;
 }
 
 function openEmail(to, subject, text) { 
