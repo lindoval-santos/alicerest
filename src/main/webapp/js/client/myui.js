@@ -5,9 +5,15 @@
 $(document).ready(function (){
 
     $('#enviar').on('click', function(){
+    	
+    function debug(msg){
+    	$("#spandebug").html(msg);;
+    }
+    
     debug('Iniciando');
-    var that = $('#that').val();
-    var topic = $('#topic').val();
+    
+    var _that = $('#that').val();
+    var _topic = $('#topic').val();
     
     var input = $('#questao').val();
 
@@ -26,27 +32,27 @@ $(document).ready(function (){
     input = input.replace("/","");
     input = input.replace("!","");
     
-    that = that.replace("?","");
-    that = that.replace("/","");
-    that = that.replace("!","");
+    _that = _that.replace("?","");
+    _that = _that.replace("/","");
+    _that = _that.replace("!","");
     
-    topic = topic.replace("?","");
-    topic = topic.replace("/","");
-    topic = topic.replace("!","");    
+    _topic = _topic.replace("?","");
+    _topic = _topic.replace("/","");
+    _topic = _topic.replace("!","");    
     
     debug('realizou todos os replaces');
     
-    that = (that == "undefined" || that == '' || that == "")?"*":that;
-    topic = (topic == "undefined" || topic == '')?"*":topic;
+    _that = (_that == "undefined" || _that == '' || _that == "")?"*":_that;
+    _topic = (_topic == "undefined" || _topic == '')?"*":_topic;
     
-    topic = topic.replace("\"", "");
+    _topic = _topic.replace("\"", "");
     
-    that = that.replace("*","%2A");
-    topic = topic.replace("*","%2A");
+    _that = _that.replace("*","%2A");
+    _topic = _topic.replace("*","%2A");
     
-    debug('input: '+input+'|'+that+'|'+topic);
+    debug('input: '+input+'|'+_that+'|'+_topic);
     
-    apiURL = apiURL + input + '/' + that + '/' + topic;
+    apiURL = apiURL + input + '/' + _that + '/' + _topic;
 
     var send = apiURL;
     
@@ -56,7 +62,6 @@ $(document).ready(function (){
     		url: send,
 	        //url: 'http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask/' + input + '/*/*',
 	        //url: 'http://10.32.96.210:8080/alicerest/bot/query/ask/' + input + '/' + that + '/' + topic,
-			//url: this.apiURL + input + '/' + that + '/' + topic,
         	//data:tmp,
 		    contentType: "application/json; charset=utf-8",
 		    dataType: 'json',
@@ -71,15 +76,15 @@ $(document).ready(function (){
     });
 });
 
-function debug(msg){
-	$("#spandebug").text(msg);;
-}
-
 function mostrar(data){
 	var questao = "";
 	var resposta = "";
 	var output = $("<div class='output'/>");
 
+    function debug(msg){
+    	$("#spandebug").html(msg);;
+    }
+	
 	debug('Retornou sucesso, valores: '+data.questao+'--'+data.resposta+'--'+data.that+'--'+data.topic);
 	questao = data.questao;
     resposta = data.conteudo;
@@ -103,14 +108,18 @@ function mostrar(data){
 }
  
 function erro(input){
-		
+	
+	    function debug(msg){
+	    	$("#spandebug").html(msg);;
+	    }
+	
 		debug('Erro inicio');
 		
-		var questao = "";
+		var _questao = "";
 		var output = $("<div class='output'/>");
-		questao = $('#questao').val();
+		_questao = $('#questao').val();
 	    
-		var clickableDiv = $("<div class='inputDiv'>"+new Date().toLocaleString()+"<br/>Questão: " + questao + "</div>");
+		var clickableDiv = $("<div class='inputDiv'>"+new Date().toLocaleString()+"<br/>Questão: " + _questao + "</div>");
 	    //clickableDiv.addClass('clickable');
 	    output.append(clickableDiv);
 	    debug('Erro meio');
