@@ -12,7 +12,7 @@ div a {
 #main, #description, #infova{
     color: #596067;
     font-family: 'Helvetica Neue',Arial,sans-serif;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .pointer {
@@ -112,7 +112,7 @@ div a {
     width: 315px;
     color: #596067;
     font-family: "Helvetica Neue",Arial,sans-serif;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .debug {
