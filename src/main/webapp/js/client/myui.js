@@ -1,7 +1,4 @@
 
-//var apiURL = 'http://10.32.96.210:8080/alicerest/bot/query/ask/';
-//var apiURL = 'http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask/';
-
 $(document).ready(function (){
 
     $('#enviar').on('click', function(){
@@ -22,9 +19,9 @@ $(document).ready(function (){
     
     var apiURL;
     
-    if(isDebugging())
-      apiURL = 'bot/query/ask/';
-    else
+    //if(isDebugging())
+    //  apiURL = 'bot/query/ask/';
+    //else
       apiURL = 'bot/query/ask/';	
 
     
@@ -69,8 +66,8 @@ $(document).ready(function (){
 		    crossDomain: true,
 			async:true
 }).
-                        pipe(function(data) { console.log("Successo!!!"); mostrar(data);}).
-                        fail(function() { console.log('Falhou!');erro(input);});
+                        pipe(function(data) { console.log("Successo!!!"); mostrar(data);scrollDown();}).
+                        fail(function() { console.log('Falhou!');erro(input);scrollDown();});
 
 
     });
@@ -100,8 +97,8 @@ function mostrar(data){
 	tag.html('<p align="justify">Resposta: ' + resposta + '</p>');
 	output.append(tag);
 
-	//$('#mainOutput').append(output);
-	$('#mainOutput').prepend(output);
+	$('#mainOutput').append(output);
+	//$('#mainOutput').prepend(output);
 	$('#questao').val('');
 	$('#questao').focus();
 	debug('terminou de renderizar a resposta');
@@ -127,8 +124,8 @@ function erro(input){
 		tag.html('Ocorreu um erro ao processar: ' + input);
 		output.append(tag);
 
-		//$('#mainOutput').append(output);
-		$('#mainOutput').prepend(output);
+		$('#mainOutput').append(output);
+		//$('#mainOutput').prepend(output);
 		input = '';
 		debug('Erro fim');
 	}
@@ -138,17 +135,14 @@ function isDebugging() {
     return document.location.hostname == "localhost" || document.location.hostname == "127.0.0.1";
 }
 
-/*
- 
 function scrollDown(){
 	 $("#mainOutput").animate({ scrollTop: $('#mainOutput').prop("scrollHeight")}, 1000);
  }
- */
+
  $("#questao").on('keydown', function(e) {
      if (e.which == 13) {
-          $("#enviar").trigger('click');
-         return false;
+         $("#enviar").trigger('click');
+         e.preventDefault();
      }
-     return true;
  });
  
