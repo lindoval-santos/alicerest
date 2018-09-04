@@ -86,7 +86,10 @@ function mostrar(data){
 	questao = data.questao;
     resposta = data.conteudo;
     
-    $('#that').val(data.that);
+    if (endsWith(data.that,"/>"))
+      $('#that').val("#");
+    else
+      $('#that').val(data.that);
     $('#topic').val(data.topic);
     
 	var clickableDiv = $("<div class='inputDiv'>"+new Date().toLocaleString()+"<br/>Questão: " + questao + "</div>");

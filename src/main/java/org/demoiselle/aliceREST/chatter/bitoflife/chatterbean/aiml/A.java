@@ -15,6 +15,7 @@ public class A extends TemplateElement
 
   public A(Attributes attributes)
   {
+	this.href = attributes.getValue("href");
   }
 
   public A(Object... children)
@@ -47,7 +48,8 @@ public class A extends TemplateElement
   {
     try
     {
-      String value = (String) match.getCallback().getContext().property("predicate." + href);
+      //String value = (String) match.getCallback().getContext().property("predicate." + href);
+      String value = "<a href=\""+href+"\">"+(String) super.process(match)+"</a>";
       return (value != null ? value : "");
     }
     catch (NullPointerException e)

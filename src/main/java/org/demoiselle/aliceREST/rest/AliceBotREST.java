@@ -24,7 +24,6 @@ import org.demoiselle.aliceREST.business.QuestaoBody;
 @Path("query")
 public class AliceBotREST {
 
-	//@Inject
 	private AliceBotBC bc = new AliceBotBC();
 
 	@GET

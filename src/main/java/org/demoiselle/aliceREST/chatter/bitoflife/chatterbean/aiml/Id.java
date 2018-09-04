@@ -52,7 +52,7 @@ public class Id extends TemplateElement
 
   public String process(Match match)
   {
-    if (match == null) return "unknown";
+    if (match == null) return "Desconhecido";
     AliceBot bot = match.getCallback();
     Context context = bot.getContext();
     return context.id();
