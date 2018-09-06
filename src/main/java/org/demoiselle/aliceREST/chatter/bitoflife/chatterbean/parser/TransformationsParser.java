@@ -21,17 +21,17 @@ import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
 
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.config.ConfigException;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.config.TokenizerConfig;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.config.TokenizerConfigStream;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Tokenizer;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Transformations;
+import org.xml.sax.SAXException;
 
 public class TransformationsParser
 {

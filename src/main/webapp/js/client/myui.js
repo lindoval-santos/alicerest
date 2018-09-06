@@ -82,11 +82,11 @@ function mostrar(data){
     	$("#spandebug").html(msg);;
     }
 	
-	debug('Retornou sucesso, valores: '+data.questao+'--'+data.resposta+'--'+data.that+'--'+data.topic);
+	debug('Retornou sucesso, valores: '+data.questao+'--'+data.conteudo+'--'+data.that+'--'+data.topic);
 	questao = data.questao;
     resposta = data.conteudo;
     
-    if (endsWith(data.that,"/>"))
+    if (matches(data.that,[">","<","/"], "OR"))
       $('#that').val("#");
     else
       $('#that').val(data.that);
@@ -97,8 +97,13 @@ function mostrar(data){
     output.append(clickableDiv);
     
     var tag = $("<span/>");
-	tag.html('<p align="justify">Resposta: ' + resposta + '</p>');
-	output.append(tag);
+    var p = $("<p/>");
+
+    p.css("text-align", "justify").html('Resposta: ' + resposta);
+
+	tag.append(p).serialize();
+
+    output.append(tag);
 
 	$('#mainOutput').append(output);
 	//$('#mainOutput').prepend(output);

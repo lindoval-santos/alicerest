@@ -14,9 +14,6 @@ You should have received a copy of the GNU General Public License along with Cha
 
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;

@@ -9551,10 +9551,9 @@ de governo com oferta de produtos diversificados.
 </template>
 </category>
 <!-- FIM SERPRO-->
-<category>
-<pattern>*</pattern>
-<template>
-Me desculpe, ainda não aprendi sobre "<star/>". <a href="http://www.google.com.br/?q="> tente uma busca manual</a>
-</template>
-</category>
+  <category>
+    <pattern>*</pattern>
+    <template>Me desculpe, ainda não aprendi sobre "<star/>". 
+     Faça uma pesquisa externa com <a pesquisar="true" href="https://www.google.com.br/search?q="><star/></a></template>
+  </category>
 </aiml>

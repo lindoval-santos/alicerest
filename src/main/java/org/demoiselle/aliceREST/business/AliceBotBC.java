@@ -1,5 +1,6 @@
 package org.demoiselle.aliceREST.business;
 
+import java.text.Normalizer;
 import java.util.List;
 import java.util.Locale;
 
@@ -31,10 +32,16 @@ public class AliceBotBC
 	
 	public Resposta questionar(QuestaoBody q)throws Exception{
 		this.setUp();
-		Response response = bot.respond(q.getQuestao(), q.getTopic(), q.getThat());
+		Response response = bot.respond(q.getQuestao(), q.getTopic().toUpperCase(), q.getThat().toUpperCase());
+		String s = response.getOriginal().trim();
+		String that = response.getSentences(1).getOriginal().trim();
 		String topic = response.getSentences(0).getOriginal();
-		String that = response.getSentences(1).getOriginal();
-		Resposta r = new Resposta(topic, that, q.getQuestao(),response.getOriginal().trim());
+		topic = topic.toUpperCase();
+		that = that.endsWith(".") && that.length() >= 1?that.substring(0,that.length()-1):that;
+		that = Normalizer.normalize(that, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+		that = that.toUpperCase();
+		s = s.replace("&lt;br&gt;", "<br>");
+		Resposta r = new Resposta(topic, that, q.getQuestao(),s);
 		return r;
 	}
 

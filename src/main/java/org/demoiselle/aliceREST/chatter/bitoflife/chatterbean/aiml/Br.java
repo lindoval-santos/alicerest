@@ -24,6 +24,6 @@ public class Br extends TemplateElement
 
   public String process(Match match)
   {
-    return "<br/>";
+    return "&lt;br&gt;"; //&#47;
   }
 }

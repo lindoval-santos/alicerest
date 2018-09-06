@@ -15,15 +15,10 @@ You should have received a copy of the GNU General Public License along with Cha
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean;
 
 import java.io.ByteArrayOutputStream;
-import java.util.Locale;
-
-import javax.inject.Inject;
 
 import org.demoiselle.aliceREST.business.AliceBotBC;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.parser.AliceBotParser;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.util.Searcher;
-
-import br.gov.frameworkdemoiselle.util.ResourceBundle;
 
 public class AliceBotMother
 {
@@ -38,10 +33,10 @@ public class AliceBotMother
   	
   private ByteArrayOutputStream gossip;
   
-  @Inject
-  private ResourceBundle b;
+  //@Inject
+ //private ResourceBundle b;
   
-  private String recurso;
+  //private String recurso;
   
   /*
   Event Section
@@ -54,10 +49,10 @@ public class AliceBotMother
   public void setUp(String tipoExecucao)
   {
     gossip = new ByteArrayOutputStream();
-    if ("T".equals(tipoExecucao.toUpperCase()))
-    	recurso = "test";
-    else
-    	recurso = "messages";
+//    if ("T".equals(tipoExecucao.toUpperCase()))
+//    	recurso = "test";
+//    else
+//    	recurso = "messages";
   }
   
   /*
@@ -65,12 +60,12 @@ public class AliceBotMother
   */
   
   //pra atender os testes unitários
-  public ResourceBundle getBundle(){
-	  if(b == null){
-		  b = new ResourceBundle(recurso, Locale.getDefault());
-	  }
-	  return b;
-  }
+  //public ResourceBundle getBundle(){
+//	  if(b == null){
+//		  b = new ResourceBundle(recurso, Locale.getDefault());
+//	  }
+//	  return b;
+//  }
   
   public String gossip()
   {

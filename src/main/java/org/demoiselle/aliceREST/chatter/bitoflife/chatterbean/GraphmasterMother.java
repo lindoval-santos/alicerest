@@ -14,11 +14,8 @@ You should have received a copy of the GNU General Public License along with Cha
 
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean;
 
-import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.Graphmaster;
-import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml.Srai;
-import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml.Star;
-import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml.Text;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml.Category;
+import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml.Star;
 
 public class GraphmasterMother
 {

@@ -8,6 +8,7 @@ public class A extends TemplateElement
 {
 
   private String href;
+  private boolean isPesquisa;
 	
   /*
   Constructors
@@ -16,6 +17,9 @@ public class A extends TemplateElement
   public A(Attributes attributes)
   {
 	this.href = attributes.getValue("href");
+	try{
+	 this.isPesquisa = Boolean.valueOf(attributes.getValue("pesquisar"));
+	}catch(Exception e){this.isPesquisa = false;};
   }
 
   public A(Object... children)
@@ -48,8 +52,14 @@ public class A extends TemplateElement
   {
     try
     {
-      //String value = (String) match.getCallback().getContext().property("predicate." + href);
-      String value = "<a href=\""+href+"\">"+(String) super.process(match)+"</a>";
+      if (href == null || "".equals(href))
+    	return "";
+      String texto = (String) super.process(match);
+      String value = "<a target=\"_blank\" href=\"" + href;
+      if(isPesquisa)
+    	value = value + texto + "\">"+texto+"</a>";
+      else
+    	value = value + "\">"+texto+"</a>";
       return (value != null ? value : "");
     }
     catch (NullPointerException e)

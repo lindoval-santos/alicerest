@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<aiml>
+  <category>
+    <pattern>HISTORIA DO BRASIL</pattern>
+    <template>
+  		A História do Brasil é dividida, consensualmente e para fins didáticos, em três períodos principais: Período Colonial, Período Imperial e Período Republicano.
+    </template>
+  </category>
+  <category>
+    <pattern>* PERIODO COLONIAL</pattern>
+    <template>
+     <srai>PERIODO COLONIAL</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>E O PERIODO COLONIAL</pattern>
+    <template>
+     <srai>PERIODO COLONIAL</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>PERIODO COLONIAL</pattern>
+    <template>  
+  		<br/>Com a ameaça da ocupação do território brasileiro por outros povos, como os franceses, a coroa portuguesa decidiu, no início da década de 1530, estabelecer o controle de fato da colônia, instituindo o Governo Geral. O primeiro dos governadores gerais do Brasil foi Tomé de Souza. A partir da fase dos governos gerais, começou-se o estabelecimento de uma estrutura econômica um pouco mais sofisticada. A montagem dos engenhos de açúcar e do sistema da plantation (latifúndios monocultores), bem como o emprego da mão de obra escrava, inicialmente indígena e, posteriormente, negra (africana), fez parte das decisões do Governo Geral.
+  		<br/>Ao mesmo tempo, da então Capitania de São Paulo saíram os empreendimentos conhecidos como bandeiras e entradas, que se caracterizaram pelo desbravamento do interior do país, pelo apresamento de índios e pela ampliação de territórios. A formação da sociedade colonial passou a articular-se a partir desses elementos: economia açucareira, sistema escravista e adentramento no interior do país.
+		<br/>Posteriormente, o ciclo econômico do ouro, no século XVIII, que se concentrou na região Sudeste, sobretudo em Minas Gerais, deu novos contrastes à formação da sociedade brasileira e espaço para novas ideias políticas. Essa formação social culminou também nas famosas Rebeliões Nativistas e Rebeliões Separatistas, das quais se destacaram, por exemplo, a Revolta de Beckman e a Inconfidência Mineira.
+		<br/>A Insurreição Pernambucana, por outro lado, ocorrida em Pernambuco, resultou de uma situação posterior a um período de grandíssima importância para a região Nordeste do Brasil: o período da administração holandesa. Com a União Ibérica, partes do Nordeste brasileiro, sobretudo Pernambuco, foram ocupadas pelos povos flamengos, que lá estabeleceram um desenvolvimento econômico e social nunca visto na colônia brasileira até então. Esse período foi também denominado de Brasil Holandês.
+		<br/>A crise do sistema colonial começou a agravar-se na segunda metade do século XVIII, ao mesmo tempo em que a situação da Europa tornava-se convulsiva com o advento da Revolução Francesa. Em 1808, a corte portuguesa deixou Portugal em direção ao Brasil, dando início a um novo estágio de sua história, tirando-o da condição de colônia e elevando-o à categoria de Reino Unido, junto com Portugal de Algarves.
+    </template>
+  </category>
+  <category>
+    <pattern> * SOBRE PERIODO IMPERIAL</pattern>
+    <template>
+  		<srai>BRASIL IMPERIO</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>PERIODO IMPERIAL</pattern>
+    <template>
+     <srai>BRASIL IMPERIO</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>O QUE FOI O PERIODO IMPERIAL *</pattern>
+    <template>
+     <srai>BRASIL IMPERIO</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>E O PERIODO IMPERIAL</pattern>
+    <template>
+     <srai>BRASIL IMPERIO</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>BRASIL IMPERIO</pattern>
+    <template>
+  		Brasil Império, se passou entre o período que vai do ano de 1822 (quando o Brasil tornou-se independente) ao ano de 1889 (quando foi proclamada a República). Assim, está dividido em três partes: Primeiro Reinado, Período Regencial e Segundo Reinado.
+    </template>
+  </category>
+  <category>
+    <pattern>E O * REINADO</pattern>
+    <template>
+     <srai><star/> REINADO</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>SOBRE O * REINADO</pattern>
+    <template>
+     <srai><star/> REINADO</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>SOBRE * REINADO</pattern>
+    <template>
+     <srai><star/> REINADO</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>PRIMEIRO REINADO</pattern>
+    <template>
+	  	<br/>O Primeiro Reinado se passa desde o momento em que o Brasil deixou a condição de colônia, quando a família real portuguesa saiu de Portugal após o avanço das tropas napoleônicas sobre a Península Ibérica, entre os anos de 1807 e 1808. Nesse contexto, o Brasil foi alçado à condição de Reino Unido de Portugal e Algarves. A partir de 1808, portanto, teve início no Brasil uma intensa eferverscência política que foi pautada, sobretudo, pelas divergências entre portugueses (vindos com a Corte) e brasileiros, bem como entre liberais e conservadores (disputa interna entre os próprios brasileiros).
+		<br/>A situação política do Brasil só foi resolvida com a articulação e a instituição do Império. No início de 1820, quando começaram essas articulações, a América Latina e a Europa estavam passando por grandes reviravoltas. O modelo republicano era paulatinamente adotado pelos países vizinhos do Brasil. Ao longo do ano de 1821, os chamados “arquitetos” do império, como José Bonifácio de Andrada e Silva, passaram a tramar a adoção do modelo imperial no Brasil. Em 1822, D. Pedro, filho de D. João VI, optou por permanecer no Brasil e declarou o país independente de Portugal, tornando-se o primeiro imperador, sob o título de D. Pedro I.
+		<br/>As instituições do Império, entretanto, só foram efetivamente estabelecidas e regularizadas com a Carta Constitucional de 1824, ou, em outros termos, a Constituição de 1824. Uma das principais características do Império Brasileiro foi tecida nessa Constituição, isto é, o Poder Moderador, que consistia em um quarto poder que dava ao imperador a autoridade de apreciar a decisão dos outros poderes.
+    </template>
+  </category>
+  <category>
+    <pattern>E O PERIODO REGENCIAL</pattern>
+    <template>
+     <srai>PERIODO REGENCIAL</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>PERIODO REGENCIAL</pattern>
+    <template>
+		Período Regencial se passa quando D. Pedro I abdicou do trono, na década de 1830, em favor de seu filho, então com cinco anos de idade. Como a menoridade impedia o então herdeiro do trono de assumir o cargo de imperador, o governo do Brasil ficou sob a responsabilidade de regentes. A regências tiveram de articular uma nova configuração política para o Império, além de terem que enfrentar várias revoltas que eclodiram após a abdicação de D. Pedro I. Uma das manobras políticas mais ousadas da História do Brasil também foi efetuada no período da regência: o Golpe da Maioridade, em 1839, que tornou D. Pedro II imperador com apenas 14 anos de idade.
+    </template>
+  </category>
+  <category>
+    <pattern>SEGUNDO REINADO</pattern>
+    <template>
+		<br/>Segundo Reinado: foi o período mais longo da História Imperial, indo de 1839 a 1889. Nesse período, o Brasil passou por transformações de grande porte em todos os setores, desde o econômico até o cultural. Revoltas também ocorreram e exigiram uma habilidade de integração nacional muito forte por parte do imperador.
+		<br/>Além disso, os ânimos políticos também tomaram uma configuração intensa, sobretudo entre conservadores e liberais. Os movimentos republicano e abolicionista, associados às posições do exército, que também passaram a ser refratárias às do império, acabaram por gerar pressões múltiplas que culminaram no exílio de D. Pedro II e na consequente Proclamação da República.
+    </template>
+  </category>
+
+  <category>
+    <pattern>* SOBRE HISTORIA DO BRASIL</pattern>
+    <template>
+     <srai>HISTORIA DO BRASIL</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>COMO * INDEPENDENCIA * BRASIL</pattern>
+    <template>
+     <srai>INDEPENDENCIA DO BRASIL</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>INDEPENDENCIA DO BRASIL</pattern>
+    <template>
+     	A declaração de Independência foi dada pelo então príncipe regente Pedro I, que depois de dar o famoso Grito do Ipiranga, às margens do riacho Ipiranga, transformou o Brasil de colônia a país, e se tornou o primeiro Imperador do Brasil.
+    </template>
+  </category>
+
+  <category>
+    <pattern>* CAUSAS * INDEPENDENCIA</pattern>
+    <template>
+     <srai>CAUSAS DA INDEPENDENCIA</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>CAUSAS DA INDEPENDENCIA</pattern>
+    <template>
+<br/>- No final do século XVIII e início do XIX, aumentaram no Brasil as pressões e descontentamento contra o monopólio comercial imposto por Portugal ao Brasil. As elites agrária e comercial brasileira desejavam liberdade econômica para poder ampliar o comércio de seus produtos. Esta liberdade só seria obtida com a independência do país.
+<br/>- Desde a Inconfidência Mineira (1789) e outros movimentos sociais contrários ao domínio português sobre o Brasil, era muito grande a insatisfação com relação à cobrança de altas taxas e impostos exigidos pela metrópole (Portugal). Portanto, a independência era vista como uma forma de libertação destes impostos abusivos.
+<br/>- Influência de movimentos externos liberais e, portanto, contrários ao colonialismo. Entres estes movimentos políticos e sociais, podemos citar a Independência dos Estados Unidos (1776) e a Revolução Francesa (1789). Estes ideais chegaram ao Brasil, aumentando as pressões política contra o domínio português sobre o Brasil.
+<br/>- Após a Revolução Liberal do Porto, a corte portuguesa exigiu o retorno de D. João VI para Portugal. Dom Pedro ficou no Brasil como príncipe regente. Percebendo o aumento do movimento político no Brasil pela conquista da liberdade, a corte portuguesa passou a pressionar Dom Pedro para que ele também fosse para Portugal. Esta situação foi encarada no Brasil como uma tentativa de Portugal recolonizar o Brasil, gerando mais insatisfação e aumentando os anseios pela conquista da liberdade.
+<br/>- Não podemos deixar de citar também o projeto político de Dom Pedro em se tornar imperador do Brasil após a conquista da independência.
+    </template>
+  </category>
+
+
+  <category>
+    <pattern>HISTORIA</pattern>
+    <template>
+     Atualmente só tenho conhecimento de História do Brasil.
+    </template>
+  </category>
+  <category>
+    <pattern>VAMOS FALAR SOBRE *</pattern>
+    <template>
+     Vamos lá, vou responder o que eu conseguir sobre <star/>.
+    </template>
+  </category>
+  <category>
+    <pattern>EXPLIQUE *</pattern>
+    <template>
+     <srai><star/></srai>
+    </template>
+  </category>
+  <category>
+    <pattern>FALE SOBRE *</pattern>
+    <template>
+     <srai><star/></srai>
+    </template>
+  </category>
+</aiml>

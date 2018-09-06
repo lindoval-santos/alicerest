@@ -142,7 +142,8 @@ public class AliceBot
   public Response respond(String input, String topic, String that)
   {
 	String s = Normalizer.normalize(input, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
-    Response response = respond(new Request(s), topic, that);
+	String _that = Normalizer.normalize(that, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+    Response response = respond(new Request(s), topic, _that);
     return response;
   }
   

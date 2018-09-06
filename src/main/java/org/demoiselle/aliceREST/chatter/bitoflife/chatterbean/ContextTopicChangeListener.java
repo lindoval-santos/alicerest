@@ -14,12 +14,12 @@ You should have received a copy of the GNU General Public License along with Cha
 
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean;
 
+import static org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Sentence.ASTERISK;
+
 import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
+
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Sentence;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Transformations;
-
-import static org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Sentence.ASTERISK;
 
 /**
 Property change listener for the <code>predicate.topic</code> property. Updates the Context with the new Topic value.

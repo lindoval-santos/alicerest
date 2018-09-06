@@ -14,10 +14,7 @@ You should have received a copy of the GNU General Public License along with Cha
 
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import static org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.util.Escaper.escapeRegex;
 
 public class Substitution
 {
