@@ -2,12 +2,6 @@
 $(document).ready(function (){
 
     $('#enviar').on('click', function(){
-    	
-    function debug(msg){
-    	$("#spandebug").html(msg);;
-    }
-    
-    debug('Iniciando');
     
     var _that = $('#that').val();
     var _topic = $('#topic').val();
@@ -19,10 +13,7 @@ $(document).ready(function (){
     
     var apiURL;
     
-    //if(isDebugging())
-    //  apiURL = 'bot/query/ask/';
-    //else
-      apiURL = 'bot/query/ask/';	
+    apiURL = 'bot/query/ask/';	
 
     
     input = input.replace("?","");
@@ -37,8 +28,6 @@ $(document).ready(function (){
     _topic = _topic.replace("/","");
     _topic = _topic.replace("!","");    
     
-    debug('realizou todos os replaces');
-    
     _that = (_that == "undefined" || _that == '' || _that == "")?"*":_that;
     _topic = (_topic == "undefined" || _topic == '')?"*":_topic;
     
@@ -47,19 +36,11 @@ $(document).ready(function (){
     _that = _that.replace("*","%2A");
     _topic = _topic.replace("*","%2A");
     
-    debug('input: '+input+'|'+_that+'|'+_topic);
-    
     apiURL = apiURL + input + '/' + _that + '/' + _topic;
-
     var send = apiURL;
-    
-    debug(send);
     
     $.ajax({
     		url: send,
-	        //url: 'http://alice-alicebot.a3c1.starter-us-west-1.openshiftapps.com/alicerest/bot/query/ask/' + input + '/*/*',
-	        //url: 'http://10.32.96.210:8080/alicerest/bot/query/ask/' + input + '/' + that + '/' + topic,
-        	//data:tmp,
 		    contentType: "application/json; charset=utf-8",
 		    dataType: 'json',
 		    type:'GET',
@@ -76,20 +57,22 @@ $(document).ready(function (){
 function mostrar(data){
 	var questao = "";
 	var resposta = "";
+	var t;
 	var output = $("<div class='output'/>");
 
-    function debug(msg){
-    	$("#spandebug").html(msg);;
-    }
-	
-	debug('Retornou sucesso, valores: '+data.questao+'--'+data.conteudo+'--'+data.that+'--'+data.topic);
 	questao = data.questao;
     resposta = data.conteudo;
     
-    if (matches(data.that,[">","<","/"], "OR"))
+    questao = questao.replace('<', '').replace('>','').replace('/', '');
+    t = data.that;
+    
+    t = t.replace('?','');
+    
+    if (matches(t,[">","<","/"], "OR"))
       $('#that').val("#");
     else
-      $('#that').val(data.that);
+      $('#that').val(t);
+    
     $('#topic').val(data.topic);
     
 	var clickableDiv = $("<div class='inputDiv'>"+new Date().toLocaleString()+"<br/>Questão: " + questao + "</div>");
@@ -109,16 +92,9 @@ function mostrar(data){
 	//$('#mainOutput').prepend(output);
 	$('#questao').val('');
 	$('#questao').focus();
-	debug('terminou de renderizar a resposta');
 }
  
 function erro(input){
-	
-	    function debug(msg){
-	    	$("#spandebug").html(msg);;
-	    }
-	
-		debug('Erro inicio');
 		
 		var _questao = "";
 		var output = $("<div class='output'/>");
@@ -127,21 +103,23 @@ function erro(input){
 		var clickableDiv = $("<div class='inputDiv'>"+new Date().toLocaleString()+"<br/>Questão: " + _questao + "</div>");
 	    //clickableDiv.addClass('clickable');
 	    output.append(clickableDiv);
-	    debug('Erro meio');
+
 	    var tag = $("<span/>");
-		tag.html('Ocorreu um erro ao processar: ' + input);
+	    var p = $("<p/>");
+	    p.css("text-align", "justify").html('Ocorreu um erro ao processar: ' + input);
+	    
+	    tag.append(p);
 		output.append(tag);
 
 		$('#mainOutput').append(output);
-		//$('#mainOutput').prepend(output);
+
 		input = '';
-		debug('Erro fim');
 	}
  
-function isDebugging() {
+/*function isDebugging() {
     if (document.location.hostname == "l" || document.location.hostname == "0.0.0.0") return true;
     return document.location.hostname == "localhost" || document.location.hostname == "127.0.0.1";
-}
+}*/
 
 function scrollDown(){
 	 $("#mainOutput").animate({ scrollTop: $('#mainOutput').prop("scrollHeight")}, 1000);

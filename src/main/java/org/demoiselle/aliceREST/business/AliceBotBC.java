@@ -40,7 +40,7 @@ public class AliceBotBC
 		that = that.endsWith(".") && that.length() >= 1?that.substring(0,that.length()-1):that;
 		that = Normalizer.normalize(that, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
 		that = that.toUpperCase();
-		s = s.replace("&lt;br&gt;", "<br>");
+		s = s.replace("&lt;br&gt;", "<br>").replace("&lt;b&gt;", "<b>").replace("&lt;&#47;b&gt;", "</b>");
 		Resposta r = new Resposta(topic, that, q.getQuestao(),s);
 		return r;
 	}

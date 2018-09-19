@@ -15,8 +15,11 @@ You should have received a copy of the GNU General Public License along with Cha
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml;
 
 import java.text.SimpleDateFormat;
-import org.xml.sax.Attributes;
+import java.util.GregorianCalendar;
+import java.util.Locale;
+
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.Match;
+import org.xml.sax.Attributes;
 
 public class Date extends TemplateElement
 {
@@ -24,7 +27,7 @@ public class Date extends TemplateElement
   Attributes
   */
   
-  private final SimpleDateFormat format = new SimpleDateFormat();
+  //private final SimpleDateFormat format = new SimpleDateFormat();
 
   /*
   Constructors
@@ -51,8 +54,14 @@ public class Date extends TemplateElement
   {
     try
     {
-      format.applyPattern((String) match.getCallback().getContext().property("predicate.dateFormat"));
-      return format.format(new java.util.Date());
+      String form = (String)match.getCallback().getContext().property("predicate.dateFormat");
+      Locale locale = new Locale("pt","BR");  
+      if (form == null || "".equals(form)){
+    	  form = "dd-MM-yyyy HH:mm:ss";
+      }
+      SimpleDateFormat format = new SimpleDateFormat(form, locale);
+      GregorianCalendar calendar = new GregorianCalendar();
+      return format.format(calendar.getTime());
     }
     catch (NullPointerException e)
     {

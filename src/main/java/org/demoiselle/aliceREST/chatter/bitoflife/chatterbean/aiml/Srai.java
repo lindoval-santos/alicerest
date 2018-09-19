@@ -55,7 +55,7 @@ public class Srai extends TemplateElement
     }
     catch (Exception e)
     {
-      throw new RuntimeException("While trying to respond \"" + request + "\"", e);
+      throw new RuntimeException("Tentando recursão com srai com a questão \"" + request + "\"", e);
     }
   }
   

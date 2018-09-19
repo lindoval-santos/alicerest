@@ -168,8 +168,19 @@ public class Context
       File file = new File(path);
       if (file.isDirectory())
         path = file.getPath() + "/gossip-" + id() + ".txt";
-  
-      outputStream(new FileOutputStream(path));
+      try{
+            outputStream(new FileOutputStream(path));
+      }catch (IOException IO){
+    	  String sd = System.getProperty("user.dir") + "/LogAliceBot/";
+    	  String sf = "gossip-" + id() + ".txt";
+    	  File fd = new File(sd);
+    	  if (!fd.exists())
+    		  fd.mkdir();
+    	  File f = new File(sd+sf);
+    	  if(!f.exists())
+    		  f.createNewFile();
+    	  outputStream(new FileOutputStream(f,true));
+      }
     }
     
     return output;

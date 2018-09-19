@@ -2,13 +2,45 @@
 
 <aiml>
   <category>
+    <pattern>HISTORIA</pattern>
+    <template>
+     Atualmente só tenho conhecimento de História do Brasil.
+    </template>
+  </category>
+  <category>
+    <pattern>VAMOS FALAR SOBRE *</pattern>
+    <template>
+     Vamos lá, vou responder o que eu conseguir sobre <b><star/></b>.
+    </template>
+  </category>
+  <category>
+    <pattern>EXPLIQUE *</pattern>
+    <template>
+     <srai><star/></srai>
+    </template>
+  </category>
+  <category>
+    <pattern>FALE SOBRE *</pattern>
+    <template>
+     <srai><star/></srai>
+    </template>
+  </category>
+
+  <category>
     <pattern>HISTORIA DO BRASIL</pattern>
     <template>
-  		A História do Brasil é dividida, consensualmente e para fins didáticos, em três períodos principais: Período Colonial, Período Imperial e Período Republicano.
+  		A História do Brasil é dividida, consensualmente e para fins didáticos, em três períodos 
+  		principais: Período Colonial, Período Imperial e Período Republicano.
     </template>
   </category>
   <category>
     <pattern>* PERIODO COLONIAL</pattern>
+    <template>
+     <srai>PERIODO COLONIAL</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>O PERIODO COLONIAL</pattern>
     <template>
      <srai>PERIODO COLONIAL</srai>
     </template>
@@ -36,13 +68,19 @@
     </template>
   </category>
   <category>
+    <pattern>O QUE FOI O PERIODO IMPERIAL *</pattern>
+    <template>
+     <srai>BRASIL IMPERIO</srai>
+    </template>
+  </category>
+  <category>
     <pattern>PERIODO IMPERIAL</pattern>
     <template>
      <srai>BRASIL IMPERIO</srai>
     </template>
   </category>
   <category>
-    <pattern>O QUE FOI O PERIODO IMPERIAL *</pattern>
+    <pattern>O PERIODO IMPERIAL</pattern>
     <template>
      <srai>BRASIL IMPERIO</srai>
     </template>
@@ -56,7 +94,8 @@
   <category>
     <pattern>BRASIL IMPERIO</pattern>
     <template>
-  		Brasil Império, se passou entre o período que vai do ano de 1822 (quando o Brasil tornou-se independente) ao ano de 1889 (quando foi proclamada a República). Assim, está dividido em três partes: Primeiro Reinado, Período Regencial e Segundo Reinado.
+  		Brasil Império, se passou entre o período que vai do ano de 1822 (quando o Brasil tornou-se independente) ao ano de 1889 (quando foi proclamada a República). 
+  		Assim, está dividido em três partes: Primeiro Reinado, Período Regencial e Segundo Reinado.
     </template>
   </category>
   <category>
@@ -86,6 +125,19 @@
     </template>
   </category>
   <category>
+    <pattern>SEGUNDO REINADO</pattern>
+    <template>
+		<br/>Segundo Reinado: foi o período mais longo da História Imperial, indo de 1839 a 1889. Nesse período, o Brasil passou por transformações de grande porte em todos os setores, desde o econômico até o cultural. Revoltas também ocorreram e exigiram uma habilidade de integração nacional muito forte por parte do imperador.
+		<br/>Além disso, os ânimos políticos também tomaram uma configuração intensa, sobretudo entre conservadores e liberais. Os movimentos republicano e abolicionista, associados às posições do exército, que também passaram a ser refratárias às do império, acabaram por gerar pressões múltiplas que culminaram no exílio de D. Pedro II e na consequente Proclamação da República.
+    </template>
+  </category>
+  <category>
+    <pattern>O PERIODO REGENCIAL</pattern>
+    <template>
+     <srai>PERIODO REGENCIAL</srai>
+    </template>
+  </category>
+  <category>
     <pattern>E O PERIODO REGENCIAL</pattern>
     <template>
      <srai>PERIODO REGENCIAL</srai>
@@ -98,20 +150,55 @@
     </template>
   </category>
   <category>
-    <pattern>SEGUNDO REINADO</pattern>
+    <pattern>E O PERIODO REPUBLICANO</pattern>
     <template>
-		<br/>Segundo Reinado: foi o período mais longo da História Imperial, indo de 1839 a 1889. Nesse período, o Brasil passou por transformações de grande porte em todos os setores, desde o econômico até o cultural. Revoltas também ocorreram e exigiram uma habilidade de integração nacional muito forte por parte do imperador.
-		<br/>Além disso, os ânimos políticos também tomaram uma configuração intensa, sobretudo entre conservadores e liberais. Os movimentos republicano e abolicionista, associados às posições do exército, que também passaram a ser refratárias às do império, acabaram por gerar pressões múltiplas que culminaram no exílio de D. Pedro II e na consequente Proclamação da República.
+     <srai>PERIODO REPUBLICANO</srai>
     </template>
   </category>
-
   <category>
-    <pattern>* SOBRE HISTORIA DO BRASIL</pattern>
+    <pattern>O PERIODO REPUBLICANO</pattern>
     <template>
-     <srai>HISTORIA DO BRASIL</srai>
+     <srai>PERIODO REPUBLICANO</srai>
     </template>
   </category>
-  
+  <category>
+    <pattern>PERIODO REPUBLICANO</pattern>
+    <template>
+	  Brasil República se passa no arco temporal de 1889 até os dias de hoje.
+      A chamada República Velha, que se estendeu de 1889 a 1930, dividiu-se em duas fases: 
+      a República da Espada e a República dos Oligarcas.	  
+    </template>
+  </category>
+  <category>
+    <pattern>A REPUBLICA DA ESPADA</pattern>
+    <template>
+     <srai>REPUBLICA DA ESPADA</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>E A REPUBLICA DA ESPADA</pattern>
+    <template>
+     <srai>REPUBLICA DA ESPADA</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>REPUBLICA DA ESPADA</pattern>
+    <template>  
+  	 A República da espada corresponde ao período que se estendeu da Proclamação (no dia 15 de novembro de 1889) até o ano de 1894, 
+  	 quando terminou o governo de Floriano Peixoto. O termo “espada” aplicado a essa fase faz menção ao fato de que os dois primeiros 
+  	 presidentes da república (antes de Floriano, tivemos Deodoro da Fonseca) eram militares e exerceram governos autoritários.
+    </template>
+  </category>  
+  <category>
+    <pattern>REPUBLICA DOS OLIGARCAS</pattern>
+    <template>  
+  	 A dos Oligarcas começou com o primeiro governo civil, o de Prudente de Moraes, e teve fim em 1930, 
+  	 com a saída de Washington Luís do poder. Essa faze recebeu a alcunha de “República dos Oligarcas” 
+  	 em razão das tramas e conchavos estabelecidos entre as elites (oligarquias) regionais do Brasil. Foi nessa fase que o Brasil passou por dois eventos de envergadura internacional: a Primeira Guerra Mundial e a Crise de 1929.
+    </template>
+  </category>
+ 
+    
   <category>
     <pattern>COMO * INDEPENDENCIA * BRASIL</pattern>
     <template>
@@ -143,29 +230,4 @@
     </template>
   </category>
 
-
-  <category>
-    <pattern>HISTORIA</pattern>
-    <template>
-     Atualmente só tenho conhecimento de História do Brasil.
-    </template>
-  </category>
-  <category>
-    <pattern>VAMOS FALAR SOBRE *</pattern>
-    <template>
-     Vamos lá, vou responder o que eu conseguir sobre <star/>.
-    </template>
-  </category>
-  <category>
-    <pattern>EXPLIQUE *</pattern>
-    <template>
-     <srai><star/></srai>
-    </template>
-  </category>
-  <category>
-    <pattern>FALE SOBRE *</pattern>
-    <template>
-     <srai><star/></srai>
-    </template>
-  </category>
 </aiml>

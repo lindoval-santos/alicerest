@@ -44,7 +44,7 @@ public class AliceBotREST {
 		}catch(Exception e)
 		{
 			e.printStackTrace();
-			Resposta resp = new Resposta(topic.trim(), that, "Ocorreu um erro, favor recarregar a página para reiniciar.",questao);
+			Resposta resp = new Resposta(topic.trim(), that, questao, "Ocorreu um erro, favor recarregar a página para reiniciar.");
 			return Response.ok().entity(resp).build();
 		}
 		return Response.ok().entity(r).build();

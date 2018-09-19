@@ -14,8 +14,6 @@ You should have received a copy of the GNU General Public License along with Cha
 
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean;
 
-import java.io.ByteArrayOutputStream;
-
 import org.demoiselle.aliceREST.business.AliceBotBC;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.parser.AliceBotParser;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.util.Searcher;
@@ -31,7 +29,7 @@ public class AliceBotMother
   public static String PATH_SUBSTITUTIONS = "";
   public static String PATH_BRAINBASE = "";
   	
-  private ByteArrayOutputStream gossip;
+  //private ByteArrayOutputStream gossip;
   
   //@Inject
  //private ResourceBundle b;
@@ -48,7 +46,7 @@ public class AliceBotMother
   
   public void setUp(String tipoExecucao)
   {
-    gossip = new ByteArrayOutputStream();
+    //gossip = new ByteArrayOutputStream();
 //    if ("T".equals(tipoExecucao.toUpperCase()))
 //    	recurso = "test";
 //    else
@@ -67,10 +65,10 @@ public class AliceBotMother
 //	  return b;
 //  }
   
-  public String gossip()
+/*  public String gossip()
   {
     return gossip.toString();
-  }
+  }*/
   
   public void loadConfig(){
 	  AliceBotBC bc = new AliceBotBC();
@@ -96,8 +94,8 @@ public class AliceBotMother
             getClass().getResourceAsStream(PATH_SUBSTITUTIONS),
             searcher.search(PATH_BRAINBASE, ".*\\.aiml"));
     
-    Context context = bot.getContext(); 
-    context.outputStream(gossip);
+    //Context context = bot.getContext(); 
+    //context.outputStream(gossip);
     return bot;
   }
 }

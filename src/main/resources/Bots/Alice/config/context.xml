@@ -5,7 +5,7 @@
   <bot name="id" value="Alice"/>
 
   <!-- Bot predicates are set at load time, and cannot be changed at runtime. -->
-  <bot name="output" value="Logs/gossip.txt"/>
+  <bot name="output" value="/LogAliceBot/"/>
   <bot name="randomSeed" value="1"/>
   <bot name="series" value="Alpha"/>
   <bot name="version" value="1.0"/>
