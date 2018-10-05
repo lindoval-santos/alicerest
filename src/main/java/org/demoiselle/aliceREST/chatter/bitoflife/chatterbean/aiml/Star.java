@@ -14,10 +14,10 @@ You should have received a copy of the GNU General Public License along with Cha
 
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml;
 
-import org.xml.sax.Attributes;
-import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.Match;
-
 import static org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.Match.Section.PATTERN;
+
+import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.Match;
+import org.xml.sax.Attributes;
 
 public class Star extends TemplateElement
 {

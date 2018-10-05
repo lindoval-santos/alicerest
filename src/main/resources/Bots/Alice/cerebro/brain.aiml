@@ -9556,7 +9556,7 @@ de governo com oferta de produtos diversificados.
     <template>
      Me desculpe, ainda não aprendi sobre "<star/>". 
      Faça uma pesquisa externa com <a pesquisar="true" href="https://www.google.com.br/search?q="><star/></a>
-     <gossip>não consegui responder: "<star/>"</gossip>
+     <gossip><date/> - não consegui responder: "<star/>"</gossip>
      </template>
   </category>
 </aiml>

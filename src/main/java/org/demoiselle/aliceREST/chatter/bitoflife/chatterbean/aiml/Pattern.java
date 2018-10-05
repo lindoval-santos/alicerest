@@ -14,13 +14,10 @@ You should have received a copy of the GNU General Public License along with Cha
 
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml;
 
-import java.lang.System;
 import java.util.Arrays;
 import java.util.List;
+import java.lang.System;
 import org.xml.sax.Attributes;
-
-import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.AliceBot;
-import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Sentence;
 
 public class Pattern implements AIMLElement
 {

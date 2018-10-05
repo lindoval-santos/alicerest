@@ -17,11 +17,12 @@ package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import org.xml.sax.Attributes;
+
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.AliceBot;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.Context;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.Match;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Response;
+import org.xml.sax.Attributes;
 
 public class That extends TemplateElement
 {

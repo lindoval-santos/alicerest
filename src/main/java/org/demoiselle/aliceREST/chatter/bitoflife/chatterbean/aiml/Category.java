@@ -14,10 +14,11 @@ You should have received a copy of the GNU General Public License along with Cha
 
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml;
 
-import java.lang.System;
 import java.util.List;
-import org.xml.sax.Attributes;
+
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.Match;
+import org.xml.sax.Attributes;
+import java.lang.System;
 
 public class Category implements AIMLElement
 {

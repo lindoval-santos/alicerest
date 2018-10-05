@@ -15,7 +15,8 @@ import javax.ws.rs.core.Application;
 @ApplicationPath("bot")
 public class Api extends Application {
 
-	public static final String DESCRIPTION = "As `APIs de Chat` são serviços que estão expostos através de `HTTP REST` com suporte a Cross-Domain oferecendo operações que permitem as aplicações realizarem diálogos com um Bot.";
+	public static final String DESCRIPTION = "As `APIs de Chat` são serviços que estão expostos através de `HTTP REST` " +
+											 "com suporte a Cross-Domain oferecendo operações que permitem as aplicações realizarem diálogos com um Bot.";
 
 	public Api() {
 		BeanConfig beanConfig = new BeanConfig();

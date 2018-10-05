@@ -14,13 +14,14 @@ You should have received a copy of the GNU General Public License along with Cha
 
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text;
 
+import static org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.util.Escaper.escapeRegex;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.config.TokenizerConfig;
 
-import static org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.util.Escaper.escapeRegex;
+import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.config.TokenizerConfig;
 
 public class Tokenizer
 {

@@ -17,6 +17,7 @@ package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+
 import org.xml.sax.Attributes;
 
 public class Aiml implements AIMLElement

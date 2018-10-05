@@ -21,6 +21,12 @@ public class AliceBotBC
     private ConfigDAO dao = new ConfigDAO();
   
     private AliceBot bot;
+    
+    final String PAGE_ACCESS_TOKEN = "EAAPWgwdUPr4BAMZBl3PY32XRt6ZAgidRExe10LLXNUDs6ufr17Td6EKvvx5CnAVAQxPnRg7n13LjjO8nvpMfkCeD27ZBgZC6c9OgLkCIZB7IDS79COFHo5ayY9YeiW9W6uYUbaud5DAidoW9XVOmQtjEpIAb90LEoJAWE4GVYI8gkiaK39YTg";
+    
+    public String getFbAccessToken(){
+    	return PAGE_ACCESS_TOKEN;
+    }
 	
 	public void setUp() throws Exception{
       if (bot == null){

@@ -17,12 +17,14 @@ package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.config;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+
+import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Tokenizer;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Tokenizer;
 
 public class TokenizerConfigStream extends DefaultHandler implements TokenizerConfig
 {

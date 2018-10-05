@@ -15,6 +15,7 @@ You should have received a copy of the GNU General Public License along with Cha
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text;
 
 import java.io.FileInputStream;
+
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.parser.TransformationsParser;
 
 public class TransformationsMother

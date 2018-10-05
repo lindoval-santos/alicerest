@@ -1,11 +1,5 @@
 package org.demoiselle.aliceREST.persistence;
 
-import java.util.List;
-
-import javax.persistence.TypedQuery;
-
-import org.demoiselle.aliceREST.entity.Bookmark;
-import br.gov.frameworkdemoiselle.stereotype.PersistenceController;
 //import br.gov.frameworkdemoiselle.template.JPACrud;
 
 //@PersistenceController

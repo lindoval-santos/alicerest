@@ -14,11 +14,11 @@ You should have received a copy of the GNU General Public License along with Cha
 
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml;
 
-import org.xml.sax.Attributes;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.AliceBot;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.Context;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.Match;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.script.Interpreter;
+import org.xml.sax.Attributes;
 
 public class Javascript extends TemplateElement
 {

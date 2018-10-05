@@ -15,7 +15,6 @@ You should have received a copy of the GNU General Public License along with Cha
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.util;
 
 import java.io.File;
-import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.util.Sequence;
 
 public class SequenceMother
 {

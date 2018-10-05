@@ -14,12 +14,13 @@ You should have received a copy of the GNU General Public License along with Cha
 
 package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.parser;
 
+import static org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.util.Escaper.escapeRegex;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import org.xml.sax.Attributes;
 
-import static org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.util.Escaper.escapeRegex;
+import org.xml.sax.Attributes;
 
 public class SubstitutionBuilder implements ReflectionBuilder
 {

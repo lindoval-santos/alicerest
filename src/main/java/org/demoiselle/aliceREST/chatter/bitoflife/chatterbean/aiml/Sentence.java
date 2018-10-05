@@ -16,8 +16,9 @@ package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.xml.sax.Attributes;
+
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.Match;
+import org.xml.sax.Attributes;
 
 public class Sentence extends TemplateElement
 {

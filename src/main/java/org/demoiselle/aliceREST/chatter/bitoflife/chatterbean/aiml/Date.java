@@ -17,6 +17,7 @@ package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+import java.util.TimeZone;
 
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.Match;
 import org.xml.sax.Attributes;
@@ -60,7 +61,9 @@ public class Date extends TemplateElement
     	  form = "dd-MM-yyyy HH:mm:ss";
       }
       SimpleDateFormat format = new SimpleDateFormat(form, locale);
-      GregorianCalendar calendar = new GregorianCalendar();
+      TimeZone tz = TimeZone.getTimeZone("America/Sao_Paulo");
+      TimeZone.setDefault(tz);
+      GregorianCalendar calendar = new GregorianCalendar(tz);
       return format.format(calendar.getTime());
     }
     catch (NullPointerException e)
