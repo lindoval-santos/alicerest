@@ -139,6 +139,7 @@ public class AliceBotREST {
 	@Consumes("application/json")
 	@ApiOperation(value = "Responde a chamada do facebook com o código 200 caso seja a chama de uma página", notes = "Para ser chamado pelo facebook")
 	public Response fbwebhookPost(String str) throws Exception {
+		System.out.println("requisição POST recebida: " + str);
 		JsonElement jelement = new JsonParser().parse(str);
 		JsonObject  body = jelement.getAsJsonObject();
 
@@ -181,6 +182,7 @@ public class AliceBotREST {
 								 @QueryParam("hub.challenge") String challenge
 								) throws Exception {
 		Hub hub = new Hub(mode,verify_token,challenge);
+		System.out.println("requisição GET recebida: " + hub.toString());
 		if ("".equals(hub.getMode()) || "".equals(hub.getVerify_token()))
 			throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST)
 					.entity("Erro nos parâmetros.").build());
