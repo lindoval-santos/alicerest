@@ -204,6 +204,7 @@ public class AliceBotREST {
 			HttpEntity entity = new ByteArrayEntity(
 					jsonEnvio.getBytes("UTF-8"));
 			httppost.setEntity(entity);
+			httppost.setHeader("Content-Type","application/json");
 			HttpResponse response = client.execute(httppost);
 			String result = EntityUtils.toString(response.getEntity());
 			System.out.println("Enviou a resposta: " + message.getText());
@@ -248,6 +249,7 @@ public class AliceBotREST {
 			HttpEntity entity = new ByteArrayEntity(
 					s.getBytes("UTF-8"));
 			httppost.setEntity(entity);
+			httppost.setHeader("Content-Type","application/json");
 			HttpResponse response = client.execute(httppost);
 			String result = EntityUtils.toString(response.getEntity());
 			System.out.println("Marcado como lida: " + s);
