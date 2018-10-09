@@ -89,5 +89,10 @@ public class FbMessage {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "FbMessage [mid=" + mid + ", text=" + text + "]";
+	}
 	
 }

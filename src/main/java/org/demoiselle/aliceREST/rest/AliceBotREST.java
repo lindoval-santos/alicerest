@@ -163,11 +163,13 @@ public class AliceBotREST {
 		String questao = objMensagem.get("text").getAsString();
 		String cliente = sender.get("id").getAsString();
 		
+		marcarComoLida(cliente);
+		
 		FbMessage resposta = new FbMessage();
 		String mensagemProcessada = this.responderParaFB(questao);
 		resposta.setText(mensagemProcessada);
 		
-		responderFB(cliente, resposta);
+		enviarRespostaFB(cliente, resposta);
 		
 		return Response.ok().entity("EVENT_RECEIVED").build();
 	}
@@ -193,10 +195,11 @@ public class AliceBotREST {
 		return r;
 	}
 	
-	private void responderFB(String senderId, FbMessage message) {
+	private void enviarRespostaFB(String senderId, FbMessage message) {
 
 		FBMessageResponse envio = montaRespostaFB(senderId, message);
 		String jsonEnvio = new Gson().toJson(envio);
+		System.out.println("json de resposta: " + jsonEnvio);
 		try {
 			HttpEntity entity = new ByteArrayEntity(
 					jsonEnvio.getBytes("UTF-8"));
@@ -233,6 +236,28 @@ public class AliceBotREST {
 		{
 			e.printStackTrace();
 			return "Ocorreu um erro, favor recarregar a página para reiniciar.";
+		}
+	}
+	
+	private void marcarComoLida(String mId){
+		String s = "{\"recipient\":{ " +
+			       "\"id\":\""+ mId +"\"}," +
+			       "\"sender_action\":\"mark_seen\"}"; 
+
+		try {
+			HttpEntity entity = new ByteArrayEntity(
+					s.getBytes("UTF-8"));
+			httppost.setEntity(entity);
+			HttpResponse response = client.execute(httppost);
+			String result = EntityUtils.toString(response.getEntity());
+			System.out.println("Marcado como lida: " + s);
+			System.out.println("resultado de marcado como lida:"+result);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 	
