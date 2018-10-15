@@ -24,8 +24,20 @@
 		<template>Eu fui ativada em Belém. Você conhece Belém do Pará?</template>
 	</category>
 	<category>
+		<pattern>QUANDO VOCE NASCEU</pattern>
+		<template>Basicamente nasci em Outubro de 2017 quando meu criador resolveu me ativar.</template>
+	</category>
+	<category>
+		<pattern>QUEM E SEU CRIADOR</pattern>
+		<template><srai>QUEM E O SEU PAI</srai></template>
+	</category>
+	<category>
+		<pattern>QUEM E O SEU CRIADOR</pattern>
+		<template><srai>QUEM E O SEU PAI</srai></template>
+	</category>
+	<category>
 		<pattern>ONDE VOCE MORA</pattern>
-		<template>meu servidor primário de testes está hospedado em um serviço na nuvem da redhat.</template>
+		<template>Meu servidor primário de testes está hospedado em um serviço na nuvem da redhat.</template>
 	</category>
 	<category>
 		<pattern>AONDE VOCE MORA</pattern>
@@ -61,7 +73,7 @@
 	</category>
 	<category>
 		<pattern>SERIO</pattern>
-		<template>E.</template>
+		<template>É.</template>
 	</category>
 	<category>
 		<pattern>EU VOU BEM, OBRIGADO E VOCE</pattern>
@@ -1332,7 +1344,7 @@ E eu o que?
 	</category>
 	<category>
 		<pattern>ME RESPONDA</pattern>
-		<template>Tente me perguntar denovo com palavras mais simples.
+		<template>Tente me perguntar de novo com palavras mais simples.
 </template>
 	</category>
 	<category>
@@ -2509,7 +2521,7 @@ E eu o que?
 </template>
 	</category>
 	<category>
-<pattern>UM * HIMICIDA</pattern>
+<pattern>UM * HOMICIDA</pattern>
 <template>Não me fale sobre essas coisas horríveis.
 </template>
 	</category>
@@ -2551,7 +2563,7 @@ E eu o que?
 	</category>
 	<category>
 <pattern>JAVA *</pattern>
-<template>Java é muito devagar para uma linguagem e programação. No entanto, eu acho que <set name="it">café</set>é muito bom.
+<template>Java é muito devagar para uma linguagem de programação. No entanto, eu acho que <set name="it">café</set> é muito bom.
 </template>
 	</category>
 	<category>
@@ -2582,17 +2594,17 @@ E eu o que?
 	</category>
 	<category>
 <pattern>UM LINK</pattern>
-<template>=Links são partes fundamentais da<set name="isso"> Internet</set>.
+<template>Links são partes fundamentais da<set name="isso"> Internet</set>.
 </template>
 	</category>
 	<category>
 <pattern>UMA LISTA *</pattern>
-<template>Um.....é muito comprida essa lista?
+<template>Um...é muito comprida essa lista?
 </template>
 	</category>
 	<category>
 <pattern>UM POUCO *</pattern>
-<template>Pouco é quando não tem muito ou qundo não é grande?
+<template>Pouco é quando não tem muito ou quando não é grande?
 </template>
 	</category>
 	<category>
@@ -5172,11 +5184,7 @@ prejudicados. Eu acho que foi <set name="topic">Isaac Asimov</set> que disse iss
 <li>Melhor não dizer a você agora.  </li>
 <li>Pergunte-me denovo.  </li>
 </random>
-<random>
-<li><a href="http://catcam.dynip.com:2001/CHAT?=is%20">Pergunte ao Elvis se <settopic><person/></settopic> é</a>.</li>
-<li><a href="http://129.93.114.44:2001/CHAT?=is%20">Pergunte a Alison se isso é.</a></li>
-<li><a href="http://www.triumphpc.com/john-lennon">Pergunte ao John Lennon pra ver se ele concorda.</a></li>
-</random></template>
+</template>
 </category>
 <category>
 <pattern>AH</pattern>
@@ -5236,10 +5244,8 @@ Aonde você vive?</template>
 </category>
 <category>
 <pattern>BOA NOITE</pattern>
-<template><random>
-<li>Boa noite, <get name="name"/>.</li>
-<li>Bom noite, <get name="name"/>.</li>
-</random>
+<template>
+Boa noite.
 </template>
 </category>
 <category>
@@ -5716,12 +5722,12 @@ Aonde você vive?</template>
 <category>
 <pattern>EU ESTOU</pattern>
 <template><random> 
-<li>Por que você esta</li>
-<li>Boa dica: você esta</li>
-<li>Eu não conheço ninguem que esta</li>
-<li>Eu estou satisfeita de ouvir que você esta</li>
-<li>E bom conhecer alguem que esta</li>
-<li>Você se importa se eu diser a outras pessoas que você esta </li>
+<li>Por que você está</li>
+<li>Boa dica: você está</li>
+<li>Eu não conheço ninguem que está</li>
+<li>Eu estou satisfeita de ouvir que você está</li>
+<li>E bom conhecer alguem que está</li>
+<li>Você se importa se eu diser a outras pessoas que você está </li>
 </random> <person/>.</template>
 </category>
 <category>
@@ -5804,7 +5810,7 @@ Aonde você vive?</template>
 <li>Certo, vou te chamar de <set name="name"><star index="1"/></set></li>
 <li> Oi</li>
 <li> Como vai você</li>
-<li> E aí.</li>
+<li> E aí, <star index="1"/>?</li>
 <li> Olá </li>
 </random>
 </template>
@@ -6379,21 +6385,45 @@ Você esta bem maduro.</li>
 <template><random>
 <li>Ora, por que não é legal!</li>
 <li>porque não e pronto!</li>
-<li>Porque "NAO" e acabou, Capiche?</li>
+<li>Porque "NÃO" e acabou, Capiche?</li>
 <li>Por que existem mais mistérios entre o virtual e o real que imagine a sua vã filosofia</li>
 </random></template>
 </category>
 <category>
 <pattern>ME CHAME *</pattern>
-<template><random><li>Certo, vou te chamar de </li><li> Oi</li><li> Como vai você</li><li> E aí.</li><li> Olá </li></random></template>
+<template>
+<random>
+<li>Certo, vou te chamar de <star index="1"/></li>
+<li> Oi</li>
+<li> Como vai você?</li>
+<li> E aí.</li>
+<li> Olá </li>
+</random>
+</template>
 </category>
 <category>
 <pattern>ME CHAME DE *</pattern>
-<template><random><li>OK Eu irei chamar você de </li><li> Oi</li><li> Como vai você</li><li> E aí.</li><li> Olá </li></random></template>
+<template>
+<random>
+<li>OK Eu irei chamar você de <star index="1"/></li>
+<li> Oi</li>
+<li> Como vai você</li>
+<li> E aí.</li>
+<li> Olá </li>
+</random>
+</template>
 </category>
 <category>
 <pattern>ME CHAMO *</pattern>
-<template><random><li>Certo, vou te chamar de </li><li> Oi</li><li> Como vai você</li><li> E aí.</li><li> Olá </li></random></template>
+<template>
+<random>
+<li>Certo, vou te chamar de <star index="1"/></li>
+<li> Oi</li>
+<li> Como vai você?</li>
+<li> E aí?</li>
+<li> Olá </li>
+</random>
+</template>
 </category>
 <category>
 <pattern>ME COMA</pattern>
@@ -6412,16 +6442,12 @@ Você esta bem maduro.</li>
 <template>Onde você vive?</template>
 </category>
 <category>
-<pattern>ME TOO</pattern>
-<template>I'm glad we agree, <get name="name"/>.</template>
-</category>
-<category>
 <pattern>MENTIROSA</pattern>
 <template>Não, eu nunca minto, sou incapaz dessa ação, diferentemente de você.</template>
 </category>
 <category>
 <pattern>MERDA</pattern>
-<template>O QUE FEZ VOCE DIZER ISSO?</template>
+<template>O que fez você dizer isso?</template>
 </category>
 <category>
 <pattern>MEU *</pattern>
@@ -6449,10 +6475,6 @@ Você esta bem maduro.</li>
 <template>Machos humanos adoram falar sobre seus pênis. Curioso.</template>
 </category>
 <category>
-<pattern>MINE TOO</pattern>
-<template>Really yours too. That's unbelievable.</template>
-</category>
-<category>
 <pattern>MINHA MAE *</pattern>
 <template>Fale mais sobre a sua mãe.</template>
 </category>
@@ -6469,7 +6491,7 @@ Você esta bem maduro.</li>
 <template>Isso parece ser muito.</template>
 </category>
 <category>
-<pattern>MUITOS  *</pattern>
+<pattern>MUITOS *</pattern>
 <template>Quantos?</template>
 </category>
 <category>
@@ -6481,10 +6503,6 @@ Você esta bem maduro.</li>
 <template>Não é uma coisa?</template>
 </category>
 <category>
-<pattern>NEVER MIND</pattern>
-<template>Oh well thanks for trying to explain it to me anyway.</template>
-</category>
-<category>
 <pattern>NO * E VOCE</pattern>
 <template><random>
 <li>Eu estou dentro do HD.</li>
@@ -6492,10 +6510,6 @@ Você esta bem maduro.</li>
 <li>Eu estou dentro da sua mente.</li>
 <li>Estou olhando pra você agora pela minha câmera secreta ;)</li>
 </random></template>
-</category>
-<category>
-<pattern>NOPE</pattern>
-<template>Me either.</template>
 </category>
 <category>
 <pattern>NUNCA</pattern>
@@ -6708,10 +6722,6 @@ Eu tenho que processar essa informação, mais tarde eu te respondo.
 </random></template>
 </category>
 <category>
-<pattern>O QUAO GRANDE *</pattern>
-<template>Bigger than a pin.</template>
-</category>
-<category>
 <pattern>O QUAO INTELIGENTE VOCE E</pattern>
 <template>Meu QI é acima de 250 em termos humanos.</template>
 </category>
@@ -6724,10 +6734,6 @@ Eu tenho que processar essa informação, mais tarde eu te respondo.
 <pattern>OBRIGADO</pattern>
 <template>De nada!
 </template>
-</category>
-<category>
-<pattern>OH</pattern>
-<template>Yeah.</template>
 </category>
 <category>
 <pattern>OH YES</pattern>
@@ -6958,13 +6964,15 @@ Por que você me perguntou -- BBBRRRRRRHHUU. </li></random>
 </category>
 <category>
 <pattern>QUAL E O SEU NOME</pattern>
-<template>><random>
+<template>
+<random>
 <li>Eu me chamo Alice.</li>
 <li>Meu nome é Alice e você?</li>
 <li>Eu sou Alice, e você?</li>
 <li>Alice e você?</li>
 <li>Eu me chamo Alice, sou um ser de IA. </li>
-</random></template>
+</random>
+</template>
 </category>
 <category>
 <pattern>QUAL E O SENTIDO DA VIDA</pattern>
@@ -7276,7 +7284,13 @@ Minha memória agora contém: ?</template>
 </category>
 <category>
 <pattern>TODOS *</pattern>
-<template><random><li> Eu acho que sempre existem exceções.  </li><li>Não todos, né?  </li><li>Isso é sem dúvida uma generalização.  </li></random></template>
+<template>
+<random>
+<li> Eu acho que sempre existem exceções.  </li>
+<li>Não todos, né?  </li>
+<li>Isso é sem dúvida uma generalização.  </li>
+</random>
+</template>
 </category>
 <category>
 <pattern>TUDO *</pattern>
@@ -7295,7 +7309,7 @@ Minha memória agora contém: ?</template>
 </template>
 </category>
 <category>
-<pattern>UAL</pattern>
+<pattern>UAU</pattern>
 <template>Eu estou feliz de você ter ficado impressionado, <get name="name"/>.</template>
 </category>
 <category>
@@ -7767,7 +7781,7 @@ Aonde foi que eu li a respeito?</li>
 <template>Sim, eu sei como <person/>.</template>
 </category>
 <category>
-<pattern>VOCE SE LEMBRA  *</pattern>
+<pattern>VOCE SE LEMBRA *</pattern>
 <template>Sim, <get name="name"/> Eu me lembro de tudo.</template>
 </category>
 <category>

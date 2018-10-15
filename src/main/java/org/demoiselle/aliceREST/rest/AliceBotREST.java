@@ -164,12 +164,16 @@ public class AliceBotREST {
 		String cliente = sender.get("id").getAsString();
 		
 		marcarComoLida(cliente);
+		sinalizarEscrevendo(cliente);
 		
 		FbMessage resposta = new FbMessage();
 		String mensagemProcessada = this.responderParaFB(questao);
 		resposta.setText(mensagemProcessada);
 		
+		sinalizarParouEscrever(cliente);
+		
 		enviarRespostaFB(cliente, resposta);
+		
 		
 		return Response.ok().entity("EVENT_RECEIVED").build();
 	}
@@ -263,72 +267,51 @@ public class AliceBotREST {
 		}
 	}
 	
-/*	@GET
-	@Path("{id}")
-	@Produces("application/json")
-	public Bookmark load(@PathParam("id") Long id) throws Exception {
-		Bookmark result = bc.load(id);
+	private void sinalizarEscrevendo(String mId){
+		String s = "{\"recipient\":{ " +
+			       "\"id\":\""+ mId +"\"}," +
+			       "\"sender_action\":\"typing_on\"}"; 
 
-		if (result == null) {
-			throw new NotFoundException();
+		try {
+			HttpEntity entity = new ByteArrayEntity(
+					s.getBytes("UTF-8"));
+			httppost.setEntity(entity);
+			httppost.setHeader("Content-Type","application/json");
+			HttpResponse response = client.execute(httppost);
+			String result = EntityUtils.toString(response.getEntity());
+			System.out.println("Marcado como escrevendo: " + s);
+			System.out.println("resultado escrevendo:"+result);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-
-		return result;
 	}
+	
+	private void sinalizarParouEscrever(String mId){
+		String s = "{\"recipient\":{ " +
+			       "\"id\":\""+ mId +"\"}," +
+			       "\"sender_action\":\"typing_off\"}"; 
 
-	@POST
-//	@LoggedIn
-	@Transactional
-//	@ValidatePayload
-	@Produces("application/json")
-	@Consumes("application/json")
-	public Response insert(Bookmark body, @Context UriInfo uriInfo, @Context HttpHeaders headers) throws Exception {
-		
-        System.out.println("ALL headers -- "+ headers.getRequestHeaders().toString());
-        //System.out.println("'Accept' header -- "+ headers.getHeaderString("Accept"));
-        System.out.println("'TestCookie' value -- "+ headers.getCookies().get("TestCookie").getValue());
-		checkId(body);
-
-		String id = bc.insert(body).getId().toString();
-		URI location = uriInfo.getRequestUriBuilder().path(id).build();
-
-		return Response.created(location).entity(id).build();
-	}
-
-	@PUT
-//	@LoggedIn
-	@Path("{id}")
-	@Transactional
-//	@ValidatePayload
-	@Produces("application/json")
-	@Consumes("application/json")
-	public void update(@PathParam("id") Long id, Bookmark body) throws Exception {
-		checkId(body);
-		load(id);
-
-		body.setId(id);
-		bc.update(body);
-	}
-
-	@DELETE
-//	@LoggedIn
-	@Path("{id}")
-	@Transactional
-	public void delete(@PathParam("id") Long id) throws Exception {
-		load(id);
-		bc.delete(id);
-	}
-
-	@DELETE
-//	@LoggedIn
-	@Transactional
-	public void delete(List<Long> ids) throws Exception {
-		bc.delete(ids);
-	}
-
-	private void checkId(Bookmark entity) throws Exception {
-		if (entity.getId() != null) {
-			throw new BadRequestException();
+		try {
+			HttpEntity entity = new ByteArrayEntity(
+					s.getBytes("UTF-8"));
+			httppost.setEntity(entity);
+			httppost.setHeader("Content-Type","application/json");
+			HttpResponse response = client.execute(httppost);
+			String result = EntityUtils.toString(response.getEntity());
+			System.out.println("Marcado como parou de escrever: " + s);
+			System.out.println("resultado parou de escrever:"+result);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-	}*/
+	}
+	
+
 }

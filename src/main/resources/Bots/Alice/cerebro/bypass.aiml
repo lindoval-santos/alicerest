@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<aiml>
+  <category>
+    <pattern>HELLO</pattern>
+    <template>Please, try "Olá"</template>
+  </category>
+  <category>
+    <pattern>HELP</pattern>
+    <template><srai>AVISO IDIOMA</srai></template>
+  </category>
+  <category>
+    <pattern>DO *</pattern>
+    <template><srai>AVISO IDIOMA</srai></template>
+  </category>
+  <category>
+    <pattern>WHAT *</pattern>
+    <template><srai>AVISO IDIOMA</srai></template>
+  </category>
+  <category>
+    <pattern>WHAT'S *</pattern>
+    <template><srai>AVISO IDIOMA</srai></template>
+  </category>
+  <category>
+    <pattern>INFO</pattern>
+    <template><srai>AVISO IDIOMA</srai></template>
+  </category>
+  <category>
+    <pattern>START</pattern>
+    <template><srai>AVISO IDIOMA</srai></template>
+  </category>
+  <category>
+    <pattern>WHERE *</pattern>
+    <template><srai>AVISO IDIOMA</srai></template>
+  </category>
+  <category>
+    <pattern>IS *</pattern>
+    <template><srai>AVISO IDIOMA</srai></template>
+  </category>
+  <category>
+    <pattern>HELLO I HAVE A QUESTION</pattern>
+    <template><srai>AVISO IDIOMA</srai></template>
+  </category>
+  <category>
+    <pattern>HOW *</pattern>
+    <template><srai>AVISO IDIOMA</srai></template>
+  </category>
+  <category>
+    <pattern>IS *</pattern>
+    <template><srai>AVISO IDIOMA</srai></template>
+  </category>
+  <category>
+    <pattern>AVISO IDIOMA</pattern>
+    <template>Please change the input language to Portuguese, I was designed to answer questions only in this language.</template>
+  </category>  
+</aiml>
