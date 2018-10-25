@@ -49,9 +49,7 @@ public class Srai extends TemplateElement
     try
     {
       AliceBot bot = (match != null ? match.getCallback() : null);
-      String that = match.getThat().getOriginal();
-      String topic = match.getTopic().getOriginal();
-      return (bot != null ? bot.respond(request, topic, that).getOriginal() : "");
+      return (bot != null ? bot.respond(request).getOriginal() : "");
     }
     catch (Exception e)
     {

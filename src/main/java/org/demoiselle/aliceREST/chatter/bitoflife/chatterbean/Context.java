@@ -125,17 +125,21 @@ public class Context
 
   public void appendResponse(Response response)
   {
+
     transformations.normalization(response);
     responses.add(0, response);
 
     that = response.lastSentence(0);
+
     transformations.normalization(that);
   }
 
   public void print(String output) throws IOException
   {
-    outputStream().write(output.getBytes());
-    outputStream().write('\n');
+	  synchronized(this.output){
+		  outputStream().write(output.getBytes());
+    	  outputStream().write('\n');
+	  }
   }
   
   /*

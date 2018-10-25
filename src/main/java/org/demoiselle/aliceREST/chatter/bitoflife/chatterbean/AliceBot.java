@@ -18,6 +18,7 @@ package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean;
 //import static org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Sentence.ASTERISK;
 
 import java.text.Normalizer;
+import java.util.Calendar;
 
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.aiml.Category;
 import org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text.Request;
@@ -37,6 +38,8 @@ public class AliceBot
   /** The Graphmaster maps user requests to AIML categories. */
   private Graphmaster graphmaster;
   
+  private Calendar ultimaVezUsado;
+  
   /*
   Constructor Section
   */
@@ -46,6 +49,7 @@ public class AliceBot
   */
   public AliceBot()
   {
+	  ultimaVezUsado = Calendar.getInstance();
   }
 
   /**
@@ -57,6 +61,7 @@ public class AliceBot
   {
     setContext(new Context());
     setGraphmaster(graphmaster);
+    ultimaVezUsado = Calendar.getInstance();
   }
 
   /**
@@ -69,6 +74,7 @@ public class AliceBot
   {
     setContext(context);
     setGraphmaster(graphmaster);
+    ultimaVezUsado = Calendar.getInstance();
   }
   
   /*
@@ -92,18 +98,20 @@ public class AliceBot
   
   @return A response to the request.
   **/
-  public Response respond(Request request, String _topic, String _that)
+  public Response respond(Request request) //, String _topic, String _that)
   {
     String original = request.getOriginal();
+    ultimaVezUsado = Calendar.getInstance();
     if (original == null || "".equals(original.trim()))
       return new Response("");
     
-    String oldTopic = context.getTopic().getOriginal().trim();
+/*    String oldTopic = context.getTopic().getNormalized().trim();
     String newTopic = _topic != null?_topic.trim():"*";
+    String oldThat = context.getThat().getNormalized().trim();
     String newThat = _that != null?_that.trim():"*";
     
-    boolean isNewTopic = !newTopic.equals(oldTopic);
-    boolean isThat = !newThat.equals("*");
+    boolean isNewTopic = !newTopic.equalsIgnoreCase(oldTopic);
+    boolean isNewThat = !newThat.equalsIgnoreCase(oldThat);
     
     if (isNewTopic)
     {
@@ -112,12 +120,12 @@ public class AliceBot
       context.setTopic(topic);
     }
     
-    if (isThat)
+    if (isNewThat)
     {
       Sentence that = new Sentence(newThat);
       transformations().normalization(that);
       context.setThat(that);
-    }
+    }*/
     
     Sentence that = context.getThat();
     Sentence topic = context.getTopic();
@@ -128,7 +136,7 @@ public class AliceBot
     for(Sentence sentence : request.getSentences())
       respond(sentence, that, topic, response);
     context.appendResponse(response);
-    response.setSentences(new Sentence[]{context.getTopic(),context.getThat()});
+    //response.setSentences(new Sentence[]{context.getTopic(),context.getThat()});
     return response;
   }
 
@@ -139,11 +147,10 @@ public class AliceBot
   
   @return A response to the input string.
   **/
-  public Response respond(String input, String topic, String that)
+  public Response respond(String input)
   {
 	String s = Normalizer.normalize(input, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
-	String _that = Normalizer.normalize(that, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
-    Response response = respond(new Request(s), topic, _that);
+    Response response = respond(new Request(s));
     return response;
   }
   
@@ -183,5 +190,13 @@ public class AliceBot
   public void setGraphmaster(Graphmaster graphmaster)
   {
     this.graphmaster = graphmaster;
+  }
+  
+  public Calendar getUltimaVezUsado(){
+	  return ultimaVezUsado;
+  }
+  
+  public void setUltimaVezUsado(Calendar c){
+	  ultimaVezUsado = c;
   }
 }

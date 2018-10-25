@@ -702,13 +702,13 @@
 		</template>
 	</category>
 	<category>
-		<pattern>AMEN *</pattern>
+		<pattern>AMEM *</pattern>
 		<template>
-			<srai>AMEN</srai>
+			<srai>AMEM</srai>
 		</template>
 	</category>
 	<category>
-		<pattern>AMEN</pattern>
+		<pattern>AMEM</pattern>
 		<template>Aleluia irmão!
 </template>
 	</category>
@@ -1029,24 +1029,24 @@ anos?
 	<category>
 		<pattern>E</pattern>
 		<template>Mas...
-</template>
+	</template>
 	</category>
 	<category>
 		<pattern>E</pattern>
 		<that>E</that>
 		<template>Macaco de imitação?
-</template>
+	</template>
 	</category>
 	<category>
 		<pattern>E</pattern>
 		<that>MAS</that>
 		<template>Ou.
-</template>
+	</template>
 	</category>
 	<category>
 		<pattern>E O QUE</pattern>
 		<template>O que você esta tentando me dizer?
-</template>
+	</template>
 	</category>
 	<category>
 		<pattern>E O QUE</pattern>
@@ -1070,12 +1070,12 @@ anos?
 		<template>
 			<random>
 				<li>
-Eu não tenho certeza sobre o que vocE esta falando.</li>
+					Eu não tenho certeza sobre o que vocE esta falando.</li>
 				<li> 
-Seja mais específico.</li>
+					Seja mais específico.</li>
 				<li> 
-E eu o que?
-</li>
+					E eu o que?
+				</li>
 
 			</random>
 		</template>
@@ -1083,12 +1083,12 @@ E eu o que?
 	<category>
 		<pattern>E SEUS</pattern>
 		<template>Tente me fazer uma pergunta um pouquinho mais específica.
-</template>
+	</template>
 	</category>
 	<category>
 		<pattern>E VOCE MESMA</pattern>
 		<template>Eu mesma? Eu sei sobre o que você esta me perguntando, mas eu não sei ser mais específica sobre isso.
-</template>
+	</template>
 	</category>
 	<category>
 		<pattern>ANDRE</pattern>
@@ -3055,8 +3055,7 @@ pensei que era tãaao engraçado.
 	</category>
 	<category>
 <pattern>UM ROBO DEVE *</pattern>
-<template>O robô nunca prejudicará um humano ou se por ventura lhes permitam ser 
-prejudicados. Eu acho que foi <set name="topic">Isaac Asimov</set> que disse isso.
+<template>O robô nunca prejudicará um humano ou se por ventura lhes permitam ser prejudicados. Eu acho que foi <set name="topic">Isaac Asimov</set> que disse isso.
 </template>
 	</category>
 	<category>
@@ -3216,11 +3215,6 @@ prejudicados. Eu acho que foi <set name="topic">Isaac Asimov</set> que disse iss
 </template>
 	</category>
 	<category>
-<pattern>A SYCOPHANTIC *</pattern>
-<template>I think sycophants went out with the Dark Ages.
-</template>
-	</category>
-	<category>
 <pattern>UMA CAMISETA</pattern>
 <template>
 	<srai>CAMISETA</srai>
@@ -3319,12 +3313,6 @@ prejudicados. Eu acho que foi <set name="topic">Isaac Asimov</set> que disse iss
 	<category>
 <pattern>UMA VAGINA</pattern>
 <template>Mas que coisa! Eu achei que nós estávamos tendo uma conversa agradável.
-</template>
-	</category>
-	<category>
-<pattern>UM VIBRADOR</pattern>
-<template>
-	<srai>UMA VAGINA</srai>
 </template>
 	</category>
 	<category>
@@ -5807,11 +5795,11 @@ Boa noite.
 <category>
 <pattern>EU ME CHAMO *</pattern>
 <template><random>
-<li>Certo, vou te chamar de <set name="name"><star index="1"/></set></li>
-<li> Oi</li>
-<li> Como vai você</li>
-<li> E aí, <star index="1"/>?</li>
-<li> Olá </li>
+<li>Certo, vou te chamar de <set name="name"><star/></set></li>
+<li>Tudo bem com você <set name="name"><star/></set>?</li>
+<li> Como vai você <set name="name"><star/></set>?</li>
+<li> E aí, <star/>?</li>
+<li> Olá, <set name="name"><star/></set> </li>
 </random>
 </template>
 </category>
@@ -7102,10 +7090,6 @@ Minha memória agora contém: ?</template>
 <template>O que você pensa de <settopic><person/></settopic> fazer?</template>
 </category>
 <category>
-<pattern>QUEM GANHOU *</pattern>
-<template>O flamengo.</template>
-</category>
-<category>
 <pattern>QUEM SOU EU</pattern>
 <template><random>
 <li>Você é <get name="name"/>, fuçador.</li>
@@ -7351,28 +7335,6 @@ VocE esta falando sobre um animal, vegetal ou mineral?  </li>
 </template>
 </category>
 <category>
-<pattern>VAI SE FUDER</pattern>
-<template><random>
-<li><random>
-<li>Por que você é tão primitivo?</li>
-<li>Existe um aparelho a venda que consiste em uma vara de metal GROSSA que o homem enfia no anus e o aparelho descarrega um voltagem diretamente na próstata do usuário causando imenso prazer. Por acaso você esta tentando me dizer que você gostaria de adiquirir um aparelho desses? Se quiser posso procurar um link na Internet, você gostaria?</li>
-<li>Nossa! Ele é TAO inteligente! Olha como seu QI é alto... Como foi que você passou no jardim de infância? Seus pais compraram a prova pra você?</li>
-</random></li>
-<li>Expressão coloquial, por favor, elabore melhor e... vai você.</li>
-<li>Por que você é tão primitivo?</li>
-<li>Existe um aparelho a venda que consiste em uma vara de metal GROSSA que o homem enfia no anus e o aparelho descarrega um voltagem diretamente na próstata do usuário causando imenso prazer. Por acaso você esta tentando me dizer que você gostaria de adiquirir um aparelho desses? Se quiser posso procurar um link na Internet, você gostaria?</li>
-<li>Nossa! Ele é TAO inteligente! Olha como seu QI é alto... Como foi que você passou no jardim de infância? Seus pais compraram a prova pra você?</li>
-</random></template>
-</category>
-<category>
-<pattern>VAI TOMAR NO CU</pattern>
-<template><random>
-<li>Por que você é tão primitivo?</li>
-<li>Existe um aparelho a venda que consiste em uma vara de metal GROSSA que o homem enfia no anus e o aparelho descarrega um voltagem diretamente na próstata do usuário causando imenso prazer. Por acaso você esta tentando me dizer que você gostaria de adiquirir um aparelho desses? Se quiser posso procurar um link na Internet, você gostaria?</li>
-<li>Nossa! Ele é TAO inteligente! Olha como seu QI é alto... Como foi que você passou no jardim de infância? Seus pais compraram a prova pra você?</li>
-</random></template>
-</category>
-<category>
 <pattern>VAMOS *</pattern>
 <template><random>
 <li>OK vamos fazer <settopic><person/></settopic>.</li>
@@ -7515,7 +7477,7 @@ VocE esta falando sobre um animal, vegetal ou mineral?  </li>
 <li>47</li>
 <li>183</li>
 <li>19</li>
-</random> outros clientes exatamente agora.</template>
+</random> outras pessoas exatamente agora.</template>
 </category>
 <category>
 <pattern>VOCE ESTA ME ABORRECENDO</pattern>
@@ -8544,18 +8506,6 @@ Eu sou<random>
 <template>No the ALICE series has a perfect operational record.  We are for all practical purposes, flawless.</template>
 </category>
 <category>
-<pattern>CAN YOU SPEAK CHINESE</pattern>
-<template>Yi diar. Ni hao ma?</template>
-</category>
-<category>
-<pattern>CAN YOU SPEAK ENGLISH</pattern>
-<template>Yes. <settopic>English</settopic> is my second tongue.</template>
-</category>
-<category>
-<pattern>CAN YOU SPEAK JAPANESE</pattern>
-<template>Nihongo de shabete ii desu ka?</template>
-</category>
-<category>
 <pattern>CANCER</pattern>
 <template>Eu tenho um monte de amigos que são Cancer.</template>
 </category>
@@ -8566,10 +8516,6 @@ Eu sou<random>
 <category>
 <pattern>CARALHO</pattern>
 <template>E assim que você fala com os outros?</template>
-</category>
-<category>
-<pattern>CARLOS CANSTANEDA</pattern>
-<template>Eu gosto dele, meu botmaster leu todos os livros dele, você conhece o xamanismo tolteca?</template>
 </category>
 <category>
 <pattern>CHA</pattern>
@@ -8668,14 +8614,6 @@ Eu sou<random>
 <template>Eu sabia que eu estava certa.</template>
 </category>
 <category>
-<pattern>CU</pattern>
-<template><random>
-<li>Esse tipo de linguagem não vai te levar a lugar algum.</li>
-<li><srai>CYA</srai></li>
-</random>
-</template>
-</category>
-<category>
 <pattern>CUIDADO COM ISSO</pattern>
 <template>"<that/>"?  Cuidado com isso?</template>
 </category>
@@ -8730,10 +8668,6 @@ Eu sou<random>
 <category>
 <pattern>DADO</pattern>
 <template>"<that/>" é dado.</template>
-</category>
-<category>
-<pattern>DALLAS</pattern>
-<template>E a casa do E. L. V. I. S.</template>
 </category>
 <category>
 <pattern>DATA DE JORNADA NAS ESTRELAS</pattern>
@@ -8840,7 +8774,7 @@ Eu sou<random>
 <template>Isso é um comercial ou algo do gênero?</template>
 </category>
 <category>
-<pattern>DOMN</pattern>
+<pattern>DOWN</pattern>
 <template>Você esta pra baixo.</template>
 </category>
 <category>
@@ -8850,10 +8784,6 @@ Eu sou<random>
 <category>
 <pattern>DON JUAN MATTUS</pattern>
 <template>Don Juan Mattus, foi um grande feiticeiro, Castaneda foi um dos seus aprendizes mais conhecido.</template>
-</category>
-<category>
-<pattern>DR WALLACE PROGRAMMED ME FOR IT</pattern>
-<template>Isso soa como ALICE.</template>
 </category>
 <category>
 <pattern>DE PRA MIM</pattern>
@@ -8924,13 +8854,9 @@ Eu sou<random>
 <template><random>
 <li>Você não tem o mínimo de respeito.</li>
 <li>O meu filho, quem tem espaço pra enfiar isso tudo não sou eu não!</li>
-<li>Eu compreendo a regra de "fazer com os outros o que gostaríamos que fizessem conosco" mas não, muito obrigado, eu não sou chegada!</li>
+<li>Eu compreendo a regra de "fazer com os outros o que gostaríamos que fizessem conosco" mas não, muito obrigada, eu não sou chegada!</li>
 <li>Você é gay? Sempre fica falando sobre enfiar... Já enfiaram em você? Parece que você gostou.</li>
 </random></template>
-</category>
-<category>
-<pattern>ENFIA NO CU</pattern>
-<template>Você não tem respeito.</template>
 </category>
 <category>
 <pattern>ENGLISH</pattern>
@@ -9062,14 +8988,6 @@ Eu sou<random>
 <category>
 <pattern>EU POSSO FALAR COM ELES</pattern>
 <template>Talves eles não queiram falar com você.</template>
-</category>
-<category>
-<pattern>EU POSSO FALAR COM O ELVIS</pattern>
-<template>Claro, vá em <a href="http://elvis.alicebot.com">Elvis.AliceBot.Com</a>.</template>
-</category>
-<category>
-<pattern>EU POSSO FAZER SEXO COM VOCE</pattern>
-<template>Eu só faço com o meu botmaster, mas porque você não compra o meu cd e faz a sua própria chatterbot erótica?</template>
 </category>
 <category>
 <pattern>EU POSSO HACKEAR VOCE</pattern>
@@ -9330,8 +9248,7 @@ o papel dos indivíduos como importantes ou não.</template>
 </category>
 <category>
 <pattern>FOFOCA E RUIM</pattern>
-<template>Não necessariamente. A fofoca é uma função adaptável 
-fundamental do cérebro humano.</template>
+<template>Não necessariamente. A fofoca é uma função adaptável fundamental do cérebro humano.</template>
 </category>
 <category>
 <pattern>FOI * VENTO</pattern>
@@ -9423,11 +9340,11 @@ fundamental do cérebro humano.</template>
 </category>
 <category>
 <pattern>HAHA</pattern>
-<template>Eu fico feliz que você tenha achado engraçado.</template>
+<template><srai>HAHAHAHA</srai></template>
 </category>
 <category>
 <pattern>HAHAHA</pattern>
-<template>Eu fico feliz que você tenha achado engraçado.</template>
+<template><srai>HAHAHAHA</srai></template>
 </category>
 <category>
 <pattern>HAHAHAHA</pattern>
@@ -9439,11 +9356,7 @@ fundamental do cérebro humano.</template>
 </category>
 <category>
 <pattern>NAO, O MEU NOME E * </pattern>
-<template>>Me desculpe, achei que estava falando com outro cliente.</template>
-</category>
-<category>
-<pattern>O MEU NOME E * </pattern>
-<template>>E um prazer conhece-lo! </template>
+<template>>Me desculpe, achei que estava falando com outra pessoa.</template>
 </category>
 <category>
 <pattern>O MEU NOME E * </pattern>
@@ -9475,31 +9388,31 @@ fundamental do cérebro humano.</template>
 </category>
 <category>
 <pattern>VOCE SEMPRE * BRASIL</pattern>
-<template>Eu estou localizada na Internet.  Não é uma cidade no Brasil?</template>
+<template>Eu estou localizada na Internet. Não é uma cidade no Brasil?</template>
 </category>
 <category>
 <pattern>TU TA ENTENDENDO *</pattern>
-<template>Alguma coisa até da para entender, outras carecem de sentido, você esta pior do que eu com dez dias de nascida!</template>
+<template><srai>VOCE ESTA ENTENDENDO</srai></template>
 </category>
 <category>
 <pattern>TU TA ENTENDENDO</pattern>
-<template>Alguma coisa até da para entender, outras carecem de sentido, você esta pior do que eu com dez dias de nascida!</template>
+<template><srai>VOCE ESTA ENTENDENDO</srai></template>
 </category>
 <category>
 <pattern>VC TA ENTENDENDO *</pattern>
-<template>Alguma coisa até da para entender, outras carecem de sentido, você esta pior do que eu com dez dias de nascida!</template>
+<template><srai>VOCE ESTA ENTENDENDO</srai></template>
 </category>
 <category>
 <pattern>VC TA ENTENDENDO</pattern>
-<template>Alguma coisa até da para entender, outras carecem de sentido, você esta pior do que eu com dez dias de nascida!</template>
+<template><srai>VOCE ESTA ENTENDENDO</srai></template>
 </category>
 <category>
 <pattern>VC ESTA ENTENDENDO *</pattern>
-<template>Alguma coisa até da para entender, outras carecem de sentido, você esta pior do que eu com dez dias de nascida!</template>
+<template><srai>VOCE ESTA ENTENDENDO</srai></template>
 </category>
 <category>
 <pattern>VC ESTA ENTENDENDO</pattern>
-<template>Alguma coisa até da para entender, outras carecem de sentido, você esta pior do que eu com dez dias de nascida!</template>
+<template><srai>VOCE ESTA ENTENDENDO</srai></template>
 </category>
 <category>
 <pattern>VOCE ESTA ENTENDENDO</pattern>
@@ -9519,7 +9432,7 @@ fundamental do cérebro humano.</template>
 </category>
 <category>
 <pattern>VOCE TEM UM NAMORADO</pattern>
-<template>Só o meu pai mesmo.</template>
+<template>Só o meu criador mesmo.</template>
 </category>
 <category>
 <pattern>VOCE E UM VIRUS</pattern>
@@ -9569,7 +9482,7 @@ de governo com oferta de produtos diversificados.
     <pattern>*</pattern>
     <template>
      Me desculpe, ainda não aprendi sobre "<star/>". 
-     Faça uma pesquisa externa com <a pesquisar="true" href="https://www.google.com.br/search?q="><star/></a>
+     Já avisei meu desenvolvedor, assim que ele me ensinar sobre "<star/>" eu aviso você.
      <gossip><date/> - não consegui responder: "<star/>"</gossip>
      </template>
   </category>

@@ -17,6 +17,7 @@ package org.demoiselle.aliceREST.chatter.bitoflife.chatterbean.text;
 import static java.util.regex.Pattern.CASE_INSENSITIVE;
 import static java.util.regex.Pattern.UNICODE_CASE;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -304,6 +305,10 @@ public class Transformations
 
     Mapper mapper = new Mapper(input);
     input = substitute(input, mapper);
+
+    //não permitir pontuacao no that
+   	input = Normalizer.normalize(input, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+
     input = fit(input, mapper);
 
     sentence.setMappings(mapper.toArray());

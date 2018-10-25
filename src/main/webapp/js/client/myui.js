@@ -3,9 +3,6 @@ $(document).ready(function (){
 
     $('#enviar').on('click', function(){
     
-    var _that = $('#that').val();
-    var _topic = $('#topic').val();
-    
     var input = $('#questao').val();
 
     if(input == '')
@@ -20,23 +17,8 @@ $(document).ready(function (){
     input = input.replace("/","");
     input = input.replace("!","");
     
-    _that = _that.replace("?","");
-    _that = _that.replace("/","");
-    _that = _that.replace("!","");
+    apiURL = apiURL + input;
     
-    _topic = _topic.replace("?","");
-    _topic = _topic.replace("/","");
-    _topic = _topic.replace("!","");    
-    
-    _that = (_that == "undefined" || _that == '' || _that == "")?"*":_that;
-    _topic = (_topic == "undefined" || _topic == '')?"*":_topic;
-    
-    _topic = _topic.replace("\"", "");
-    
-    _that = _that.replace("*","%2A");
-    _topic = _topic.replace("*","%2A");
-    
-    apiURL = apiURL + input + '/' + _that + '/' + _topic;
     var send = apiURL;
     
     $.ajax({
@@ -57,23 +39,12 @@ $(document).ready(function (){
 function mostrar(data){
 	var questao = "";
 	var resposta = "";
-	var t;
 	var output = $("<div class='output'/>");
 
 	questao = data.questao;
     resposta = data.conteudo;
     
     questao = questao.replace('<', '').replace('>','').replace('/', '');
-    t = data.that;
-    
-    t = t.replace('?','');
-    
-    if (matches(t,[">","<","/"], "OR"))
-      $('#that').val("#");
-    else
-      $('#that').val(t);
-    
-    $('#topic').val(data.topic);
     
 	var clickableDiv = $("<div class='inputDiv'>"+new Date().toLocaleString()+"<br/>Questão: " + questao + "</div>");
     //clickableDiv.addClass('clickable');

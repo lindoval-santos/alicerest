@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -17,6 +18,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 
 import org.apache.http.HttpEntity;
@@ -32,7 +34,6 @@ import org.demoiselle.aliceREST.business.ConfigBody;
 import org.demoiselle.aliceREST.business.FBMessageResponse;
 import org.demoiselle.aliceREST.business.FbMessage;
 import org.demoiselle.aliceREST.business.Hub;
-import org.demoiselle.aliceREST.business.QuestaoBody;
 import org.demoiselle.aliceREST.business.Recipient;
 
 import com.google.gson.Gson;
@@ -56,58 +57,32 @@ public class AliceBotREST {
 	
 	
 	@GET
-	@Path("ask/{questao}/{that}/{topic}")
-	@Produces("application/json")
-	@Consumes("application/json")
-	@ApiOperation(value = "O chatterbot responde uma questão conforme a base de conhecimento", notes = "Robot em REST", response = Resposta.class)
-	public Response consultar(@PathParam("questao") String questao,
-							  @PathParam("that") String that,
-							  @PathParam("topic") String topic) throws Exception {
-		if (questao == null || "".equals(questao))
-			throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST)
-					.entity("Nenhuma questão informada.").build());
-		System.out.println("consultando com os 3 parâmetros");
-		Resposta r = null;
-		try{
-			r = bc.questionar(new QuestaoBody(questao, that == null?"*":that, topic == null?"*":topic));
-		}catch(Exception e)
-		{
-			e.printStackTrace();
-			Resposta resp = new Resposta(topic.trim(), that, questao, "Ocorreu um erro, favor recarregar a página para reiniciar.");
-			return Response.ok().entity(resp).build();
-		}
-		return Response.ok().entity(r).build();
-	}
-
-	//O chome no Android não consegue construir URL tipo "{questao}/{that}/{topic}", assim, irá consultar este método
-	@GET
-	@Path("ask/{questao}/{that}")
-	@Produces("application/json")
-	@Consumes("application/json")
-	@ApiOperation(value = "O chatterbot responde uma questão conforme a base de conhecimento", notes = "Robot em REST", response = Resposta.class)
-	public Response consultar(@PathParam("questao") String questao,
-			  				  @PathParam("that") String that) throws Exception {
-		if (questao == null || "".equals(questao))
-			throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST)
-					.entity("Nenhuma questão informada.").build());
-		System.out.println("consultando com 2 parâmetros");
-		return this.consultar(questao, that, "*");
-	}
-	
-	//O chome no Android não consegue construir URL tipo "{questao}/{that}/{topic}", assim, irá consultar este método
-	@GET
 	@Path("ask/{questao}")
 	@Produces("application/json")
 	@Consumes("application/json")
 	@ApiOperation(value = "O chatterbot responde uma questão conforme a base de conhecimento", notes = "Robot em REST", response = Resposta.class)
-	public Response consultar(@PathParam("questao") String questao) throws Exception {
+	public Response consultar(@Context HttpServletRequest req,
+							  @PathParam("questao") String questao) throws Exception {
+		
 		if (questao == null || "".equals(questao))
 			throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST)
 					.entity("Nenhuma questão informada.").build());
-		System.out.println("consultando com 1 parâmetro");
-		return this.consultar(questao, "*", "*");
+
+		Resposta r = null;
+		try{
+			String idCli;
+			idCli = req.getRemoteHost();
+			if (idCli == null)
+				idCli = req.getRemoteAddr();
+			r = bc.questionar(idCli, questao);
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			Resposta resp = new Resposta(questao, "Ocorreu um erro, favor recarregar a página para reiniciar.");
+			return Response.ok().entity(resp).build();
+		}
+		return Response.ok().entity(r).build();
 	}
-	
 	
 	@POST
 	@Path("config/{nome}/{valor}")
@@ -133,11 +108,13 @@ public class AliceBotREST {
 		return Response.ok().entity(result).build();
 	}
 
+	
+// Destinado ao facebook
 	@POST
 	@Path("webhook/")
 	@Produces("application/json")
 	@Consumes("application/json")
-	@ApiOperation(value = "Responde a chamada do facebook com o código 200 caso seja a chama de uma página", notes = "Para ser chamado pelo facebook")
+	@ApiOperation(value = "Webhook para receber mensagens do facebook", notes = "Para ser chamado pelo facebook")
 	public Response fbwebhookPost(String str) throws Exception {
 		System.out.println("requisição POST recebida: " + str);
 		JsonElement jelement = new JsonParser().parse(str);
@@ -167,7 +144,7 @@ public class AliceBotREST {
 		sinalizarEscrevendo(cliente);
 		
 		FbMessage resposta = new FbMessage();
-		String mensagemProcessada = this.responderParaFB(questao);
+		String mensagemProcessada = this.responderParaFB(cliente,questao);
 		resposta.setText(mensagemProcessada);
 		
 		sinalizarParouEscrever(cliente);
@@ -232,15 +209,15 @@ public class AliceBotREST {
 		return reply;
 	}
 	
-	private String responderParaFB(String questao){
+	private String responderParaFB(String cliente, String questao){
 		Resposta r = null;
 		try{
-			r = bc.questionar(new QuestaoBody(questao, "*", "*"));
+			r = bc.questionar(cliente, questao);
 			return r.getConteudo();
 		}catch(Exception e)
 		{
 			e.printStackTrace();
-			return "Ocorreu um erro, favor recarregar a página para reiniciar.";
+			return "Ocorreu um erro, favor tentar novamente mais tarde.";
 		}
 	}
 	
