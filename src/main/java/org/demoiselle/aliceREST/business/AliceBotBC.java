@@ -35,7 +35,6 @@ public class AliceBotBC
 	private static void setUp(String cliente) throws Exception{
 	  bot = Bots.getBot(cliente);
       if (bot == null){
-	    mother.setUp("");
 	    bot = mother.newInstance();
       }
 	}
@@ -90,15 +89,14 @@ public class AliceBotBC
 				return;
 			System.out.println("Empilhando bot para: " + dono);
 			bot.setUltimaVezUsado(Calendar.getInstance());
-			if (!botsGuardados.containsKey(dono))
-				botsGuardados.put(dono, bot);
+			botsGuardados.put(dono, bot);
 		}
 		
 		public static AliceBot getBot(String dono){
 			checkUso();
 			if(dono == null || "".equals(dono))
 				return null;
-			System.out.println("Empilhando bot para: " + dono);
+			System.out.println("Desempilhando bot para: " + dono);
 			if(botsGuardados.containsKey(dono))
 				return botsGuardados.get(dono);
 			

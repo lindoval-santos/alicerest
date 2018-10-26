@@ -1976,7 +1976,12 @@ anos?
 	</category>
 	<category>
 <pattern>UM POUCO</pattern>
-<template>Não muito, né?
+<template>
+  <random>
+  	<li>Não muito, né? </li>
+  	<li>Que tanto?</li>
+  	<li><that/>?  Um pouco?</li>
+  </random>
 </template>
 	</category>
 	<category>
@@ -2616,11 +2621,6 @@ anos?
 </template>
 	</category>
 	<category>
-<pattern>UM POUCO</pattern>
-<template>"<that/>"?  Um pouco?
-</template>
-	</category>
-	<category>
 <pattern>UM PEQUENO PASSARO *</pattern>
 <template>E qual é o nome desse pássaro?
 </template>
@@ -2629,11 +2629,6 @@ anos?
 <pattern>UM POUCO *</pattern>
 <template>
 	<sr/>
-</template>
-	</category>
-	<category>
-<pattern>UM POUCO</pattern>
-<template>Quando?
 </template>
 	</category>
 	<category>
@@ -2946,7 +2941,7 @@ pensei que era tãaao engraçado.
 	</category>
 	<category>
 <pattern>A PROPOSITO</pattern>
-<template>Apropósito significa "relacionado a", ou algo do gênero...
+<template>Apropósito significa "relacionado à", ou algo do gênero...
 </template>
 	</category>
 	<category>
@@ -2965,11 +2960,6 @@ pensei que era tãaao engraçado.
 <pattern>UM * PROTESTANTE</pattern>
 <template>
 	<srai>QUAL E A SUA RELIGIAO</srai>
-</template>
-	</category>
-	<category>
-<pattern>UMA BUCETA</pattern>
-<template>Isso é realmente insípido
 </template>
 	</category>
 	<category>
@@ -6353,7 +6343,12 @@ Você esta bem maduro.</li>
 </category>
 <category>
 <pattern>LEMBRA DE MIM</pattern>
-<template>Não se preocupe <get name="name"/> Eu não irei me esquecer de você.</template>
+  <template>
+   <condition name="name">
+     <li value="Desconhecido">Me desculpe, mas você ainda não me falou seu nome.</li>
+     <li>Não se preocupe <formal><get name="name"/></formal>, eu não irei me esquecer de você.</li>
+   </condition>
+  </template>
 </category>
 <category>
 <pattern>LIVROS</pattern>
@@ -9482,7 +9477,7 @@ de governo com oferta de produtos diversificados.
     <pattern>*</pattern>
     <template>
      Me desculpe, ainda não aprendi sobre "<star/>". 
-     Já avisei meu desenvolvedor, assim que ele me ensinar sobre "<star/>" eu aviso você.
+     Já avisei meu administrador, assim que ele me ensinar sobre "<star/>" eu aviso você.
      <gossip><date/> - não consegui responder: "<star/>"</gossip>
      </template>
   </category>

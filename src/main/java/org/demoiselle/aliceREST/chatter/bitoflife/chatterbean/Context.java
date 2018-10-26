@@ -136,7 +136,7 @@ public class Context
 
   public void print(String output) throws IOException
   {
-	  synchronized(this.output){
+	  synchronized(this){
 		  outputStream().write(output.getBytes());
     	  outputStream().write('\n');
 	  }
@@ -173,7 +173,7 @@ public class Context
       if (file.isDirectory())
         path = file.getPath() + "/gossip-" + id() + ".txt";
       try{
-            outputStream(new FileOutputStream(path));
+            outputStream(new FileOutputStream(path, true));
       }catch (IOException IO){
     	  String sd = System.getProperty("user.dir") + "/LogAliceBot/";
     	  String sf = "gossip-" + id() + ".txt";

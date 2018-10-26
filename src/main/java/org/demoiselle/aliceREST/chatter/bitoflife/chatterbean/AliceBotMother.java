@@ -44,14 +44,14 @@ public class AliceBotMother
 	  return (!"".equals(PATH_CONTEXT));
   }
   
-  public void setUp(String tipoExecucao)
+/*  public void setUp(String tipoExecucao)
   {
     //gossip = new ByteArrayOutputStream();
-//    if ("T".equals(tipoExecucao.toUpperCase()))
-//    	recurso = "test";
-//    else
-//    	recurso = "messages";
-  }
+    if ("T".equals(tipoExecucao.toUpperCase()))
+    	recurso = "test";
+    else
+    	recurso = "messages";
+  }*/
   
   /*
   Method Section

@@ -27,8 +27,11 @@
       <substitute find=" hehe" replace=" he"/>
       <substitute find=" haha" replace=" ha"/>    
       <substitute find=" hellp " replace=" help "/>
-      <substitute find=" becuse " replace=" because "/>
-      <substitute find=" beleive " replace=" believe "/>
+      <substitute find=" mue " replace=" meu "/>
+      <substitute find=" comcerteza " replace=" com certeza "/>
+      <substitute find=" concerteza " replace=" com certeza "/>
+      <substitute find=" concertesa " replace=" com certeza "/>
+      <substitute find=" com certesa " replace=" com certeza "/>
       <substitute find=" becasue " replace=" because "/>
       <substitute find=" becuase " replace=" because "/>
       <substitute find=" becouse " replace=" because "/>
@@ -259,9 +262,6 @@
       <substitute find=" a.l.i.c.e. " replace=" ALICE "/>
       <substitute find=" a.l.i.c.e " replace=" ALICE "/>
       <substitute find=" i.c.e " replace=" i c e "/>
-      <substitute find=" e l v i s " replace=" ELVIS "/>
-      <substitute find=" e.l.v.i.s. " replace=" ELVIS "/>
-      <substitute find=" e.l.v.i.s " replace=" ELVIS "/>
       <substitute find=" v.i.s " replace=" v i s "/>
       <substitute find=" h a l " replace=" hal "/>
       <substitute find=" h.a.l. " replace=" hal "/>
@@ -318,21 +318,20 @@
     </protection>
   </input>
   <gender>
-    <substitute find=" he " replace="she"/>
-    <substitute find=" she " replace="he"/>
-    <substitute find=" to him " replace="to her"/>
-    <substitute find=" for him " replace="for her"/>
-    <substitute find=" with him " replace="with her"/>
-    <substitute find=" on him " replace="on her"/>
-    <substitute find=" in him " replace="in her"/>
-    <substitute find=" to her " replace="to him"/>
-    <substitute find=" for her " replace="for him"/>
-    <substitute find=" with her " replace="with him"/>
-    <substitute find=" on her " replace="on him"/>
-    <substitute find=" in her " replace="in him"/>
-    <substitute find=" his " replace="her"/>
-    <substitute find=" her " replace="his"/>
-    <substitute find=" him " replace="her"/>
+    <substitute find=" ele " replace="ela"/>
+    <substitute find=" ela " replace="ele"/>
+    <substitute find=" para ele " replace="para ela"/>
+    <substitute find=" pra ele " replace="pra ela"/>
+    <substitute find=" para ela " replace="para ele"/>
+    <substitute find=" pra ela " replace="pra ele"/>
+    <substitute find=" com ele " replace="com ela"/>
+	<substitute find=" com ela " replace="com ele"/>
+    <substitute find=" nele " replace="nela"/>
+    <substitute find=" nela " replace="nele"/>
+    <substitute find=" a ela " replace="a ele"/>
+    <substitute find=" a ele " replace="a ela"/>
+    <substitute find=" dele " replace="dela"/>
+    <substitute find=" dela " replace="dele"/>
   </gender>
   <person>
     <substitute find=" I was " replace="he or she was"/>
